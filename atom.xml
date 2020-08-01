@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小小小日天的博客</title>
+  
+  <subtitle>瞧！这里有个不知道叫什么好的小玩意！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://359303267.github.io/"/>
+  <updated>2020-04-22T13:04:22.685Z</updated>
+  <id>https://359303267.github.io/</id>
+  
+  <author>
+    <name>小小小日天</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(2020)一个不知道叫什么好的U盘启动工具集</title>
+    <link href="https://359303267.github.io/PE/"/>
+    <id>https://359303267.github.io/PE/</id>
+    <published>2020-04-23T09:22:54.000Z</published>
+    <updated>2020-04-22T13:04:22.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h1&gt;&lt;p&gt;​        没错，这是最后一个版本，以后不再更新。&lt;br&gt;​       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="WinPE" scheme="https://359303267.github.io/categories/WinPE/"/>
+    
+    
+      <category term="WinPE" scheme="https://359303267.github.io/tags/WinPE/"/>
+    
+      <category term="U盘启动" scheme="https://359303267.github.io/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/"/>
+    
+      <category term="工具集" scheme="https://359303267.github.io/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
+    
+      <category term="Windows" scheme="https://359303267.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020.02.05博客更新说明</title>
+    <link href="https://359303267.github.io/blog-update-info01/"/>
+    <id>https://359303267.github.io/blog-update-info01/</id>
+    <published>2020-02-05T07:20:09.000Z</published>
+    <updated>2020-02-05T07:45:01.958Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;原Coding
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记一次kindle Paperwhite3 拆机降级</title>
+    <link href="https://359303267.github.io/kindle-02/"/>
+    <id>https://359303267.github.io/kindle-02/</id>
+    <published>2020-01-21T16:40:33.000Z</published>
+    <updated>2020-01-21T17:02:30.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;记一次kindle-Paperwhite3-拆机降级&quot;&gt;&lt;a href=&quot;#记一次kindle-Paperwhite3-拆机降级&quot; class=&quot;headerlink&quot; title=&quot;记一次kindle Paperwhite3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="我的Kindle" scheme="https://359303267.github.io/categories/%E6%88%91%E7%9A%84Kindle/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="Kindle" scheme="https://359303267.github.io/tags/Kindle/"/>
+    
+      <category term="杂谈" scheme="https://359303267.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>几种BP机的解密方法</title>
+    <link href="https://359303267.github.io/BP-Password/"/>
+    <id>https://359303267.github.io/BP-Password/</id>
+    <published>2019-08-25T09:13:45.000Z</published>
+    <updated>2019-08-25T09:21:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;摩托罗拉大顾问型号解密：&lt;/p&gt;
+&lt;p&gt;一、首先你需要一个BP机写码设备（USB转TTL串口小板也可以，要保证写入数据时接触良好）。&lt;br&gt;二、你需要一个配套的解密软件，可以从&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="BP机" scheme="https://359303267.github.io/tags/BP%E6%9C%BA/"/>
+    
+      <category term="大顾问" scheme="https://359303267.github.io/tags/%E5%A4%A7%E9%A1%BE%E9%97%AE/"/>
+    
+      <category term="单片机" scheme="https://359303267.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="摩托罗拉" scheme="https://359303267.github.io/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/"/>
+    
+      <category term="寻呼机解密" scheme="https://359303267.github.io/tags/%E5%AF%BB%E5%91%BC%E6%9C%BA%E8%A7%A3%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源！使用单片机发送POCSAG编码呼响BP机</title>
+    <link href="https://359303267.github.io/POCSAG/"/>
+    <id>https://359303267.github.io/POCSAG/</id>
+    <published>2019-08-23T06:11:17.000Z</published>
+    <updated>2019-08-25T08:28:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;禁止转载&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="BP机" scheme="https://359303267.github.io/tags/BP%E6%9C%BA/"/>
+    
+      <category term="单片机" scheme="https://359303267.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="POCSAG" scheme="https://359303267.github.io/tags/POCSAG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何获得BP机的地址码和工作频率？</title>
+    <link href="https://359303267.github.io/Get-BP-Code/"/>
+    <id>https://359303267.github.io/Get-BP-Code/</id>
+    <published>2019-08-23T04:01:27.000Z</published>
+    <updated>2019-08-25T08:43:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;禁止转载&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;前言少叙&quot;&gt;&lt;a href=&quot;#前言少叙&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="BP机" scheme="https://359303267.github.io/tags/BP%E6%9C%BA/"/>
+    
+      <category term="单片机" scheme="https://359303267.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="摩托罗拉" scheme="https://359303267.github.io/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/"/>
+    
+      <category term="POCSAG" scheme="https://359303267.github.io/tags/POCSAG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用PCB板做一把尺子</title>
+    <link href="https://359303267.github.io/PCB_Ruler/"/>
+    <id>https://359303267.github.io/PCB_Ruler/</id>
+    <published>2019-05-09T04:12:12.000Z</published>
+    <updated>2019-08-23T07:49:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;信仰&quot;&gt;&lt;a href=&quot;#信仰&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="PCB" scheme="https://359303267.github.io/categories/PCB/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="PCB" scheme="https://359303267.github.io/tags/PCB/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Floppy内核关闭温控教程</title>
+    <link href="https://359303267.github.io/FloppyKernel-02/"/>
+    <id>https://359303267.github.io/FloppyKernel-02/</id>
+    <published>2019-02-08T09:41:13.000Z</published>
+    <updated>2019-02-08T11:00:02.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;按照上一篇&lt;a href=&quot;/FloppyKernel-01&quot;&gt;Floppy
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="小米5" scheme="https://359303267.github.io/tags/%E5%B0%8F%E7%B1%B35/"/>
+    
+      <category term="内核" scheme="https://359303267.github.io/tags/%E5%86%85%E6%A0%B8/"/>
+    
+      <category term="折腾" scheme="https://359303267.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="刷机" scheme="https://359303267.github.io/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Floppy 内核关闭背光调节器的方法</title>
+    <link href="https://359303267.github.io/FloppyKernel-01/"/>
+    <id>https://359303267.github.io/FloppyKernel-01/</id>
+    <published>2019-01-12T14:16:45.000Z</published>
+    <updated>2019-02-08T10:58:34.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;这是个假的二级标题&quot;&gt;&lt;a href=&quot;#这是个假的二级标题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="小米5" scheme="https://359303267.github.io/tags/%E5%B0%8F%E7%B1%B35/"/>
+    
+      <category term="内核" scheme="https://359303267.github.io/tags/%E5%86%85%E6%A0%B8/"/>
+    
+      <category term="折腾" scheme="https://359303267.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="刷机" scheme="https://359303267.github.io/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《知识就是力量第六期笔记分享》</title>
+    <link href="https://359303267.github.io/zhishijiushililiang/"/>
+    <id>https://359303267.github.io/zhishijiushililiang/</id>
+    <published>2018-09-04T04:10:42.000Z</published>
+    <updated>2018-09-04T04:59:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;最近发现一个节目非常的不错，我妈推荐给我的，名为《知识就是力量》，里面的罗胖会分享很多人生的经验和方法。  &lt;/li&gt;
+&lt;li&gt;我更推荐大家去&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="爱奇艺" scheme="https://359303267.github.io/tags/%E7%88%B1%E5%A5%87%E8%89%BA/"/>
+    
+      <category term="知识就是力量" scheme="https://359303267.github.io/tags/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/"/>
+    
+      <category term="分享" scheme="https://359303267.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="笔记" scheme="https://359303267.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用好fastboot命令，刷机加锁不用再找工具！</title>
+    <link href="https://359303267.github.io/fastboot-01/"/>
+    <id>https://359303267.github.io/fastboot-01/</id>
+    <published>2018-09-02T14:14:15.000Z</published>
+    <updated>2019-08-23T07:51:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;手机刷机我想很多人都折腾过吧，我想大多数人都是去找对应品牌的专用刷机工具。其实现在很多手机都有fastboot模式（可以重启到Bootloader进入），这是可以说是一种快速通用的刷机模式，那么我们通过fastboot这个工具就可以对手机进行刷写了。fastbo
+        
+      
+    
+    </summary>
+    
+    
+      <category term="杂七杂八的教程" scheme="https://359303267.github.io/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="刷机" scheme="https://359303267.github.io/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="fastboot" scheme="https://359303267.github.io/tags/fastboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈Kindle这个玩意儿</title>
+    <link href="https://359303267.github.io/kindle-01/"/>
+    <id>https://359303267.github.io/kindle-01/</id>
+    <published>2018-09-01T10:58:37.000Z</published>
+    <updated>2019-08-08T17:19:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Kindle只能看书&quot;&gt;&lt;a href=&quot;#Kindle只能看书&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="我的Kindle" scheme="https://359303267.github.io/categories/%E6%88%91%E7%9A%84Kindle/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="Kindle" scheme="https://359303267.github.io/tags/Kindle/"/>
+    
+      <category term="杂谈" scheme="https://359303267.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我修改PE的一点小经验</title>
+    <link href="https://359303267.github.io/PE-01/"/>
+    <id>https://359303267.github.io/PE-01/</id>
+    <published>2018-08-31T09:44:57.000Z</published>
+    <updated>2018-11-17T14:32:04.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="WinPE" scheme="https://359303267.github.io/categories/WinPE/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="WinPE" scheme="https://359303267.github.io/tags/WinPE/"/>
+    
+      <category term="U盘启动" scheme="https://359303267.github.io/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/"/>
+    
+      <category term="工具集" scheme="https://359303267.github.io/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
+    
+  </entry>
+  
+</feed>
