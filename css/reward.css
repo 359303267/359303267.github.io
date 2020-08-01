@@ -1,0 +1,30 @@
+.reward {
+  margin: 1em auto;
+  width: 90%;
+  text-align: center;
+  color: #444;
+}
+.reward .qr {
+  text-align: center;
+}
+.reward .qr div {
+  padding: 0.5em;
+  display: inline-block;
+}
+.reward .qr div img {
+  width: 10em;
+  display: inline-block;
+}
+.reward .qr div span {
+  display: block;
+}
+.reward .button {
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  padding: 0em 0.5em;
+  margin: 0.5em 0;
+  background: #9f1313;
+  border: 0.1em solid #f5c6cb;
+  line-height: 2em;
+}

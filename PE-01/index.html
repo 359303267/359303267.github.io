@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>我修改PE的一点小经验 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/PE-01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">我修改PE的一点小经验</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-31T17:44:57+08:00">2018-08-31 17:44:57</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WinPE/" itemprop="url" rel="index"><span itemprop="name">WinPE</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>我觉得应该把这些经验分享出来，因为我觉得我的技术算是非常的差，基本上用的都是别人制作好的东西，我只是把他们简单的拼合在一起，事实上确是如此。下面我所说的PE是指的整个工具的集合，而非特指Win2003或者Win10PE，我又比较懒，多打几个字就不是滋味，所以PE就是那个不知道叫什么好的工具集  </li>
+</ul>
+<h1 id="PE中的注册表部分"><a href="#PE中的注册表部分" class="headerlink" title="PE中的注册表部分"></a>PE中的注册表部分</h1><ul>
+<li>PE内核中的注册表是PE的核心部分，每个大神制作的PE内核都有他们独到的部分，可谓是百家齐放。这部分很难，网上搜集到的资料也比较少。我曾经也是有自己精简注册表的想法的，但是发现这样太耗费时间，不如直接用别人修改好的，站在巨人的肩膀上可以少费力很多。我用的就是无忧论坛<strong>wimboot</strong>大神制作好的内核，Win10x86和x64都有，而且他的注册表精简的非常到位，我觉得不错，在此表示致敬。  </li>
+<li>下面就是外置软件部分的注册表了，当然是用<strong>RegShot</strong>这个工具，这个工具可以非常快速方便的对比出安装软件之前和安装之后的注册表和Windows目录中文件的变化，并且生成报告文件，这样就可以讲安装式的软件变成绿色免安装版的，就可以放进PE中啦。RegShot生成的TXT报告文件其实是reg文件，可以直接修改后缀为.reg，双击就可以直接导进目录了。<br>还有一种导入reg格式注册表的方法，就是利用<strong>注册表转换工具</strong>，将reg格式的注册表文件转换成cmd格式或者inf格式，利用cmd命令就可以导入注册表了。  </li>
+<li>导入reg格式注册表的命令行： <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">regedit &#x2F;s X:\\Windows\system32\RegPE.reg<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="GRUB引导部分"><a href="#GRUB引导部分" class="headerlink" title="GRUB引导部分"></a>GRUB引导部分</h1><ul>
+<li>我的PE的界面是用<code>GRUB4DOS</code>做成的，从官方下载来的GRUB4DOS运行以后是命令行版本，没点功底还真是操作不了。<br>GRUB4DOS可以加载常见的ISO、IMG格式的磁盘文件，也可以直接引导Linux内核。Linux内核要和initrd一起加载，否则引导成功也只是进入了内核而没有图形界面，只能敲bash命令。  </li>
+<li>懒得敲命令就写一个<strong>LST列表文件</strong>，把需要引导的文件做成一个列表，这样就省去了每次敲命令的麻烦。具体的LST语法可以参考我PE中的LST文件，很简单的，基本上就是复制粘贴一下就好。  </li>
+<li>所以给GRUB4DOS应用主题就是一个非常明智的选择。GRUB4DOS的主题文件在GRUB/MESSAGE文件，这个文件包含了界面的背景和倒计时等一系列控件。有人问我可不可以更改PE的背景图？当然可以！你下载一个<strong>MESSAGE编辑工具</strong>就可以更改了，而且还有很多模板哦，可以自己DIY。  </li>
+<li>GRUB4DOS寻找默认LST的位置是在/GURB/memu.lst，这个路径和许多<code>Linux系统</code>默认的路径是一样的，如果直接使用的话可能导致引导的是你本地的系统而非PE，所以应该修改一下默认的路径免得GRUB混淆。可以使用<strong>磁盘引导扇区修复工具</strong>中得GRUB内置命令修改工具打开PE目录的GRUB文件，将所有的<strong>menu.lst改成UDmenu.lst</strong>这样独一无二的文件名，这样就不会引起混乱。还要注意的是保存的时候千万不要选择进行GZ压缩，这样会导致GRUB4DOS出问题的，直接以UTF-8编码保存就好。因为新版本的<strong>fbinsttool</strong>会默认进行GZ压缩GRUB文件，所以不要用fbinsttool工具直接修改GRUB文件。  </li>
+<li>GRUB4DOS可以自动识别GZ压缩过的磁盘文件，所以把ISO或者IMG文件进行GZ压缩一下体积会减小许多哦。  </li>
+</ul>
+<h1 id="UEFI引导部分"><a href="#UEFI引导部分" class="headerlink" title="UEFI引导部分"></a>UEFI引导部分</h1><ul>
+<li>现在的机器应该都是UEFI引导的了，发展的趋势如浪如潮哇。UEFI是个很好的趋势，因为我不用再担心MBR损坏了，也不用再考虑将哪个分区设置为主分区（MBR有主分区个数的限制，而GPT可以说没有），也可以购买3T4T的大硬盘了。就算引导文件损坏了，我只需要把引导文件拷贝进FAT32的U盘里一样可以引导进入系统，备份重要数据，所以我是非常喜欢UEFI方式的。  </li>
+<li>UEFI中的一个很重要的工具就是<strong>UEFIshell</strong>，就是那个壳子。shell这个东西在Linux可是神器，前提是你得会命令。用这玩意可以引导任何EFI文件，用来调试EFI再好不过了，而且它能提供你机器BIOS的原生UEFI环境。shell是一个efi文件，通过改名为bootx64.efi的方式引导它，它在引导其他文件，很方便的。但是对于不愿意敲命令的同学就非常的差劲了。  </li>
+<li>我PE中的UEFI引导部分的列表是用<strong>XorBoot</strong>，出自无忧论坛的Pauly大师。这个工具可以做出精美的引导界面。我才学疏漏，并且没有艺术大脑，最终只做成了这个样子：黑背景黄框框。这不是重点，我想说的是在BIOS的环境下做一个图形界面是不容易的，所以说XorBoot可谓是一个极好的工具，也是我PE的UEFI部分中的核心。  </li>
+</ul>
+<h1 id="Linux部分"><a href="#Linux部分" class="headerlink" title="Linux部分"></a>Linux部分</h1><ul>
+<li>我PE中Linux用的是无忧大神<strong>wintoflash</strong>定制的<code>Porteus</code>，这是网友公认的比价好的小型Linux了。可惜驱动不是很全，较新的的机器上还会有兼容性问题，作者现在也不再更新了。如果大家还有什么比较好的Linux发行版的话（我是指体积比较小，界面好看，支持网络的），可以自行更换哦，也可以告知我。  </li>
+<li>Linux启动的话就两点。一个是内核（体积大概十几MB到几十MB），一个是initrd（体积几百兆甚至几个G）。只要这两个文件在启动器中定义好，启动基本是没有问题的。有的Linux还要在其内核后面添加一些命令，比如–noroot，用来指定启动方式的。自行添加的时候要注意这些。</li>
+</ul>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><ul>
+<li>我当然是希望大家能够轻松的DIY出自己喜欢的PE。所以大家可以解包我的PE，进行研究之。不过要注意的是，切莫拿这个PE进行商用，这里面有很多的开源软件和破解软件，如果拿来商用的话，小心收到律师函罒ω罒。  </li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/WinPE/" rel="tag"><i class="fas fa-tags"></i>WinPE</a>
+        
+        <a class="post-tag button" href="/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/" rel="tag"><i class="fas fa-tags"></i>U盘启动</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/" rel="tag"><i class="fas fa-tags"></i>工具集</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/kindle-01/" rel="prev" title="谈谈Kindle这个玩意儿"><span class="nav-title">谈谈Kindle这个玩意儿</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "wavatar",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "true"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">13</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">24</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#PE%E4%B8%AD%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%E9%83%A8%E5%88%86"><span class="toc-text">PE中的注册表部分</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#GRUB%E5%BC%95%E5%AF%BC%E9%83%A8%E5%88%86"><span class="toc-text">GRUB引导部分</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#UEFI%E5%BC%95%E5%AF%BC%E9%83%A8%E5%88%86"><span class="toc-text">UEFI引导部分</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Linux%E9%83%A8%E5%88%86"><span class="toc-text">Linux部分</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

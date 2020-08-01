@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>如何获得BP机的地址码和工作频率？ | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Get-BP-Code/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">如何获得BP机的地址码和工作频率？</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T12:01:27+08:00">2019-08-23 12:01:27</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p><strong>禁止转载</strong></p>
+<h1 id="前言少叙"><a href="#前言少叙" class="headerlink" title="前言少叙"></a>前言少叙</h1><p>现在玩BP机的应该都是为了那点情怀吧？奈何我家穷，当年买不起BP机，所以直到最近才在网络上购买了几个二手BP机。</p>
+<p>现在是2019年。在2006年，中国最后一家寻呼运营商停止了寻呼服务，BP机寻呼台的信号也随之消失，老百姓手中的BP机也随之成了收藏品。</p>
+<p>现在电商平台上有个人制作的小型寻呼台在卖，但是都太贵（坑）了，也许很多人只是想简单的让自己的呼机响起来，并不需要GSM、蓝牙、Wifi各种花里胡哨的功能，因此，本文出于情怀和让人人呼响BP机的目的，介绍如何呼响手中的BP机。</p>
+<p>寻呼服务到底是怎样的呢？呼号、地址码、工作频率都是什么？</p>
+<p>根据我的了解和猜测，当年买了寻呼机之后是不能直接使用的，需要到当地运营商哪里对BP机进行写码（这里是地址码）和改频（BP机的工作频率），改好之后可能会对BP机进行加密，加密之后的BP机如果没有解密，是不能再次进行写码操作的（读取也不可以）。完了之后呢，运营商会给这个BP机分配一个呼号（相当于现在的手机号码），一个呼号对应一个地址码和工作频率。然后BP机就可以装上电池拿回家使用了。</p>
+<p>当有人拨通你的呼号时，运营商会将此呼号对应的地址码和工作频率找出，然后将地址码和需要发送的信息一起进行<code>POCSAG</code>编码，最后通过寻呼台的无线电发送设备（调制模式为NFM，无线电的频率要和BP机的工作频率一致）将数据发送出去。BP机接收到寻呼台发送过来的信号，就会响起来和显示信息了。</p>
+<p>现在寻呼运营商早就没有了，因此通过呼号来呼响BP机肯定是行不通的，只能通过地址码和工作频率来呼响你的BP机。</p>
+<p>根据我这几个月的摸索和网上找到的资料，做了一套POCSAG编码系统，配合手台（手持对讲机，需要UV双频段的才可以）可以将你手中的BP机重新响起来。这个系统我只用摩托罗拉的大顾问和精英王两个型号测试过，其他型号我手头没有，所以没办法测试。理论支持所有摩托罗拉POCSAG编码的BP机（FLEX高速机，比如智囊股票机就不支持）。</p>
+<h1 id="怎么获得BP机的工作频率？"><a href="#怎么获得BP机的工作频率？" class="headerlink" title="怎么获得BP机的工作频率？"></a>怎么获得BP机的工作频率？</h1><p>了解了BP机工作频率和地址码的重要性，下面说说怎样获得工作频率？</p>
+<p><strong>需要注意的是，现在BP机工作频段已经被国家收回，所以自己使用手台、车台等大功率无线发射器在这个频段发射无线电波是违法的，所以需要进行发射信号的衰减，无线发射功率控制在0.1W之内是没有问题的。</strong></p>
+<p>有两个方法可以得到工作频率：</p>
+<h2 id="一、使用专用BP机追频设备进行追频"><a href="#一、使用专用BP机追频设备进行追频" class="headerlink" title="一、使用专用BP机追频设备进行追频"></a>一、使用专用BP机追频设备进行追频</h2><p>市面上可以买到BP 机追频设备，这样的设备可以从BP机最低的工作频率开始，逐次增加频点并且发送一段信息给BP机直至BP机的最高工作频率，如果BP工作在其间某个频点上，就会响起来。</p>
+<p>这个方法的优点是：1、不需要拆机</p>
+<p>缺点：1、速度非常慢，如果提前知道BP机的地址码会快很多，如果连地址码都不晓得，要追到何年何月哦~</p>
+<h2 id="二、拆机，根据晶振计算工作频率"><a href="#二、拆机，根据晶振计算工作频率" class="headerlink" title="二、拆机，根据晶振计算工作频率"></a>二、拆机，根据晶振计算工作频率</h2><p>如何拆机就不说了，大顾问型号应该是最好拆的了，都不需要用螺丝刀，直接用手就可以拆开。</p>
+<p>拆开之后将频率板取出（一般BP机内部会有两个电路板，比较小的有天线的那个电路板是频率板）</p>
+<p>一般频率板上会有1~3个晶体振荡器，把它们的频率分别记下来。这里先以大顾问为例：</p>
+<p><img src="/images/Get-BP-Code/01.png" alt="image-20190823062444669"></p>
+<p>三个晶振频率分别为9705KHz、17.9MHz、44975KHz。</p>
+<p>计算工作频率只需要用到后面两个晶振频率（准确的来说应该是17.9MHz加上一个40MHz~60MHz的频率），前面那个比较低的频率用不到。</p>
+<p>计算结果为<br>$$<br>工作频率=44975KHz*3 + 17.9MHz = 152.825MHz<br>$$<br>还有可能BP机里面只有一个或者两个晶体振荡器，没有17.9MHz的晶体振荡器，那么就不需要将17.9MHz的频率加上去，以精英王型号为例：</p>
+<p><img src="/images/Get-BP-Code/02.png" alt="image-20190823062748259"></p>
+<p>晶振频率为50900KHz。</p>
+<p>那么计算结果为：<br>$$<br>工作频率=50900KHz*3=152.700MHz<br>$$<br>其他BP机关于频率的计算也是如此。</p>
+<p>这个方法的优点是：1、速度快，几分钟就搞定  2、顺便还能清清灰</p>
+<p>缺点：1、需要一定的动手能力，不能手贱，不能相信大力出奇迹</p>
+<h1 id="如何获得地址码？"><a href="#如何获得地址码？" class="headerlink" title="如何获得地址码？"></a>如何获得地址码？</h1><h2 id="一、使用追码设备追出地址码"><a href="#一、使用追码设备追出地址码" class="headerlink" title="一、使用追码设备追出地址码"></a>一、使用追码设备追出地址码</h2><p>和追频一样，目前市面上可以购买到BP机专用追码设备，通常追频和追码是集成在一起的。追码设备可以从起始地址逐次增加并发送信号给BP机，如果发送的信号地址码和手中的BP机地址码相同，BP机就响起来了。</p>
+<p>这个方法的优点：1、简单无脑</p>
+<p>缺点：1、速度慢，如果知道工作频率的话可能需要追十几个小时，不晓得工作频率时间会更长。</p>
+<h2 id="二、使用读码设备读取地址码"><a href="#二、使用读码设备读取地址码" class="headerlink" title="二、使用读码设备读取地址码"></a>二、使用读码设备读取地址码</h2><p>工作频率的问题解决了，地址码怎么获得呢？</p>
+<p>地址码是存放在BP机CPU中一块EEPROM存储器当中的，如果你的BP机没有被加密，可以通过读码设备读出。当然有些型号被加密也是有办法进行解密的。</p>
+<p>如果你的动手能力强，有一定的电路基础，可以自己做一个读码设备（其实就是个串口，CH340、FT232芯片甚至MAX232都可以）。其实很简单，十几块钱就搞得定。  </p>
+<p>原理图（已经通过测试的）：  </p>
+<p><img src="/images/Get-BP-Code/05.png" alt="IMG_20190722_191136"></p>
+<p>实物图：  </p>
+<p><img src="/images/Get-BP-Code/03.png" alt="IMG_20190722_191136"></p>
+<p>只有读码设备是不行的，还得有配套的读码软件才可以。读码软件使用<code>雷霆2000</code>系列光盘，大多数的寻呼机写码软件都集成在里面了，只是这些软件只能跑在DOS或者WinXP系统下，为了能使现在主流的Windows7、10能够运行，我将它集了DOSBOX和VMware，可以直接在现有系统下打开。</p>
+<p><img src="/images/Get-BP-Code/04.png" alt="04"></p>
+<p>可以看到，每个呼机可以设置四个不同的地址码，可以自定义每个地址码下的功能位，除了读码写码的功能，还有更改BP机的很多参数。不小心改错了也不用怕，恢复缺省参数即可。</p>
+<p>找不到写码软件怎么办？<br>去各大搜索引擎搜索BP机写码软件，应该找得到。摩托罗拉官网现在还保留了几个型号的BP机写码软件，现在是可以下载的。（DOS环境下运行）  </p>
+<p>动手能力不强自己做不出板子怎么办？<br>我自己做板子的时候多做了几个，可以通过<a target="_blank" rel="noopener" href="https://market.m.taobao.com/app/idleFish-F2e/widle-taobao-rax/page-detail?wh_weex=true&wx_navbar_transparent=true&id=598353867729&ut_sk=1.XQe6E2%252FASVwDAPP0NEMf5WRD_21407387_1566722074532.Copy.detail.598353867729.1944924120&forceFlush=1">闲鱼平台</a>向我购买，附带视频教程和摩托罗拉写码软件集合。我只焊了几个板子，数量有限。</p>
+<p>这个方法的优点：1、速度快  2、可以自定义地址码和更改其他参数</p>
+<p>缺点：1、需要自制或者购买读码设备  2、如果BP机加密并且没有密码，就无法读出地址码。  3、可能要多花点零钱</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
+        
+        <a class="post-tag button" href="/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/" rel="tag"><i class="fas fa-tags"></i>摩托罗拉</a>
+        
+        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/PCB_Ruler/" rel="next" title="用PCB板做一把尺子"><i class="fas fa-angle-left"></i><span class="nav-title">用PCB板做一把尺子</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/POCSAG/" rel="prev" title="开源！使用单片机发送POCSAG编码呼响BP机"><span class="nav-title">开源！使用单片机发送POCSAG编码呼响BP机</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "wavatar",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "true"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">13</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">24</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%89%8D%E8%A8%80%E5%B0%91%E5%8F%99"><span class="toc-text">前言少叙</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%80%8E%E4%B9%88%E8%8E%B7%E5%BE%97BP%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E9%A2%91%E7%8E%87%EF%BC%9F"><span class="toc-text">怎么获得BP机的工作频率？</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E4%B8%93%E7%94%A8BP%E6%9C%BA%E8%BF%BD%E9%A2%91%E8%AE%BE%E5%A4%87%E8%BF%9B%E8%A1%8C%E8%BF%BD%E9%A2%91"><span class="toc-text">一、使用专用BP机追频设备进行追频</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E6%8B%86%E6%9C%BA%EF%BC%8C%E6%A0%B9%E6%8D%AE%E6%99%B6%E6%8C%AF%E8%AE%A1%E7%AE%97%E5%B7%A5%E4%BD%9C%E9%A2%91%E7%8E%87"><span class="toc-text">二、拆机，根据晶振计算工作频率</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E5%9C%B0%E5%9D%80%E7%A0%81%EF%BC%9F"><span class="toc-text">如何获得地址码？</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E8%BF%BD%E7%A0%81%E8%AE%BE%E5%A4%87%E8%BF%BD%E5%87%BA%E5%9C%B0%E5%9D%80%E7%A0%81"><span class="toc-text">一、使用追码设备追出地址码</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E8%AF%BB%E7%A0%81%E8%AE%BE%E5%A4%87%E8%AF%BB%E5%8F%96%E5%9C%B0%E5%9D%80%E7%A0%81"><span class="toc-text">二、使用读码设备读取地址码</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

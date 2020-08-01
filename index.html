@@ -1,196 +1,917 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.0.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li role="menuitem"><a href="/" class="current"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main">
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/01/hello-world/" class="article-date">
-  <time datetime="2020-08-01T05:58:32.180Z" itemprop="datePublished">2020-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/PE/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/01/hello-world/" data-id="ckdb8wof80000sxo30agv094u" class="article-share-link">Share</a>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/PE/" itemprop="url">(2020)一个不知道叫什么好的U盘启动工具集</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-04-23T17:22:54+08:00">2020-04-23 17:22:54</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WinPE/" itemprop="url" rel="index"><span itemprop="name">WinPE</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
+      
+      感谢​ 没错，这是最后一个版本，以后不再更新。​ 我从2013年开始制作这个U盘启动工具集，到现在已经有七年之久了，当初的目的只是想把自己需要的工具集成到一起并提高工具的兼容性，后来出于互联网的分享精神，开始在CSDN和无忧论坛上发布，上传到百度网盘供大家免费使用。 再见​ 为什么不继续做了呢？当时我才初中毕业，无忧无虑的时光总是过得很快，如今已经大学毕业，已经不再是小孩子，需要自己挣钱。很显然，这个工具无法带给我收入，前几版当中内置浏览器中有2345联盟的主页，后来网友们觉得2345恶心，就去掉了，2345联盟中的收入只有30元，充了话费。这个工具我单独开了一个支付宝账号来计算捐赠收入，七年时间通过二维码捐赠（微信和支付宝一共）拿到的收入有600元左右（最近这两个月收入只有7元）。我的博客是搭建在github上的，所以不需要额外的支出。 ​ 好像看起来还是有一些油水可以拿的，不过大家不要忘了时间成本，每次我发布新的版本之前，几乎都是通宵来进行更新，每次都要花大量的时间来寻找PE内核、移植脚本、编写PECMD.ini、寻找驱动、集成驱动、增删系统组件、对比注册表、甚至是快捷方式、Gru
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/WinPE/" rel="tag"><i class="fas fa-tags"></i>WinPE</a>
+        
+        <a class="post-tag button" href="/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/" rel="tag"><i class="fas fa-tags"></i>U盘启动</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/" rel="tag"><i class="fas fa-tags"></i>工具集</a>
+        
+        <a class="post-tag button" href="/tags/Windows/" rel="tag"><i class="fas fa-tags"></i>Windows</a>
+        
+      </div>
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-
-
-</section>
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/blog-update-info01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/blog-update-info01/" itemprop="url">2020.02.05博客更新说明</a>
+      </h1>
+      <div class="post-meta">
         
-          <aside id="sidebar">
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-02-05T15:20:09+08:00">2020-02-05 15:20:09</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      原Coding Page已经失效，且无法删除，所以重新更换了域名并关闭了https访问（开启https会大幅度降低网站的访问速度）。 更新了ARIA主题，对原来一些失效的链接进行重定向。 更换了评论系统，由于Github业务调整，所以原来的Gitment评论系统换成Valine，所以原有的评论不会显示在页面上。请大家在评论的时候主动提交昵称和邮箱，这样才会接到回复提醒，也可以使用Github账号在原来的https://github.com/359303267/Gitment/issues链接上进行评论。
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
   
-    
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/kindle-02/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/kindle-02/" itemprop="url">记一次kindle Paperwhite3 拆机降级</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-22T00:40:33+08:00">2020-01-22 00:40:33</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%88%91%E7%9A%84Kindle/" itemprop="url" rel="index"><span itemprop="name">我的Kindle</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      记一次kindle Paperwhite3 拆机降级降级步骤拆机降级理论上支持任何版本，也可以救砖。 原理就是进入fastboot模式，使用fastboot刷写内核和文件系统。懂的就不用往下看了，不懂得继续please. 先拆机，使用usb转串口模块连接kpw3，我用的3.3v电平的模块，kindle是1.8v电平的，所以最好别使用5v TTL电平。 打开putty软件，打开对应的串口号，波特率是115200。 重启kindle，putty此时会输出一大堆debug信息，不要管，重启之后立即狂按enter键（一定是记得是重启之后立马狂按，否则就会错过进入uboot的机会）。 几秒之后会出现uboot命令行，这时候输入命令进入bist： 1bist 接着再输入命令进入fastboot模式： 1fastboot 使用zadig安装驱动，驱动类型选择libusb 使用kindletool.exe对固件进行解包，想刷哪个版本的就解对应的包，解包命令： 1kindletool extract [固件.bin] [输出文件夹] 解包输出的uImage文件就是内核，可以直接刷入，rootfs.img
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/Kindle/" rel="tag"><i class="fas fa-tags"></i>Kindle</a>
+        
+        <a class="post-tag button" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fas fa-tags"></i>杂谈</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/BP-Password/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/BP-Password/" itemprop="url">几种BP机的解密方法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-25T17:13:45+08:00">2019-08-25 17:13:45</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      摩托罗拉大顾问型号解密： 一、首先你需要一个BP机写码设备（USB转TTL串口小板也可以，要保证写入数据时接触良好）。二、你需要一个配套的解密软件，可以从闲鱼平台向我购买。这个软件是我自己编写的，为了防止他人盗用，加入了一个简单的激活码认证。购买时留言从博客上看到的只需要十块钱就可以得到这个软件，比什么60块钱的解密小板靠谱多了，经过了很多大顾问的测试。 其原理是向CPU写入一段特殊的数据，使其将EEPROM中的加密使能位清除。 其他资料来源中国知网学问：
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
+        
+        <a class="post-tag button" href="/tags/%E5%A4%A7%E9%A1%BE%E9%97%AE/" rel="tag"><i class="fas fa-tags"></i>大顾问</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
+        
+        <a class="post-tag button" href="/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/" rel="tag"><i class="fas fa-tags"></i>摩托罗拉</a>
+        
+        <a class="post-tag button" href="/tags/%E5%AF%BB%E5%91%BC%E6%9C%BA%E8%A7%A3%E5%AF%86/" rel="tag"><i class="fas fa-tags"></i>寻呼机解密</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/POCSAG/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/POCSAG/" itemprop="url">开源！使用单片机发送POCSAG编码呼响BP机</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T14:11:17+08:00">2019-08-23 14:11:17</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      禁止转载 ​ 需要注意的是，现在BP机工作频段已经被国家收回，所以自己使用手台、车台等大功率无线发射器在这个频段发射无线电波是违法的，所以需要进行发射信号的衰减，无线发射功率控制在0.1W之内是没有问题的。 ​ 单片机使用STC公司的IAP15W4K58S4，时钟频率为27MHz，使用串口1来发送数据，串口波特率为115200。支持1200和512比特速率的POCSAG编码，支持正负相位，可以发送数字信息和汉字信息（不支持混输） ​ 对讲机我用的是宝峰UV-5R。单片机的P36接对讲机的压控振荡器输入端，P35接对讲机的PTT控制端，还要和对讲机共地（至于这三个接线端具体接在哪一个位置，网上一搜就有了）。对讲机的发射频率需要调到BP机的工作频率一样。 ​ BP机我用摩托罗拉精英王和大顾问实验成功，如果不响可以试试切换一下相位。如果显示乱码就换一个响声/功能位。​​ 如果就是不响，要知道哪有这么容易响？地址码、BP机工作频率、对讲机频率调到和BP机工作频率一致、对讲机不能有频偏。如果就是不响，要考虑BP机是否被改过频率，很多BP机在使用的时候都是改过频率的，或者就是对讲机有频偏，可以使用
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
+        
+        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Get-BP-Code/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/Get-BP-Code/" itemprop="url">如何获得BP机的地址码和工作频率？</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T12:01:27+08:00">2019-08-23 12:01:27</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      禁止转载 前言少叙现在玩BP机的应该都是为了那点情怀吧？奈何我家穷，当年买不起BP机，所以直到最近才在网络上购买了几个二手BP机。 现在是2019年。在2006年，中国最后一家寻呼运营商停止了寻呼服务，BP机寻呼台的信号也随之消失，老百姓手中的BP机也随之成了收藏品。 现在电商平台上有个人制作的小型寻呼台在卖，但是都太贵（坑）了，也许很多人只是想简单的让自己的呼机响起来，并不需要GSM、蓝牙、Wifi各种花里胡哨的功能，因此，本文出于情怀和让人人呼响BP机的目的，介绍如何呼响手中的BP机。 寻呼服务到底是怎样的呢？呼号、地址码、工作频率都是什么？ 根据我的了解和猜测，当年买了寻呼机之后是不能直接使用的，需要到当地运营商哪里对BP机进行写码（这里是地址码）和改频（BP机的工作频率），改好之后可能会对BP机进行加密，加密之后的BP机如果没有解密，是不能再次进行写码操作的（读取也不可以）。完了之后呢，运营商会给这个BP机分配一个呼号（相当于现在的手机号码），一个呼号对应一个地址码和工作频率。然后BP机就可以装上电池拿回家使用了。 当有人拨通你的呼号时，运营商会将此呼号对应的地址码和工作频率找
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
+        
+        <a class="post-tag button" href="/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/" rel="tag"><i class="fas fa-tags"></i>摩托罗拉</a>
+        
+        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/PCB_Ruler/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/PCB_Ruler/" itemprop="url">用PCB板做一把尺子</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T12:12:12+08:00">2019-05-09 12:12:12</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PCB/" itemprop="url" rel="index"><span itemprop="name">PCB</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      信仰前些天在某宝上发现了刻有电子专业信仰的尺子，做工不错，上面不仅有mm，mil这样的常用单位，还有各种元器件的封装和焊盘，用沉金工艺做的，简直是又好看又使用。没错，又是没钱，正好自己刚考了CAED认证，决定画一个自己的信仰。正好赶上某PCB打样的厂家放出5块钱打样还包邮的优惠，连夜赶出两个图纸。绿色阻焊和黑色阻焊各打了两版，花了20个大洋，这波羊毛薅的还行哈~刻度我是放置的焊盘，这样做PCB的时候刻度可以喷锡保护，还耐磨。下面直接放置器件就好了，原理图都不用画，这可简单多了。免费为厂家打个广告：厂家的链接：嘉立创 效果图 实物图 实物到手后手感还是不错了，黑色阻焊表面是磨砂的，手感非常好。以后有钱了，就打个沉金的，然后收藏，哈哈~ PS:当然大部分尺子都送给我们班妹子了，果然还是把东西分享给被人看到别人快乐时的快乐要比自己得到东西时的快乐更要快乐˚‧♡ॢ˃̶̤̀◡˂̶̤́♡ॢ‧˚ PCB文件现将PCB文件分享出来，水平不高见谅。链接：本地文件
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/PCB/" rel="tag"><i class="fas fa-tags"></i>PCB</a>
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/FloppyKernel-02/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/FloppyKernel-02/" itemprop="url">Floppy内核关闭温控教程</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-08T17:41:13+08:00">2019-02-08 17:41:13</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      按照上一篇Floppy 内核关闭背光调节器的方法介绍的方法，我们直接打开ramdisk目录里的init.floppy.rc文件，我们开始修改脚本。 我们可以看到类似这种的配置，这些数据便是Floppy内核的温控配置 还要注意这里，这两个on boot和on charger分别代表启动时和充电时的状态，所以如果要修改启动时的温度控制代码，就修改on boot下面的，同理，想要修改充电时的温度控制代码，就修改on charger下面的。 下面这一行代码表示系统启动完成要修改的配置，所以当手机正常使用并且没有充电时，是这一行代码下面的配置在起作用。 1on property:sys.boot_completed&#x3D;1 如果我们只是想关闭内核的温控，那么就好办了，直接将文件中所有的这样一行代码后面的1改为0就好了。 1write &#x2F;sys&#x2F;kernel&#x2F;msm_thermal&#x2F;enabled 1 改为如图这样就好了，CPU烧到100度都不降频，贼鸡儿爽！
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E5%B0%8F%E7%B1%B35/" rel="tag"><i class="fas fa-tags"></i>小米5</a>
+        
+        <a class="post-tag button" href="/tags/%E5%86%85%E6%A0%B8/" rel="tag"><i class="fas fa-tags"></i>内核</a>
+        
+        <a class="post-tag button" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>折腾</a>
+        
+        <a class="post-tag button" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>刷机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/FloppyKernel-01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/FloppyKernel-01/" itemprop="url">Floppy 内核关闭背光调节器的方法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-12T22:16:45+08:00">2019-01-12 22:16:45</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      这是个假的二级标题用了两年的小米5逐渐老了，新游戏也拉不动了，就去找找有没有什么能流畅吃鸡的方法。然后啊，，，就找到了这个Floppy超频的内核，可以将820这个渣U的大核拉到2.2GHz，小核拉到1.8GHz，简直比满血版820都厉害啊，并且好像还没有温控，嘿嘿嘿（在内核调校APP里没有发现温控选项，在System\etc里也没有发现温控文件）😏然而发现了另外一个问题，就是在升级到了MIUI10.2（安卓O）之后，滑动亮度条的时候会出现跳变的现象，亮度从一个亮度一下子调到另外一个亮度，很难受。。。。(╯﹏╰)没错，在内核调校里把内核的背光调节器关闭，然后使用系统自带的亮度调节就好了。然后我就想能不能直接改一下内核，让它不用每次开机都要进APP里手动关闭呢。（所以就找到了╮(╯_╰)╭） 开始动手我们使用的内核是被封装在zip刷机包里的，我们可以通过解包zip包来修改它的参数。以FloppyKernel-Mi5-Lite-Prime-Pro-05012019-UBERTC-Oreo-MIUI.zip文件为例，解压之后会发现有下面这样的文件 既然是以刷机包的形式给用户使用的，我们可以从
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E5%B0%8F%E7%B1%B35/" rel="tag"><i class="fas fa-tags"></i>小米5</a>
+        
+        <a class="post-tag button" href="/tags/%E5%86%85%E6%A0%B8/" rel="tag"><i class="fas fa-tags"></i>内核</a>
+        
+        <a class="post-tag button" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>折腾</a>
+        
+        <a class="post-tag button" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>刷机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/zhishijiushililiang/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/zhishijiushililiang/" itemprop="url">《知识就是力量第六期笔记分享》</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-04T12:10:42+08:00">2018-09-04 12:10:42</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      最近发现一个节目非常的不错，我妈推荐给我的，名为《知识就是力量》，里面的罗胖会分享很多人生的经验和方法。 我更推荐大家去爱奇艺专题页面去看视频，里面罗胖讲的更为详细，语言也更为幽默轻松。 现将第六期《怎样逼自己成为一个上进的人》(怎样让日子过的不丧)的笔记整理分享出来，大家一起来看看，不足之处望指正。 不是上进反人性，而是让人上瘾的事物迎合人类人生所有的上瘾的事在你第一次接触的时候其实都不舒服，让我们上瘾的事物都是通过精心设计，让我们把时间花进去。所以，上瘾就是上进的智力资源，要自己设计自己让上进成为上瘾的事。 如何做到上瘾？ 1、先把自己放进一个更让自己容易上进的环境（设计环境）想上进，进尽可能的选择从事朝阳行业。（理由有二：一是学习氛围更好，聪明人更多，而是更容易拥抱建设性心智模式）那如何衡量自己身边的环境？傻瓜指数：觉得N年前自己是个傻瓜，N越小越说明自己现处的环境越好。朋友指数：新环境中的新朋友越多，表明环境就越好2、“绑架”自己（寻求外部监督）在起步的第一天，设计一种方式，让自己被“绑架”。3、获得不确定反馈（不确定的魅力要比确定性的事物大得多）4、选择一条长远的职业阶梯（选
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E7%88%B1%E5%A5%87%E8%89%BA/" rel="tag"><i class="fas fa-tags"></i>爱奇艺</a>
+        
+        <a class="post-tag button" href="/tags/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/" rel="tag"><i class="fas fa-tags"></i>知识就是力量</a>
+        
+        <a class="post-tag button" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fas fa-tags"></i>分享</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  
+</div>
+
+
 
   
-    
+</div>
 
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
-
-
+  <div class="search-result-box" id="search-result"></div>
   
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">13</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">24</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
-          <li>
-            <a href="/2020/08/01/hello-world/">Hello World</a>
-          </li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
         
       </ul>
     </div>
+    
+    
   </div>
-
-  
 </aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,109 @@
+.header {
+  padding-bottom: 3em;
+  margin-bottom: 0;
+  background: #33363b;
+  color: #eee;
+}
+.header .header-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding: 1em;
+}
+.header .header-container .header-title {
+  text-align: left;
+  width: 50%;
+  word-wrap: break-word;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  color: #eee;
+}
+.header .header-container .header-title a {
+  color: #eee;
+  text-decoration: none;
+  border-bottom: none;
+}
+.header .header-container .header-title a:hover {
+  color: #eee;
+  border-bottom: none;
+}
+.header .header-container .header-title a:active {
+  top: 0;
+}
+.header .header-container .header-title .title {
+  font: bold 2em $font-title-font;
+  margin: 0 0 0.5em 0;
+}
+.header .header-container .header-title .subtitle {
+  font: italic 1.5em $font-subtitle-font;
+  margin: 0.5em 0 0 0;
+}
+.header .header-container .logo {
+  text-align: right;
+  width: 50%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.header .header-container .logo img {
+  display: inline-block;
+  max-width: 20em;
+  width: 100%;
+}
+@media (max-width: 40em) {
+  .header .header-container {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -o-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .header .header-container .header-title {
+    text-align: center;
+    width: auto;
+  }
+  .header .header-container .logo {
+    text-align: center;
+    width: auto;
+  }
+}

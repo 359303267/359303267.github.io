@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>一个不知道叫什么好的U盘启动工具集 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="page" class="page">
+  <article class="article post card">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <span>一个不知道叫什么好的U盘启动工具集</span>
+      </h1>
+    </header>
+    <main class="post-main">
+      <h1 id="先说版权"><a href="#先说版权" class="headerlink" title="先说版权"></a>先说版权</h1><p>　　这个PE工具集已经被一些商人盯上了！<br>　　所以先把版权放在前面，这个工具个人免费下载和使用，也可以解包研究，但是请不要拿它来卖钱！你以为把这个东西装到U盘里然后卖U盘的方法我没想到吗？长点脑子好吧。我不卖钱肯定是有原因的。也希望已经拿这个工具来挣钱的人停止这种行为，否则我将撤下所有资源，这样对谁都没有好处。<br>　　现在b站关于商标注册的事情闹得沸沸扬扬，我从一开始也考虑了这个问题，但是我觉得无论什么样的手段，最终都是挡得住君子防不住小人，所以我也希望各位都要点脸，不要因为钱而变成畜生。所以我在一些背景图上打了很浅的水印，防止别人盗用。<br>　　这个工具不是给小白用户使用的，而是给我这种半吊子来用的，如果你只是想偶尔给自己装个系统我劝你别用这个，省的到时候跟我说：啊……你这个没有那个什么工具……你带的工具不好用……你这个工具集太大了，看别人的就一百多兆……¯_༼ •́ ͜ʖ •̀ ༽_/¯<br>　　所以，新版本<strong>只提供完整版和光盘版</strong>，不再提供其他版本，你喜欢用小体积的用别人家的去，望悉知。<br>　　这个PE工具集<strong>不允许拿来做任何商业活动</strong>，但是<strong>个人是免费下载和使用和研究</strong>的！<strong>禁止转载到远景论坛</strong>！<br>　　有些商家用这个赚钱不说还不愿意放出官方的帖子链接，用意何在？用我的东西好歹给我说一声是吧？这样才能促进社会和谐，民族安定，国家富强。。。<br>　　<strong>PECMD.ini未加密</strong>，并且进行整理标注，欢迎研究和分析。禁止抄袭！！如发现有侵权行为，会走程序。  </p>
+<h1 id="2019-08-08，嘻嘻···嘻······"><a href="#2019-08-08，嘻嘻···嘻······" class="headerlink" title="2019-08-08，嘻嘻···嘻······"></a>2019-08-08，嘻嘻···嘻······</h1><p>　　很开心，又更新了，但是我发誓以后绝不轻易更新。鼓捣这个东西很耗费时间和精力，搞这几天我睡的很晚，又不挣钱。以后的时间越来越少，所以等下次更新？等着吧~！<br>　　你们所期望的功能，我没有添加进去，无非就是一键装系统的工具而已，DISM++体积小功能多，足矣！<br>　　说一下吧，更新了啥？我劝你仔细看  </p>
+<ol>
+<li>没有更新PE内核，呃……盲目追求新版本是错误的，目前的内核很稳定，体积和功能也控制的很好，我没有必要去换个新的内核然后重新弄一遍</li>
+<li>但是注入了USB3.0，NVME，IRST驱动。其实这些个驱动不注入也行……win10自带的驱动足矣驱动这些东西，IRST模式蓝屏你就不能把磁盘模式改为AHCI吗？</li>
+<li>更新了Diskgenus、DISM++、WinNTSetup、CPU-Z……算了，太麻烦不写，最讨厌写更新日志了，就像敲代码不想写注释一样讨厌。</li>
+<li>加入了安装外置驱动的功能。把驱动放进“PETools\外置驱动程序”目录里面，进入PE之后运行桌面的“安装外置驱动”快捷方式就可以安装了，支持多级目录，驱动是需要解压的，含有inf文件的那种。</li>
+<li>优化了一些操作逻辑，比如说UEFI启动界面将32位和64位的菜单分开了，还有会自动搜索PETools，如果搜索不到PETools的话，就不会创建”加载外置工具”的快捷方式。</li>
+<li>Win10PE加入了右下角显示网络状态和连接wifi的图标（使用PENetWork），所以开机以后会自动弹出PENetWork的窗口，点击关闭就好了。</li>
+<li>优化一些界面显示，现在启动页面可以显示当前的启动方式了。Win10PE优化了任务管理器默认的窗口大小。</li>
+<li>替换微型Linux系统为Slitaz 5.0。</li>
+<li>打包了光盘版，光盘版支持UEFI和Legacy BIOS两种启动方式，两种启动方式共用了一些文件，所以一些界面和U盘版会有差别。</li>
+<li>不支持上个版本无损升级，需要将U盘格式化后重新制作。</li>
+<li>Win10PE加入了MTP组件，可以连接手机拷贝文件。Win10PEx86支持比较完美，Win10PEx64只可以从手机拷贝到电脑，不能从电脑拷贝到手机，会发生错误，不知原因出在哪里，期望有高手出现能够解决。</li>
+<li>Win10PE将世界之窗浏览器更新到了7，支持Html5视频直接播放，不需要flash插件了。也支持ip地址直接访问（需要在标签栏上右击，使用chrome内核才可以）。支持HIDPI显示。</li>
+<li>其他的想不起来了，第三条曾经说过我讨厌写更新日志，所以忘了就忘了吧。
+　　</li>
+</ol>
+<h1 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h1><h2 id="启动界面"><a href="#启动界面" class="headerlink" title="启动界面"></a>启动界面</h2><p><img src="/images/PE/13.png"></p>
+<p><img src="/images/PE/14.png"></p>
+<p><img src="/images/PE/15.png"></p>
+<h2 id="丰富的菜单项"><a href="#丰富的菜单项" class="headerlink" title="丰富的菜单项"></a>丰富的菜单项</h2><p><img src="/images/PE/16.png"></p>
+<p><img src="/images/PE/17.png"></p>
+<p><img src="/images/PE/18.png"></p>
+<h2 id="Windows-2003-PE"><a href="#Windows-2003-PE" class="headerlink" title="Windows 2003 PE"></a>Windows 2003 PE</h2><p><img src="/images/PE/19.png"></p>
+<p><img src="/images/PE/20.png"></p>
+<h2 id="Windows-10-PE"><a href="#Windows-10-PE" class="headerlink" title="Windows 10 PE"></a>Windows 10 PE</h2><p><img src="/images/PE/21.jpg"></p>
+<p><img src="/images/PE/22.jpg"></p>
+<p><img src="/images/PE/23.jpg"></p>
+<p><img src="/images/PE/24.jpg"></p>
+<p><img src="/images/PE/25.jpg"></p>
+<h2 id="Slitaz-5-0-Linux-系统"><a href="#Slitaz-5-0-Linux-系统" class="headerlink" title="Slitaz 5.0 Linux 系统"></a>Slitaz 5.0 Linux 系统</h2><p><img src="/images/PE/26.png"></p>
+<h2 id="内置基于-Linux-的-Acronis-工具"><a href="#内置基于-Linux-的-Acronis-工具" class="headerlink" title="内置基于 Linux 的 Acronis 工具"></a>内置基于 Linux 的 Acronis 工具</h2><p><img src="/images/PE/27.png"></p>
+<p><img src="/images/PE/28.png"></p>
+<h2 id="UEFI-启动模式下的工具"><a href="#UEFI-启动模式下的工具" class="headerlink" title="UEFI 启动模式下的工具"></a>UEFI 启动模式下的工具</h2><p><img src="/images/PE/29.png"></p>
+<p><img src="/images/PE/30.png"></p>
+<h2 id="丰富又强大的外置-PETools"><a href="#丰富又强大的外置-PETools" class="headerlink" title="丰富又强大的外置 PETools"></a>丰富又强大的外置 PETools</h2><p><img src="/images/PE/31.png"></p>
+<h2 id="制作工具主界面"><a href="#制作工具主界面" class="headerlink" title="制作工具主界面"></a>制作工具主界面</h2><p><img src="/images/PE/32.png"></p>
+<h1 id="体积占比"><a href="#体积占比" class="headerlink" title="体积占比"></a>体积占比</h1><h2 id="U盘完整版"><a href="#U盘完整版" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><table>
+<thead>
+<tr>
+<th align="center">BIOS占用</th>
+<th align="center">UEFI占用</th>
+<th align="center">外置PETools</th>
+<th align="center">总计占用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1350MB</td>
+<td align="center">1350MB</td>
+<td align="center">671.1MB</td>
+<td align="center">3371.1MB</td>
+</tr>
+</tbody></table>
+<h2 id="光盘版"><a href="#光盘版" class="headerlink" title="光盘版"></a>光盘版</h2><p>​    使用普通4.7GB DVD光盘刻录足够</p>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ol>
+<li>支持大部分的机器和硬件。新机器使用Win10PE，老机器使用Win2003PE，配合Slitaz Linux系统基本可以做到维护所有家用机型。</li>
+<li>Win2003PE和Win10PE支持网络功能，内置一定的网卡驱动，部分机型需要手动安装驱动，Win10PE支持声音。</li>
+<li>附带的<strong>PETools搜集了很多兼顾体积和功能的程序</strong>，装机无忧。</li>
+<li>Win10PE支持MTP功能，可以从安卓手机上拷贝文件。</li>
+<li>可以打开常见的文件格式（包括jpg、gif、png、bmp等常见图片格式，mp3、wav、mp4、avi、mkv等常见媒体格式，doc、docx、xls、xlsx、ppt、pptx、chm、pdf等常见文稿格式等等）</li>
+<li>在不加载外置PETools的情况下，自带的工具足够给磁盘分区和装系统用，以便内存不够造成无法加载PETools。</li>
+<li>可以把常用的驱动放在”U盘根目录\PETools\外置驱动程序”目录当中，进入PE之后只需要点击开始菜单里的快捷方式就可以自动安装驱动程序。</li>
+<li>附带基于Linux内核的Acronis True Image Home和Acronis Disk Director工具。</li>
+<li>界面好看，UEFI启动界面使用<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=157812&extra=page=1">XorBoot Uefi</a>工具制作。<a href="/files/PE/XorBootUx64.exe.zip">在此</a>上传一个我使用的版本，以免绝版。</li>
+<li>没有推广和广告以及任何影响工具纯净的东西。</li>
+</ol>
+<h1 id="正确的安装方式（是安装不是使用，看清楚喽-）"><a href="#正确的安装方式（是安装不是使用，看清楚喽-）" class="headerlink" title="正确的安装方式（是安装不是使用，看清楚喽~）"></a>正确的安装方式（是安装不是使用，看清楚喽~）</h1><h2 id="U盘完整版-1"><a href="#U盘完整版-1" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><ol>
+<li><p>首先准备一个容量大于或等于4GB的存储设备（使用USB3.0设备可以大幅度提高进入PE的速度）  </p>
+</li>
+<li><p>一台运行Windows XP及以上系统的电脑（建议使用Windows 7系统，Windows 10可能出现兼容性问题）</p>
+</li>
+<li><p>备份重要资料（制作过程需要抹除数据）</p>
+</li>
+<li><p>打开USEC文件夹里的“开始制作.exe”</p>
+</li>
+<li><p>选择对应的磁盘，其他参数不要改，直接单击“全新制作”</p>
+</li>
+<li><p>制作完成后，将PETools文件夹拷贝到你的存储设备，注意是文件夹和里面的文件，不是只发送里面的文件，**保证文件结构类似于”G:\PETools\Tools.wim”**。当然如果不需要PETools的话，这一步可以忽略。</p>
+</li>
+</ol>
+<h2 id="光盘版-1"><a href="#光盘版-1" class="headerlink" title="光盘版"></a>光盘版</h2><p>​    使用刻录软件刻录到DVD光盘即可，这里不提供刻录方法。</p>
+<h1 id="各PE最低启动内存"><a href="#各PE最低启动内存" class="headerlink" title="各PE最低启动内存"></a>各PE最低启动内存</h1><p>​    Win2003PE最低启动内存：512MB<br>​    Win10PE 32位版最低启动内存：1G<br>​    Win10PE 64位版最低启动内存：1G<br>​    机器内存少于512MB建议使用DOS工具替代使用  </p>
+<h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><h2 id="U盘完整版-2"><a href="#U盘完整版-2" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><p>百度云链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19Z0oc5GREB_tyMPsOw_jVA">https://pan.baidu.com/s/19Z0oc5GREB_tyMPsOw_jVA</a> 提取码: b9ma  </p>
+<p>Google Drive链接：<a target="_blank" rel="noopener" href="https://drive.google.com/open?id=1InPM0LQ9nViF0g5HdlEGpmV_iJ9WKA3k">https://drive.google.com/open?id=1InPM0LQ9nViF0g5HdlEGpmV_iJ9WKA3k</a></p>
+<p>文件: 2019.08.08_Full.zip<br>大小: 3345512026 字节<br>修改时间: 2019年8月8日, 16:34:21<br>MD5: 7263B762AC83F2B936492FDA490C7880<br>SHA1: 479D88C2D752F4D18F681D1800225A764E0A2FF9<br>CRC32: D062C169  </p>
+<h2 id="光盘版-2"><a href="#光盘版-2" class="headerlink" title="光盘版"></a>光盘版</h2><p>百度云链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1LMzW6XuaufszyZMl4947wg">https://pan.baidu.com/s/1LMzW6XuaufszyZMl4947wg</a> 提取码: kj52  </p>
+<p>Google Drive链接：<a target="_blank" rel="noopener" href="https://drive.google.com/open?id=14WRu-smOfxBKF4HzaEHeWkD7ZPdJKLhK">https://drive.google.com/open?id=14WRu-smOfxBKF4HzaEHeWkD7ZPdJKLhK</a></p>
+<p>文件: 2019.08.08_CDROM.iso<br>大小: 2396276736 字节<br>修改时间: 2019年8月8日, 15:19:02<br>MD5: 0D5C1ADDE81D8020BB91B41ADFEA73D8<br>SHA1: 97BA12184A28269B683DD2E970104172F09E6D0A<br>CRC32: 661F1DB6  </p>
+<h1 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h1><ol>
+<li>PE可以点击右下角回到桌面啦！</li>
+<li>刷新Explorer.exe在鼠标右键“打开加加”里面！</li>
+<li>加载外置工具后可以按PrtSc键进行截图！</li>
+<li>搜索文件的话，用“文件工具”里的“Everything”要比系统自带的搜索快得多！</li>
+<li>PE识别不到硬盘，有两种解决方案。如果是Win2003PE就进“Win2003PE蓝屏黑屏不认硬盘解决方案”看看吧。如果是Win10PE，嗯。。。。。这个可以进BIOS把硬盘模式设置为IDE模式试试，装好系统之后再改回来。</li>
+<li>想要快速拷贝可以用FastCopy软件哦~</li>
+<li>正确加载PETools的方式是保证所有磁盘根目录只有一个PETools（搜索方式是倒序盘符搜索），然后打开桌面的“加载外置程序”，等待几秒就可以了。加载PETools之后最好刷新一下Explorer.exe（当然也可以不刷新，嘿嘿···）</li>
+<li>更改分辨率可以在右下角的彩色屏幕图标上右击，可以看到你想更改的分辨率，然后手动刷新Explorer。</li>
+<li>按住shift键并在空白处右击可以打开命令提示符。</li>
+<li>机器与机器之间传输文件可以利用网络工具里的FTP服务器和FTP客户端哦~也可以使用飞鸽传书或者使用HFS搭建HTTP服务器来传输文件。</li>
+<li>用PE自带的DISM++可以完成大多数的系统维护功能（安装系统，离线补丁，注入驱动，修复引导等等）。</li>
+<li>点击右下角PENetWork的图标可以直接连接Wifi。</li>
+<li>连接手机到Win10PE之后可以在PE里面使用fastboot工具来刷机，<a href="/fastboot-01">刷机教程在此</a>。</li>
+<li>如果你想在正常的系统使用PETools里面的程序，可以使用7-Zip打开PETools.wim，将需要的工具解压出来就可以使用了。</li>
+</ol>
+<h1 id="和平问答"><a href="#和平问答" class="headerlink" title="和平问答"></a>和平问答</h1><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs plain">问：这个工具集有什么缺点吗？<br>答：缺点嘛···很多啊，比如不能穿越时空到1937年打小日本~<br><br>问：背景图好难看！我可以更改背景吗？<br>答：可以的，换成妹子吧，顺便把那图片也发给我好啦<br><br>问：你的PETools可以在其他PE上使用吗？<br>答：可以的，解压或挂载后用PECMD加载对应系统的ini文件就好啦<br><br>问：你的PE可以玩游戏吗？<br>答：我是不会告诉你可以的，而且还能搞核武器实验，控制美军核导弹的！<br><br>问：赞助和不赞助有什么区别？<br>答：使用上没区别，但捐助后你的心灵得到了净化，精神得到了满足，人民会因此更加和谐，国家会为此再度强盛······<br><br>问：体积太大了，能做的小点吗？我连4GB的SD卡都买不起~<br>答：不仅能大能小，还能长能短，能硬能软~<br><br>问：楼猪好厉害，能教我怎么制作PE吗？<br>答：能啊，等我找到女盆友···或者帮我买一个女朋友！<br><br>问：电脑修得好，备胎当到老 是真的吗？<br>答：佛曰：不可说，不可说啊······<br><br>问：这一年都过去了，大佬还没有女朋友？？<br>答：哈哈哈哈哈，没有！我好Happy啊！<br><br>问：还会继续更新吗？<br>答：要我死~<br><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="那些神奇的链接"><a href="#那些神奇的链接" class="headerlink" title="那些神奇的链接"></a>那些神奇的链接</h1><p>赞助名单：<a href="/PEDonation">/PEDonation</a><br>历史版本：<a href="/history/PE-2018-09-04">2018-09-04</a><br>原帖地址：<a target="_blank" rel="noopener" href="http://blog.csdn.net/tw359303267/article/details/74075075">http://blog.csdn.net/tw359303267/article/details/74075075</a><br>Github：<a href="https://359303267.github.io/PE">https://359303267.github.io/PE</a><br>以前的版本在无忧论坛：<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=378683&extra=">http://bbs.wuyou.net/forum.php?mod=viewthread&amp;tid=378683&amp;extra=</a>  </p>
+
+    </main>
+    <footer class="post-footer"></footer>
+  </article>
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "wavatar",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "true"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">13</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">24</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%85%88%E8%AF%B4%E7%89%88%E6%9D%83"><span class="toc-text">先说版权</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#2019-08-08%EF%BC%8C%E5%98%BB%E5%98%BB%C2%B7%C2%B7%C2%B7%E5%98%BB%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7"><span class="toc-text">2019-08-08，嘻嘻···嘻······</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%88%AA%E5%9B%BE"><span class="toc-text">截图</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2"><span class="toc-text">启动界面</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%B8%B0%E5%AF%8C%E7%9A%84%E8%8F%9C%E5%8D%95%E9%A1%B9"><span class="toc-text">丰富的菜单项</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Windows-2003-PE"><span class="toc-text">Windows 2003 PE</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Windows-10-PE"><span class="toc-text">Windows 10 PE</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Slitaz-5-0-Linux-%E7%B3%BB%E7%BB%9F"><span class="toc-text">Slitaz 5.0 Linux 系统</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%86%85%E7%BD%AE%E5%9F%BA%E4%BA%8E-Linux-%E7%9A%84-Acronis-%E5%B7%A5%E5%85%B7"><span class="toc-text">内置基于 Linux 的 Acronis 工具</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#UEFI-%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-text">UEFI 启动模式下的工具</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%B8%B0%E5%AF%8C%E5%8F%88%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%A4%96%E7%BD%AE-PETools"><span class="toc-text">丰富又强大的外置 PETools</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7%E4%B8%BB%E7%95%8C%E9%9D%A2"><span class="toc-text">制作工具主界面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%93%E7%A7%AF%E5%8D%A0%E6%AF%94"><span class="toc-text">体积占比</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#U%E7%9B%98%E5%AE%8C%E6%95%B4%E7%89%88"><span class="toc-text">U盘完整版</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%85%89%E7%9B%98%E7%89%88"><span class="toc-text">光盘版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%EF%BC%88%E6%98%AF%E5%AE%89%E8%A3%85%E4%B8%8D%E6%98%AF%E4%BD%BF%E7%94%A8%EF%BC%8C%E7%9C%8B%E6%B8%85%E6%A5%9A%E5%96%BD-%EF%BC%89"><span class="toc-text">正确的安装方式（是安装不是使用，看清楚喽~）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#U%E7%9B%98%E5%AE%8C%E6%95%B4%E7%89%88-1"><span class="toc-text">U盘完整版</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%85%89%E7%9B%98%E7%89%88-1"><span class="toc-text">光盘版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%90%84PE%E6%9C%80%E4%BD%8E%E5%90%AF%E5%8A%A8%E5%86%85%E5%AD%98"><span class="toc-text">各PE最低启动内存</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">下载地址</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#U%E7%9B%98%E5%AE%8C%E6%95%B4%E7%89%88-2"><span class="toc-text">U盘完整版</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%85%89%E7%9B%98%E7%89%88-2"><span class="toc-text">光盘版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">使用技巧</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%92%8C%E5%B9%B3%E9%97%AE%E7%AD%94"><span class="toc-text">和平问答</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E9%82%A3%E4%BA%9B%E7%A5%9E%E5%A5%87%E7%9A%84%E9%93%BE%E6%8E%A5"><span class="toc-text">那些神奇的链接</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

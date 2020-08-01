@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title> | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="page" class="page">
+  <article class="article post card">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <span></span>
+      </h1>
+    </header>
+    <main class="post-main">
+      <h1 id="https-359303267-github-io-PE"><a href="#https-359303267-github-io-PE" class="headerlink" title="https://359303267.github.io/PE/"></a><center><a href="https://359303267.github.io/PE/">https://359303267.github.io/PE/</a></center></h1><h1 id="一个不知道叫什么好的U盘启动工具集"><a href="#一个不知道叫什么好的U盘启动工具集" class="headerlink" title="一个不知道叫什么好的U盘启动工具集"></a><center>一个不知道叫什么好的U盘启动工具集</center></h1><h2 id="非常感谢以下赞助者"><a href="#非常感谢以下赞助者" class="headerlink" title="非常感谢以下赞助者"></a><center>非常感谢以下赞助者</center></h2><h3 id="（名单随机排序）"><a href="#（名单随机排序）" class="headerlink" title="（名单随机排序）"></a><center>（名单随机排序）</center></h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Blood of SKY</td>
+<td align="center">*宽明</td>
+<td align="center"><a href="mailto:&#55;&#x38;&#x36;&#x35;&#x32;&#49;&#x31;&#56;&#52;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#109;">&#55;&#x38;&#x36;&#x35;&#x32;&#49;&#x31;&#56;&#52;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#109;</a></td>
+<td align="center">芋筅</td>
+<td align="center">*光辉</td>
+</tr>
+<tr>
+<td align="center">TonyYAO</td>
+<td align="center"><em>雷　lev**</em>@gamil.com</td>
+<td align="center">落弃</td>
+<td align="center">2018-07-10微信赞助用户</td>
+<td align="center">Singapore</td>
+</tr>
+<tr>
+<td align="center">*震</td>
+<td align="center">Alisren</td>
+<td align="center">alcoholic</td>
+<td align="center">源</td>
+<td align="center">WXQ</td>
+</tr>
+<tr>
+<td align="center">*敬龙</td>
+<td align="center">mzg</td>
+<td align="center">2018-08-30微信赞助用户</td>
+<td align="center">成师</td>
+<td align="center">铭豆</td>
+</tr>
+<tr>
+<td align="center">195648521</td>
+<td align="center">李伟华</td>
+<td align="center">丹羽子</td>
+<td align="center"><em>邓冲　zdc**</em>@163.com</td>
+<td align="center">2018-03-18微信赞助用户</td>
+</tr>
+<tr>
+<td align="center">洋</td>
+<td align="center">执念っつ</td>
+<td align="center">简单爱</td>
+<td align="center">一清</td>
+<td align="center">男人的骄傲</td>
+</tr>
+<tr>
+<td align="center">2019-02-13微信赞助用户*💪🏻</td>
+<td align="center">2019-04-21微信赞助用户*龙</td>
+<td align="center">2019-05-27支付宝用户*祥博</td>
+<td align="center">2019-07-19微信用户*è</td>
+<td align="center">2019-07-20微信用户*红</td>
+</tr>
+<tr>
+<td align="center">2019-07-22微信用户*秃</td>
+<td align="center">2019-07-22支付宝用户*子骆</td>
+<td align="center">2019-08-08微信用户*乐</td>
+<td align="center">2019-08-09支付宝用户*靖</td>
+<td align="center">2019-10-26支付宝用户*雷</td>
+</tr>
+<tr>
+<td align="center">2019-11-03支付宝用户*清华</td>
+<td align="center">2020-02-08微信用户*林</td>
+<td align="center">2020-03-12支付宝用户**章</td>
+<td align="center">2020-04-14支付宝用户**清</td>
+<td align="center">2020-04-30支付宝用户**颖</td>
+</tr>
+<tr>
+<td align="center">2020-06-05微信用户*士</td>
+<td align="center">2020-04-26微信用户*子</td>
+<td align="center">2020-07-15微信用户*學</td>
+<td align="center">2020-07-15微信用户*X</td>
+<td align="center">2020-07-23微信用户*六</td>
+</tr>
+<tr>
+<td align="center">2020-06-19微信用户*μ</td>
+<td align="center">2020-07-22支付宝用户*辉</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="以及以下的无忧论坛用户："><a href="#以及以下的无忧论坛用户：" class="headerlink" title="以及以下的无忧论坛用户："></a><center>以及以下的无忧论坛用户：</center></h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left"></th>
+<th align="right"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><code>wimboot</code>:</td>
+<td align="left">非常棒的<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=402673">Win10PE</a>内核</td>
+<td align="right"><code>立帮电子</code>:</td>
+<td align="left">优质的<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=397706">一键备份还原工具</a> 以及<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=403550">WinPE生成器</a></td>
+</tr>
+<tr>
+<td align="right"><code>2010kva</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=364890">界面友好的一键制作工具</a></td>
+<td align="right"><code>wintoflash</code>:</td>
+<td align="left">非常棒的Porteus 4.0 口袋Linux系统以及<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=410086">Grub2文件管理</a></td>
+</tr>
+<tr>
+<td align="right"><code>jsgh1983</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=365856">Message启动菜单个性化制作工具</a></td>
+<td align="right"><code>红毛樱木</code>:</td>
+<td align="left">搜集大量<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=372840">网卡、显卡驱动</a></td>
+</tr>
+<tr>
+<td align="right"><code>hhh333</code>:</td>
+<td align="left">搜集整理的<a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=388395&fromuid=570450">NVME驱动程序</a></td>
+<td align="right"><code>slore</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=409685">Wimbuilder2 PE生成器项目</a></td>
+</tr>
+<tr>
+<td align="right"><code>sinoxer</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.xyboot.com/usb3_drivers_smart_install/">搜集整理的USB3.0驱动</a></td>
+<td align="right"><code>Pauly</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=157812&extra=page=1">XORBOOT Uefi: 多系统引导程序</a></td>
+</tr>
+<tr>
+<td align="right"><code>slorelee</code>:</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://github.com/slorelee/wimbuilder2">WinBuilder2项目</a></td>
+<td align="right"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="好用的话，请作者喝杯茶吧🙂"><a href="#好用的话，请作者喝杯茶吧🙂" class="headerlink" title="好用的话，请作者喝杯茶吧🙂"></a><center>好用的话，请作者喝杯茶吧🙂</center></h2><div class="reward" id="reward">
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝">
+    </div>
+  </div>
+</div>
+
+
+
+    </main>
+    <footer class="post-footer"></footer>
+  </article>
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "wavatar",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "true"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">13</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">24</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#https-359303267-github-io-PE"><span class="toc-text">https:&#x2F;&#x2F;359303267.github.io&#x2F;PE&#x2F;</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%9F%A5%E9%81%93%E5%8F%AB%E4%BB%80%E4%B9%88%E5%A5%BD%E7%9A%84U%E7%9B%98%E5%90%AF%E5%8A%A8%E5%B7%A5%E5%85%B7%E9%9B%86"><span class="toc-text">一个不知道叫什么好的U盘启动工具集</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E9%9D%9E%E5%B8%B8%E6%84%9F%E8%B0%A2%E4%BB%A5%E4%B8%8B%E8%B5%9E%E5%8A%A9%E8%80%85"><span class="toc-text">非常感谢以下赞助者</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%EF%BC%88%E5%90%8D%E5%8D%95%E9%9A%8F%E6%9C%BA%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="toc-text">（名单随机排序）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BB%A5%E5%8F%8A%E4%BB%A5%E4%B8%8B%E7%9A%84%E6%97%A0%E5%BF%A7%E8%AE%BA%E5%9D%9B%E7%94%A8%E6%88%B7%EF%BC%9A"><span class="toc-text">以及以下的无忧论坛用户：</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%A5%BD%E7%94%A8%E7%9A%84%E8%AF%9D%EF%BC%8C%E8%AF%B7%E4%BD%9C%E8%80%85%E5%96%9D%E6%9D%AF%E8%8C%B6%E5%90%A7%F0%9F%99%82"><span class="toc-text">好用的话，请作者喝杯茶吧🙂</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2020</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
