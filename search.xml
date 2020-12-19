@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>GY906传感器校准数据备份</title>
+      <link href="/GY906jiaozhunshuju/"/>
+      <url>/GY906jiaozhunshuju/</url>
+      
+        <content type="html"><![CDATA[<ul><li>最近在做一个项目，测试GY906红外测温传感器的时候，不小心把配置寄存器1中的校准数据刷掉了，并且没有备份。无奈之下又买了一个，读出配置寄存器的值为<strong>0xaff4</strong>（BCC型号，其他型号不确定）。如果不小心将这个寄存器的值刷掉了，重新写入即可。 </li><li>在做其他传感器测试的时候，一定要先备份原始数据，否则可能会出大问题。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GY906 </tag>
+            
+            <tag> 人体红外 </tag>
+            
+            <tag> 红外测温 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>(2020)一个不知道叫什么好的U盘启动工具集</title>
       <link href="/PE/"/>
       <url>/PE/</url>
