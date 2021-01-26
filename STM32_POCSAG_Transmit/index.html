@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>分类: 杂七杂八的教程 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>基于STM32的寻呼发射器开源啦！！ | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -201,22 +201,146 @@
         <div class="main-container">
           <div class="content">
             
-<div id="category" class="category page">
-  <h1 class="page-title">杂七杂八的教程</h1>
+<div id="post" class="page">
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/fastboot-01/" itemprop="url">用好fastboot命令，刷机加锁不用再找工具！</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-02T22:14:15+08:00">09-02</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_POCSAG_Transmit/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">基于STM32的寻呼发射器开源啦！！</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-26T19:22:30+08:00">2021-01-26 19:22:30</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="基于STM32的寻呼发射器开源啦！！"><a href="#基于STM32的寻呼发射器开源啦！！" class="headerlink" title="基于STM32的寻呼发射器开源啦！！"></a>基于STM32的寻呼发射器开源啦！！</h1><p>这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系<a href="mailto:&#51;&#53;&#x39;&#x33;&#48;&#x33;&#x32;&#54;&#55;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#51;&#53;&#x39;&#x33;&#48;&#x33;&#x32;&#54;&#55;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a>  </p>
+<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YE411N7p7/">https://www.bilibili.com/video/BV1YE411N7p7/</a></p>
+<ul>
+<li><p>STM32F103RCT6可以更换成其他M3内核的单片机。</p>
+</li>
+<li><p>ESP8266-01S模块需要进行改装，需要将自带的1MB Flash更换成4MB，不能直接使用。如果不需要WIfi控制功能，也可以不装ESP8266。</p>
+</li>
+<li><p>SR_FRS_1WV模块也需要改装，不可直接使用，需要拆开屏蔽罩，将压控振荡器的输入端（26M晶振1脚）引出并与模块的第四脚相接才可以进行正常的发送。</p>
+</li>
+<li><p>进行无线发送时需要注意，不可空载测试，必须要接上V段天线或者假负载，否则会烧坏RF模块的功放！！</p>
+</li>
+<li><p>由于发送功率较大，已达到1W，空旷通信距离可以超过1km，因此务必遵守当地无线电相关法则，不可干扰其他设备正常运行，不可干扰其他人通信和卫星通信，务必通过业余无线电考试之后再进行操作！！</p>
+</li>
+</ul>
+<p>PCB地址：<a target="_blank" rel="noopener" href="https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy">https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy</a></p>
+<p>源码地址：<a target="_blank" rel="noopener" href="https://github.com/359303267/STM32_POCSAG_Transmit">https://github.com/359303267/STM32_POCSAG_Transmit</a></p>
+<p>软件地址：<a target="_blank" rel="noopener" href="https://github.com/359303267/STM32_POCSAG_Transmit/releases">https://github.com/359303267/STM32_POCSAG_Transmit/releases</a></p>
+<h1 id="成品外观"><a href="#成品外观" class="headerlink" title="成品外观"></a>成品外观</h1><p><img src="/images/STM32_POCSAG_Transmit/1.png" alt="正面">  </p>
+<p><img src="/images/STM32_POCSAG_Transmit/2.png" alt="反面"></p>
+<h1 id="假如你有问题"><a href="#假如你有问题" class="headerlink" title="假如你有问题"></a>假如你有问题</h1><p>本人开源这个项目即表示放弃这个项目，所以有任何问题都不要找我（当然，给我送钱除外，毕竟谁会跟钱过不去呢~），你需要增加自己的知识储备。更不要试图加我，我不会同意。</p>
+<p>没有成品卖！！</p>
+<h1 id="其他要说的"><a href="#其他要说的" class="headerlink" title="其他要说的"></a>其他要说的</h1><p>看到下面红色的按钮了吗？你懂我意思~</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/PCB/" rel="tag"><i class="fas fa-tags"></i>PCB</a>
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/GY906jiaozhunshuju/" rel="next" title="GY906传感器校准数据备份"><i class="fas fa-angle-left"></i><span class="nav-title">GY906传感器校准数据备份</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "wavatar",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "true"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -279,6 +403,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%9F%BA%E4%BA%8ESTM32%E7%9A%84%E5%AF%BB%E5%91%BC%E5%8F%91%E5%B0%84%E5%99%A8%E5%BC%80%E6%BA%90%E5%95%A6%EF%BC%81%EF%BC%81"><span class="toc-text">基于STM32的寻呼发射器开源啦！！</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%88%90%E5%93%81%E5%A4%96%E8%A7%82"><span class="toc-text">成品外观</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%81%87%E5%A6%82%E4%BD%A0%E6%9C%89%E9%97%AE%E9%A2%98"><span class="toc-text">假如你有问题</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%85%B6%E4%BB%96%E8%A6%81%E8%AF%B4%E7%9A%84"><span class="toc-text">其他要说的</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>

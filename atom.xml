@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2020-12-19T14:10:04.181Z</updated>
+  <updated>2021-01-26T11:45:08.279Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于STM32的寻呼发射器开源啦！！</title>
+    <link href="https://359303267.github.io/STM32_POCSAG_Transmit/"/>
+    <id>https://359303267.github.io/STM32_POCSAG_Transmit/</id>
+    <published>2021-01-26T11:22:30.000Z</published>
+    <updated>2021-01-26T11:45:08.279Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基于STM32的寻呼发射器开源啦！！&quot;&gt;&lt;a href=&quot;#基于STM32的寻呼发射器开源啦！！&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
+    
+    
+      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="PCB" scheme="https://359303267.github.io/tags/PCB/"/>
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+  </entry>
   
   <entry>
     <title>GY906传感器校准数据备份</title>
