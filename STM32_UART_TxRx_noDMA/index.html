@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_noDMA/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-07-16T16:02:22+08:00">2021-07-16 16:02:22</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"><a href="#STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）" class="headerlink" title="STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"></a>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</h1><p>今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。</p>
+<p>我也尝试了使用网络上的例程来实现，不知是HAL库的原因还是什么，要么是无法正常接收数据，要么就是无法进入空闲中断，因此自己摸索了好久。</p>
+<p>现在的代码思路是：STM32的串口有一个空闲中断的功能，串口在没有数据传输的时候会进入空闲中断，因此利用空闲中断可以接收任意不定长且无起始和结束标志的数据。</p>
+<p>首先在STM32 CubeMX中正常配置串口接收，并打开串口中断，我这里勾选了创建默认HAL_UART_IRQHandler函数的选项。</p>
+<p>工程创建完毕之后，在main.c文件中，创建两个串口缓冲数组，以及两个unsigned char型变量用来存放接收到的串口数据。在main函数中，需要调用HAL_UART_Receive_IT函数来对串口接收中断进行配置。</p>
+<p>还需要在main()函数中添加开启串口空闲中断的代码，有几个串口就开启几个，这里比较坑的是在HAL库中开启空闲中断的方法使用的是宏定义，鼠标在语句上不会有参数提示</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">main.c:<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxBuffer1[<span class="hljs-number">100</span>];<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxBuffer2[<span class="hljs-number">100</span>];<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxByte1;<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxByte2;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    HAL_UART_Receive_IT(&amp;huart1,&amp;RxByte1,<span class="hljs-number">1</span>);                    <span class="hljs-comment">/*开启串口接收中断并指定将接收到的数据放进RxByte1变量中，第三个参数为接收n个字符进入接收回调函数，这里设置为1，即一个字符一个字符地接收*/</span><br>    HAL_UART_Receive_IT(&amp;huart2,&amp;RxByte2,<span class="hljs-number">1</span>);<br>    <br>    __HAL_UART_ENABLE_IT(&amp;huart1,UART_IT_IDLE);<br>    __HAL_UART_ENABLE_IT(&amp;huart2,UART_IT_IDLE);<br>    <br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>        ...;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当串口接收到数据以后，会将数据放进RxByte1变量中并调用HAL_UART_RxCpltCallback函数，因此在main.c文件中创建void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)函数。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c">main.c:<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> RxCount1;<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> RxCount2;<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxFlag1;<br><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxFlag2;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">HAL_UART_RxCpltCallback</span><span class="hljs-params">(UART_HandleTypeDef *huart)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(huart-&gt;Instance == USART1)                                <span class="hljs-comment">// 判断是由哪个串口触发的中断</span><br>    &#123;<br>        RxBuffer1[RxCount1] = RxByte1;                          <span class="hljs-comment">//将接收到的数据放进RxBuffer1缓冲区中</span><br>        RxCount1++;                                                <span class="hljs-comment">//RxBuffer1下标累加</span><br>        HAL_UART_Receive_IT(&amp;huart1,&amp;RxByte1,<span class="hljs-number">1</span>);                <span class="hljs-comment">//处理完毕还需要重新打开接收中断，否则不会接收下一个数据</span><br>    &#125;<br>    <span class="hljs-keyword">if</span>(huart-&gt;Instance == USART2)<br>    &#123;<br>        RxBuffer2[RxCount2] = RxByte2;<br>        RxCount2++;<br>        HAL_UART_Receive_IT(&amp;huart2,&amp;RxByte2,<span class="hljs-number">1</span>);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在stm32f4xx_it.c文件中，找到串口中断服务函数，添加以下代码：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c">stm32f4xx_it.c:<br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> RxCount1;                                    <span class="hljs-comment">//声明外部变量，与main.c文件中的变量联系在一起</span><br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> RxCount2;<br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxFlag1;<br><span class="hljs-keyword">extern</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> RxFlag2;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">USART1_IRQHandler</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-comment">/* USER CODE BEGIN USART1_IRQn 0 */</span><br><br>  <span class="hljs-comment">/* USER CODE END USART1_IRQn 0 */</span><br>  HAL_UART_IRQHandler(&amp;huart1);<br>  <span class="hljs-comment">/* USER CODE BEGIN USART1_IRQn 1 */</span><br>    <span class="hljs-keyword">if</span>(__HAL_UART_GET_FLAG(&amp;huart1, UART_FLAG_IDLE) != RESET)    <span class="hljs-comment">/*判断是空闲中断标志位,要注意的是这个语句不要写到HAL_UART_RxCpltCallback函数中，因为HAL_UART_RxCpltCallback只是接收回调函数，不是接收的情况下是不会调用的，如果写到HAL_UART_RxCpltCallback中永远也处理不了空闲中断*/</span><br>    &#123;<br>        __HAL_UART_CLEAR_IDLEFLAG(&amp;huart1);                        <span class="hljs-comment">//清除空闲中断标志</span><br>        RxFlag1 = <span class="hljs-number">1</span>;                                            <span class="hljs-comment">//接收标志置1，表示收到了一帧数据</span><br>    &#125;<br>  <span class="hljs-comment">/* USER CODE END USART1_IRQn 1 */</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">USART2_IRQHandler</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-comment">/* USER CODE BEGIN USART2_IRQn 0 */</span><br><br>  <span class="hljs-comment">/* USER CODE END USART2_IRQn 0 */</span><br>  HAL_UART_IRQHandler(&amp;huart2);<br>  <span class="hljs-comment">/* USER CODE BEGIN USART2_IRQn 1 */</span><br>    <span class="hljs-keyword">if</span>(__HAL_UART_GET_FLAG(&amp;huart2, UART_FLAG_IDLE) != RESET)<br>    &#123;<br>        __HAL_UART_CLEAR_IDLEFLAG(&amp;huart2);<br>        RxFlag2 = <span class="hljs-number">1</span>;<br>    &#125;<br>  <span class="hljs-comment">/* USER CODE END USART2_IRQn 1 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>接着就可以在mian.c文件中处理接收到的数据了</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c">main.c:<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)<br>  &#123;<br>    <span class="hljs-comment">/* USER CODE END WHILE */</span><br>        <span class="hljs-keyword">if</span>(RxFlag1 == <span class="hljs-number">1</span>)                                    <span class="hljs-comment">//如果串口1收到了一帧数据</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;USART1:%s\r\n&quot;</span>, RxBuffer1);                <span class="hljs-comment">//printf内容</span><br>            <span class="hljs-built_in">memset</span>(RxBuffer1,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(RxBuffer1));            <span class="hljs-comment">//清空缓冲区，一定要清空</span><br>            RxFlag1 = <span class="hljs-number">0</span>;                                    <span class="hljs-comment">//接收标志置0</span><br>            RxCount1 = <span class="hljs-number">0</span>;                                    <span class="hljs-comment">//清零计数</span><br>        &#125;<br>        <span class="hljs-keyword">if</span>(RxFlag2 == <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;USART2:%s\r\n&quot;</span>, RxBuffer2);<br>            <span class="hljs-built_in">memset</span>(RxBuffer2,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(RxBuffer2));<br>            RxFlag2 = <span class="hljs-number">0</span>;<br>            RxCount2 = <span class="hljs-number">0</span>；<br>        &#125;<br>    <span class="hljs-comment">/* USER CODE BEGIN 3 */</span><br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<p>}</p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/STM32_POCSAG_Transmit/" rel="next" title="基于STM32的寻呼发射器开源啦！！"><i class="fas fa-angle-left"></i><span class="nav-title">基于STM32的寻呼发射器开源啦！！</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/STM32_UART_TxRx_DMA/" rel="prev" title="STM32 HAL库 使用DMA同时收发串口数据"><span class="nav-title">STM32 HAL库 使用DMA同时收发串口数据</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "hide",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">18</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">28</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#STM32-HAL%E5%BA%93%E5%A4%9A%E4%B8%B2%E5%8F%A3%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E6%8E%A5%E6%94%B6%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E6%97%A0%E8%B5%B7%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%E6%A0%87%E5%BF%97%EF%BC%8C%E4%B8%8D%E4%BD%BF%E7%94%A8DMA%EF%BC%89"><span class="toc-text">STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2021</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

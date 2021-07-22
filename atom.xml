@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2021-02-25T13:03:11.365Z</updated>
+  <updated>2021-07-22T16:23:14.764Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>迪文串口屏T5L STM32 51驱动程序分享</title>
+    <link href="https://359303267.github.io/DWinUart_Driver/"/>
+    <id>https://359303267.github.io/DWinUart_Driver/</id>
+    <published>2021-07-22T16:05:18.000Z</published>
+    <updated>2021-07-22T16:23:14.764Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;迪文串口屏T5L-STM32-51驱动程序分享&quot;&gt;&lt;a href=&quot;#迪文串口屏T5L-STM32-51驱动程序分享&quot; class=&quot;headerlink&quot; title=&quot;迪文串口屏T5L STM32 51驱动程序分享&quot;&gt;&lt;/a&gt;迪文串口屏T5L STM32
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>STM32 HAL库 使用DMA同时收发串口数据</title>
+    <link href="https://359303267.github.io/STM32_UART_TxRx_DMA/"/>
+    <id>https://359303267.github.io/STM32_UART_TxRx_DMA/</id>
+    <published>2021-07-22T14:16:37.000Z</published>
+    <updated>2021-07-22T16:21:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;STM32-HAL库-使用DMA同时收发串口数据&quot;&gt;&lt;a href=&quot;#STM32-HAL库-使用DMA同时收发串口数据&quot; class=&quot;headerlink&quot; title=&quot;STM32 HAL库 使用DMA同时收发串口数据&quot;&gt;&lt;/a&gt;STM32 HAL库
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</title>
+    <link href="https://359303267.github.io/STM32_UART_TxRx_noDMA/"/>
+    <id>https://359303267.github.io/STM32_UART_TxRx_noDMA/</id>
+    <published>2021-07-16T08:02:22.000Z</published>
+    <updated>2021-07-22T16:10:46.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）&quot;&gt;&lt;a href=&quot;#STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）&quot; class=&quot;headerlink&quot; title=&quot;STM32
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>基于STM32的寻呼发射器开源啦！！</title>
