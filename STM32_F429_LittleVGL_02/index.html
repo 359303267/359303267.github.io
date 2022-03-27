@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_F429_LittleVGL_02/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-26T01:57:42+08:00">2022-03-26 01:57:42</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="STM32F429-移植LittleVGL-8-2（4-3寸RGB-800-480，SDRAM双缓冲区，有触摸）"><a href="#STM32F429-移植LittleVGL-8-2（4-3寸RGB-800-480，SDRAM双缓冲区，有触摸）" class="headerlink" title="STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）"></a>STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）</h1><h2 id="移植LittleVGL-8-2"><a href="#移植LittleVGL-8-2" class="headerlink" title="移植LittleVGL 8.2"></a>移植LittleVGL 8.2</h2><p>首先保证你的工程显示功能和触摸屏功能正常。</p>
+<p>移植前需要完成的接口：</p>
+<ol>
+<li>屏幕画点函数</li>
+<li>触摸按下与释放识别函数</li>
+<li>触摸坐标读取函数</li>
+</ol>
+<p>OK，接下来进入正式的移植过程。</p>
+<p>首先设置工程，使用AC6编译器，并勾选使用微库（因为工程中使用到了printf函数，不勾选会卡死）。</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-39-24.png"></p>
+<p>在工程中创建一个<strong>GUI</strong>目录，然后在GUI目录下新建两个文件夹：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-41-41.png"></p>
+<p>解压lvgl-8.2.0.zip，将lvgl-8.2.0文件夹里的所有内容全部解压至lvgl目录中。</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-43-29.png"></p>
+<p>然后将lvgl目录下的<strong>lv_conf_template.h</strong>和<strong>lvgl.h</strong>移至父目录，即lvgl目录中。</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-45-52.png"></p>
+<p>将<strong>lv_conf_template.h</strong>更名为<strong>lv_conf.h</strong>：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-46-45.png"></p>
+<p>将<strong>工程目录\GUI\lvgl\examples\porting</strong>下的所有文件复制到<strong>工程目录\GUI\lvgl_porting</strong>目录中：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-48-40.png"></p>
+<p>同样更名，将所有文件中的<strong>_template</strong>去掉，改好后如下图：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-49-50.png"></p>
+<p>打开Keil工程，在项目管理中添加如下组：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-53-10.png"></p>
+<p>lvgl组中添加lvgl_conf.h文件：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-54-08.png"></p>
+<p>lvgl/core组添加<strong>工程目录\GUI\lvgl\src\core</strong>下的所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-55-27.png"></p>
+<p>lvgl/draw组添加<strong>工程目录\GUI\lvgl\src\draw</strong>和<strong>工程目录\GUI\lvgl\src\draw\sw</strong>下的所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-56-40.png"></p>
+<p>lvgl/extra组添加<strong>工程目录\GUI\lvgl\src\extra</strong>中<strong>除了lib目录下的所有.c文件</strong>（因为这里并未用到这些解码库，当然也可以全部添加进去），这里子目录比较多，需要花一些时间。             </p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_17-58-25.png"></p>
+<p>lvgl/font组添加<strong>工程目录\GUI\lvgl\src\font</strong>中所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-20-01.png"></p>
+<p>lvgl/hal组添加<strong>工程目录\GUI\lvgl\src\hal</strong>中所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-20-57.png"></p>
+<p>lvgl/misc组添加<strong>工程目录\GUI\lvgl\src\misc</strong>中所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-21-42.png"></p>
+<p>lvgl/widgets组添加<strong>工程目录\GUI\lvgl\src\widgets</strong>中所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-22-49.png"></p>
+<p>lvgl/demos组添加<strong>工程目录\GUI\lvgl\demos\widgets</strong>中所有.c文件（这里可根据需要跑的demo来选择，这里选择widgets例程）</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-23-35.png"></p>
+<p>lvgl/porting组添加<strong>工程目录\GUI\lvgl_porting</strong>中所有.c文件</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-25-27.png"></p>
+<p>添加头文件搜索路径：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/Snipaste_2022-03-25_18-39-19.png"></p>
+<p>进行编译，会报lvgl.h错误：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">..&#x2F;GUI&#x2F;lvgl&#x2F;demos&#x2F;widgets&#x2F;assets&#x2F;img_lvgl_logo.c(1): error: &#39;..&#x2F;..&#x2F;..&#x2F;lvgl.h&#39; file not found, did you mean &#39;lvgl.h&#39;?<br>#include &quot;..&#x2F;..&#x2F;..&#x2F;lvgl.h&quot;<br>         ^~~~~~~~~~~~~~~~~<br>         &quot;lvgl.h&quot;<br></code></pre></td></tr></table></figure>
+
+<p>根据代码提示，可发现是头文件路径错误。这里可以修改头文件路径为：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lvgl.h&quot;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>当然也可以修改文件的路径，然后重新添加到工程，解决方式多种多样，这里不再过多赘述。</p>
+<p>再次编译，0 Error(s), 0 Warning(s).可以了。</p>
+<h2 id="修改lv-conf-h"><a href="#修改lv-conf-h" class="headerlink" title="修改lv_conf.h"></a>修改lv_conf.h</h2><p>打开lv_conf.h文件的宏，打开LV_USE_DEMO_WIDGETS宏，如果不打开这个，widgets demo是跑不了的。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Show some widget. It might be required to increase `LV_MEM_SIZE` */</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LV_USE_DEMO_WIDGETS        1</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> LV_USE_DEMO_WIDGETS</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LV_DEMO_WIDGETS_SLIDESHOW  0</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span><br></code></pre></td></tr></table></figure>
+
+<p>OK，再次编译，通过。</p>
+<h2 id="移植显示接口"><a href="#移植显示接口" class="headerlink" title="移植显示接口"></a>移植显示接口</h2><p>打开lv_port_disp.c文件和lv_port_disp.h文件的宏。</p>
+<p>修改lv_port_disp.c中的头文件路径：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lv_port_disp.h&quot;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>修改lv_port_disp.h中的头文件路径：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lvgl.h&quot;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>添加宏：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MY_DISP_HOR_RES   800</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MY_DISP_VER_RES   480</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>屏蔽</strong>掉<strong>Example for 2</strong>和<strong>Example for 3</strong>两个创建缓冲区的例子，<strong>只保留Example for 1</strong></p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* Example for 1) */</span><br><span class="hljs-keyword">static</span> <span class="hljs-keyword">lv_disp_draw_buf_t</span> draw_buf_dsc_1;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">lv_color_t</span> buf_1[MY_DISP_HOR_RES * <span class="hljs-number">10</span>];                          <span class="hljs-comment">/*A buffer for 10 rows*/</span><br>lv_disp_draw_buf_init(&amp;draw_buf_dsc_1, buf_1, <span class="hljs-literal">NULL</span>, MY_DISP_HOR_RES * <span class="hljs-number">10</span>);   <br><br><span class="hljs-comment">/*Initialize the display buffer*/</span><br><span class="hljs-comment">//    /* Example for 2) */</span><br><span class="hljs-comment">//    static lv_disp_draw_buf_t draw_buf_dsc_2;</span><br><span class="hljs-comment">//    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/</span><br><span class="hljs-comment">//    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/</span><br><span class="hljs-comment">//    lv_disp_draw_buf_init(&amp;draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/</span><br><br><span class="hljs-comment">//    /* Example for 3) also set disp_drv.full_refresh = 1 below*/</span><br><span class="hljs-comment">//    static lv_disp_draw_buf_t draw_buf_dsc_3;</span><br><span class="hljs-comment">//    static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*A screen sized buffer*/</span><br><span class="hljs-comment">//    static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*Another screen sized buffer*/</span><br><span class="hljs-comment">//    lv_disp_draw_buf_init(&amp;draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_VER_RES * LV_VER_RES_MAX);   /*Initialize the display buffer*/</span><br></code></pre></td></tr></table></figure>
+
+<p>更改分辨率配置（不改会导致屏幕不显示）</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Set the resolution of the display*/</span><br>disp_drv.hor_res = MY_DISP_HOR_RES;<br>disp_drv.ver_res = MY_DISP_VER_RES;<br></code></pre></td></tr></table></figure>
+
+<p>将屏幕画点函数与lvgl的接口对接：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Flush the content of the internal buffer the specific area on the display</span><br><span class="hljs-comment"> *You can use DMA or any hardware acceleration to do this operation in the background but</span><br><span class="hljs-comment"> *&#x27;lv_disp_flush_ready()&#x27; has to be called when finished.*/</span><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">disp_flush</span><span class="hljs-params">(<span class="hljs-keyword">lv_disp_drv_t</span> * disp_drv, <span class="hljs-keyword">const</span> <span class="hljs-keyword">lv_area_t</span> * area, <span class="hljs-keyword">lv_color_t</span> * color_p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">/*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/</span><br><br>    <span class="hljs-keyword">int32_t</span> x;<br>    <span class="hljs-keyword">int32_t</span> y;<br>    <span class="hljs-keyword">for</span>(y = area-&gt;y1; y &lt;= area-&gt;y2; y++) &#123;<br>        <span class="hljs-keyword">for</span>(x = area-&gt;x1; x &lt;= area-&gt;x2; x++) &#123;<br>            <span class="hljs-comment">/*Put a pixel to the display. For example:*/</span><br>            <span class="hljs-comment">/*put_px(x, y, *color_p)*/</span><br>          LTDC_Disp_Point(x, y, *(<span class="hljs-keyword">uint16_t</span>*)color_p);    <span class="hljs-comment">//屏幕画点函数</span><br>            color_p++;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/*IMPORTANT!!!</span><br><span class="hljs-comment">     *Inform the graphics library that you are ready with the flushing*/</span><br>    lv_disp_flush_ready(disp_drv);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="添加lvgl心跳"><a href="#添加lvgl心跳" class="headerlink" title="添加lvgl心跳"></a>添加lvgl心跳</h2><p>直接利用滴答定时器产生心跳。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SysTick_Handler</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-comment">/* USER CODE BEGIN SysTick_IRQn 0 */</span><br><br>  <span class="hljs-comment">/* USER CODE END SysTick_IRQn 0 */</span><br>  HAL_IncTick();<br>  <span class="hljs-comment">/* USER CODE BEGIN SysTick_IRQn 1 */</span><br>  lv_tick_inc(<span class="hljs-number">1</span>);        <span class="hljs-comment">//lvgl心跳</span><br>  <span class="hljs-comment">/* USER CODE END SysTick_IRQn 1 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="添加执行代码"><a href="#添加执行代码" class="headerlink" title="添加执行代码"></a>添加执行代码</h2><p>在main.c中添加：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lvgl.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lv_port_disp.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;demos/widgets/lv_demo_widgets.h&quot;</span></span><br>...<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>      ...<br>    lv_init();<br>      lv_port_disp_init();<br>      lv_demo_widgets();<br>    <br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;<br>        lv_timer_handler();<br>        HAL_Delay(<span class="hljs-number">5</span>);<br>    &#125;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译下载，效果如图：</p>
+<p><img src="/images/STM32_F429_LittleVGL_02/IMG_20220325_191354.jpg"></p>
+<p>因为还没有移植触摸接口，所以无法控制。</p>
+<h2 id="移植触摸接口"><a href="#移植触摸接口" class="headerlink" title="移植触摸接口"></a>移植触摸接口</h2><p>打开lv_port_indev.c和lv_port_indev.h的宏</p>
+<p>修改头文件路径，同上，这里不在赘述。</p>
+<p>屏蔽掉lv_port_indev.c中lv_port_indev_init函数里关于鼠标、键盘、编码器等代码，只保留触摸屏部分的代码。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">lv_port_indev_init</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Here you will find example implementation of input devices supported by LittelvGL:</span><br><span class="hljs-comment">     *  - Touchpad</span><br><span class="hljs-comment">     *  - Mouse (with cursor support)</span><br><span class="hljs-comment">     *  - Keypad (supports GUI usage only with key)</span><br><span class="hljs-comment">     *  - Encoder (supports GUI usage only with: left, right, push)</span><br><span class="hljs-comment">     *  - Button (external buttons to press points on the screen)</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     *  The `..._read()` function are only examples.</span><br><span class="hljs-comment">     *  You should shape them according to your hardware</span><br><span class="hljs-comment">     */</span><br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">lv_indev_drv_t</span> indev_drv;<br><br>    <span class="hljs-comment">/*------------------</span><br><span class="hljs-comment">     * Touchpad</span><br><span class="hljs-comment">     * -----------------*/</span><br><br>    <span class="hljs-comment">/*Initialize your touchpad if you have*/</span><br>    touchpad_init();<br><br>    <span class="hljs-comment">/*Register a touchpad input device*/</span><br>    lv_indev_drv_init(&amp;indev_drv);<br>    indev_drv.type = LV_INDEV_TYPE_POINTER;<br>    indev_drv.read_cb = touchpad_read;<br>    indev_touchpad = lv_indev_drv_register(&amp;indev_drv);<br><br>    <span class="hljs-comment">/*------------------</span><br><span class="hljs-comment">     * Mouse</span><br><span class="hljs-comment">     * -----------------*/</span><br><br><span class="hljs-comment">//    /*Initialize your mouse if you have*/</span><br><span class="hljs-comment">//    mouse_init();</span><br><br><span class="hljs-comment">//    /*Register a mouse input device*/</span><br><span class="hljs-comment">//    lv_indev_drv_init(&amp;indev_drv);</span><br><span class="hljs-comment">//    indev_drv.type = LV_INDEV_TYPE_POINTER;</span><br><span class="hljs-comment">//    indev_drv.read_cb = mouse_read;</span><br><span class="hljs-comment">//    indev_mouse = lv_indev_drv_register(&amp;indev_drv);</span><br><br><span class="hljs-comment">//    /*Set cursor. For simplicity set a HOME symbol now.*/</span><br><span class="hljs-comment">//    lv_obj_t * mouse_cursor = lv_img_create(lv_scr_act());</span><br><span class="hljs-comment">//    lv_img_set_src(mouse_cursor, LV_SYMBOL_HOME);</span><br><span class="hljs-comment">//    lv_indev_set_cursor(indev_mouse, mouse_cursor);</span><br><br><span class="hljs-comment">//    /*------------------</span><br><span class="hljs-comment">//     * Keypad</span><br><span class="hljs-comment">//     * -----------------*/</span><br><br><span class="hljs-comment">//    /*Initialize your keypad or keyboard if you have*/</span><br><span class="hljs-comment">//    keypad_init();</span><br><br><span class="hljs-comment">//    /*Register a keypad input device*/</span><br><span class="hljs-comment">//    lv_indev_drv_init(&amp;indev_drv);</span><br><span class="hljs-comment">//    indev_drv.type = LV_INDEV_TYPE_KEYPAD;</span><br><span class="hljs-comment">//    indev_drv.read_cb = keypad_read;</span><br><span class="hljs-comment">//    indev_keypad = lv_indev_drv_register(&amp;indev_drv);</span><br><br><span class="hljs-comment">//    /*Later you should create group(s) with `lv_group_t * group = lv_group_create()`,</span><br><span class="hljs-comment">//     *add objects to the group with `lv_group_add_obj(group, obj)`</span><br><span class="hljs-comment">//     *and assign this input device to group to navigate in it:</span><br><span class="hljs-comment">//     *`lv_indev_set_group(indev_keypad, group);`*/</span><br><br><span class="hljs-comment">//    /*------------------</span><br><span class="hljs-comment">//     * Encoder</span><br><span class="hljs-comment">//     * -----------------*/</span><br><br><span class="hljs-comment">//    /*Initialize your encoder if you have*/</span><br><span class="hljs-comment">//    encoder_init();</span><br><br><span class="hljs-comment">//    /*Register a encoder input device*/</span><br><span class="hljs-comment">//    lv_indev_drv_init(&amp;indev_drv);</span><br><span class="hljs-comment">//    indev_drv.type = LV_INDEV_TYPE_ENCODER;</span><br><span class="hljs-comment">//    indev_drv.read_cb = encoder_read;</span><br><span class="hljs-comment">//    indev_encoder = lv_indev_drv_register(&amp;indev_drv);</span><br><br><span class="hljs-comment">//    /*Later you should create group(s) with `lv_group_t * group = lv_group_create()`,</span><br><span class="hljs-comment">//     *add objects to the group with `lv_group_add_obj(group, obj)`</span><br><span class="hljs-comment">//     *and assign this input device to group to navigate in it:</span><br><span class="hljs-comment">//     *`lv_indev_set_group(indev_encoder, group);`*/</span><br><br><span class="hljs-comment">//    /*------------------</span><br><span class="hljs-comment">//     * Button</span><br><span class="hljs-comment">//     * -----------------*/</span><br><br><span class="hljs-comment">//    /*Initialize your button if you have*/</span><br><span class="hljs-comment">//    button_init();</span><br><br><span class="hljs-comment">//    /*Register a button input device*/</span><br><span class="hljs-comment">//    lv_indev_drv_init(&amp;indev_drv);</span><br><span class="hljs-comment">//    indev_drv.type = LV_INDEV_TYPE_BUTTON;</span><br><span class="hljs-comment">//    indev_drv.read_cb = button_read;</span><br><span class="hljs-comment">//    indev_button = lv_indev_drv_register(&amp;indev_drv);</span><br><br><span class="hljs-comment">//    /*Assign buttons to points on the screen*/</span><br><span class="hljs-comment">//    static const lv_point_t btn_points[2] = &#123;</span><br><span class="hljs-comment">//            &#123;10, 10&#125;,   /*Button 0 -&gt; x:10; y:10*/</span><br><span class="hljs-comment">//            &#123;40, 100&#125;,  /*Button 1 -&gt; x:40; y:100*/</span><br><span class="hljs-comment">//    &#125;;</span><br><span class="hljs-comment">//    lv_indev_set_button_points(indev_button, btn_points);</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>修改touchpad_is_pressed函数，主要实现返回值，使返回值能够反映触摸屏是否按下。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Return true is the touchpad is pressed*/</span><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">touchpad_is_pressed</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">/*Your code comes here*/</span><br><br>    <span class="hljs-keyword">return</span> tp_dev.sta&amp;TP_PRES_DOWN;        <span class="hljs-comment">//返回触屏是否按下</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>修改touchpad_get_xy函数，获取屏幕点击的位置。</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Get the x and y coordinates if the touchpad is pressed*/</span><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">touchpad_get_xy</span><span class="hljs-params">(<span class="hljs-keyword">lv_coord_t</span> * x, <span class="hljs-keyword">lv_coord_t</span> * y)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">/*Your code comes here*/</span><br><br>    (*x) = tp_dev.x[<span class="hljs-number">0</span>];        <span class="hljs-comment">//获取触摸X位置</span><br>    (*y) = tp_dev.y[<span class="hljs-number">0</span>];        <span class="hljs-comment">//获取触摸y位置</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>修改main.c中的代码</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;lv_port_indev.h&quot;</span></span><br>...<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ...<br>    GT9147_Init();        <span class="hljs-comment">//触摸芯片初始化</span><br>    lv_port_indev_init();    <span class="hljs-comment">//注册输入设备</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;<br>        GT9147_Scan(<span class="hljs-number">0</span>);        <span class="hljs-comment">//扫描触摸</span><br>        lv_timer_handler();<br>        HAL_Delay(<span class="hljs-number">5</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>触摸屏部分适配完成 ，编译并下载，可以发现屏幕已经可以触摸了。</p>
+<h2 id="使用SDRAM缓冲加速"><a href="#使用SDRAM缓冲加速" class="headerlink" title="使用SDRAM缓冲加速"></a>使用SDRAM缓冲加速</h2><p>在iv_port_disp.c文件中添加宏：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LTDC_LCD_FRAMEBUF_SIZE        (MY_DISP_HOR_RES*MY_DISP_VER_RES*2)        <span class="hljs-comment">//ltdc.c中ltdc_lcd_framebuf缓冲区的大小</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> COLOR_BUF_SIZE                (MY_DISP_HOR_RES*MY_DISP_VER_RES)    <span class="hljs-comment">//全屏的大小</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> COLOR1_BUF_ADDR           (uint32_t*)(0xc0000000 + LTDC_LCD_FRAMEBUF_SIZE)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> COLOR2_BUF_ADDR           (uint32_t*)(0xc0000000 + LTDC_LCD_FRAMEBUF_SIZE + COLOR_BUF_SIZE)</span><br><br></code></pre></td></tr></table></figure>
+
+<p>SDRAM空间从0xc0000000开始，<strong>LTDC_LCD_FRAMEBUF_SIZE需要作为显存</strong>，所以需要跳过。</p>
+<p>缓冲区1从<strong>0xc0000000+LTDC_LCD_FRAMEBUF_SIZE</strong>开始；</p>
+<p>缓冲区2从<strong>0xc0000000+LTDC_LCD_FRAMEBUF_SIZE+COLOR_BUF_SIZE</strong>开始；</p>
+<p>修改Example for 3缓存创建方法，传入两个缓存的地址</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">    <span class="hljs-comment">/* Example for 3) also set disp_drv.full_refresh = 1 below*/</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">lv_disp_draw_buf_t</span> draw_buf_dsc_3;<br><span class="hljs-comment">//    static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*A screen sized buffer*/</span><br><span class="hljs-comment">//    static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*Another screen sized buffer*/</span><br>    lv_disp_draw_buf_init(&amp;draw_buf_dsc_3, COLOR1_BUF_ADDR, COLOR2_BUF_ADDR, MY_DISP_VER_RES * MY_DISP_HOR_RES);   <span class="hljs-comment">/*Initialize the display buffer*/</span><br></code></pre></td></tr></table></figure>
+
+<p>修改缓存设置</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*Set a display buffer*/</span><br>disp_drv.draw_buf = &amp;draw_buf_dsc_3;<br></code></pre></td></tr></table></figure>
+
+<p>编译下载，发现速度刷屏速度已有提升，FPS显示有33，但实际使用提升非常小，看来还需要使用DMA2D来加速。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/LittleVGL8/" rel="tag"><i class="fas fa-tags"></i>LittleVGL8</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/STM32_F429_LittleVGL_01/" rel="next" title="正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）"><i class="fas fa-angle-left"></i><span class="nav-title">正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/STM32_F429_LTDC_issus_01/" rel="prev" title="STM32F429 LTDC 驱动RGB屏幕出现抖动的解决方法"><span class="nav-title">STM32F429 LTDC 驱动RGB屏幕出现抖动的解决方法</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "hide",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">23</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">8</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">36</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#STM32F429-%E7%A7%BB%E6%A4%8DLittleVGL-8-2%EF%BC%884-3%E5%AF%B8RGB-800-480%EF%BC%8CSDRAM%E5%8F%8C%E7%BC%93%E5%86%B2%E5%8C%BA%EF%BC%8C%E6%9C%89%E8%A7%A6%E6%91%B8%EF%BC%89"><span class="toc-text">STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E7%A7%BB%E6%A4%8DLittleVGL-8-2"><span class="toc-text">移植LittleVGL 8.2</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BF%AE%E6%94%B9lv-conf-h"><span class="toc-text">修改lv_conf.h</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E7%A7%BB%E6%A4%8D%E6%98%BE%E7%A4%BA%E6%8E%A5%E5%8F%A3"><span class="toc-text">移植显示接口</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%B7%BB%E5%8A%A0lvgl%E5%BF%83%E8%B7%B3"><span class="toc-text">添加lvgl心跳</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">添加执行代码</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E7%A7%BB%E6%A4%8D%E8%A7%A6%E6%91%B8%E6%8E%A5%E5%8F%A3"><span class="toc-text">移植触摸接口</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8SDRAM%E7%BC%93%E5%86%B2%E5%8A%A0%E9%80%9F"><span class="toc-text">使用SDRAM缓冲加速</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2022</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

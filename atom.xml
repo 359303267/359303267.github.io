@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2021-07-22T16:23:14.764Z</updated>
+  <updated>2022-03-27T18:08:17.998Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,173 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32F429 LTDC 驱动RGB屏幕出现抖动的解决方法</title>
+    <link href="https://359303267.github.io/STM32_F429_LTDC_issus_01/"/>
+    <id>https://359303267.github.io/STM32_F429_LTDC_issus_01/</id>
+    <published>2022-03-25T18:03:12.000Z</published>
+    <updated>2022-03-27T18:08:17.998Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;STM32F429-LTDC-驱动RGB屏幕出现抖动的解决方法&quot;&gt;&lt;a href=&quot;#STM32F429-LTDC-驱动RGB屏幕出现抖动的解决方法&quot; class=&quot;headerlink&quot; title=&quot;STM32F429 LTDC
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
+    
+      <category term="LTDC不稳定" scheme="https://359303267.github.io/tags/LTDC%E4%B8%8D%E7%A8%B3%E5%AE%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）</title>
+    <link href="https://359303267.github.io/STM32_F429_LittleVGL_02/"/>
+    <id>https://359303267.github.io/STM32_F429_LittleVGL_02/</id>
+    <published>2022-03-25T17:57:42.000Z</published>
+    <updated>2022-03-27T18:02:22.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;STM32F429-移植LittleVGL-8-2（4-3寸RGB-800-480，SDRAM双缓冲区，有触摸）&quot;&gt;&lt;a href=&quot;#STM32F429-移植LittleVGL-8-2（4-3寸RGB-800-480，SDRAM双缓冲区，有触摸）&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
+    
+      <category term="LittleVGL8" scheme="https://359303267.github.io/tags/LittleVGL8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）</title>
+    <link href="https://359303267.github.io/STM32_F429_LittleVGL_01/"/>
+    <id>https://359303267.github.io/STM32_F429_LittleVGL_01/</id>
+    <published>2022-03-21T15:49:54.000Z</published>
+    <updated>2022-03-27T17:51:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）&quot;&gt;&lt;a href=&quot;#正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
+    
+      <category term="LittleVGL" scheme="https://359303267.github.io/tags/LittleVGL/"/>
+    
+      <category term="lvgl" scheme="https://359303267.github.io/tags/lvgl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正点原子F429开发板使用STM32CubeMX驱动板载SDRAM</title>
+    <link href="https://359303267.github.io/STM32_SDRAM_01/"/>
+    <id>https://359303267.github.io/STM32_SDRAM_01/</id>
+    <published>2022-03-20T18:40:34.000Z</published>
+    <updated>2022-03-27T17:48:05.190Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;正点原子F429开发板使用STM32CubeMX驱动板载SDRAM&quot;&gt;&lt;a href=&quot;#正点原子F429开发板使用STM32CubeMX驱动板载SDRAM&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
+    
+      <category term="SDRAM" scheme="https://359303267.github.io/tags/SDRAM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</title>
+    <link href="https://359303267.github.io/STM32_LTDC_RGB_800x480_01/"/>
+    <id>https://359303267.github.io/STM32_LTDC_RGB_800x480_01/</id>
+    <published>2022-03-20T17:32:22.000Z</published>
+    <updated>2022-03-27T17:44:51.321Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD&quot;&gt;&lt;a href=&quot;#正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
+    
+      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
+    
+      <category term="RGBLCD" scheme="https://359303267.github.io/tags/RGBLCD/"/>
+    
+  </entry>
   
   <entry>
     <title>迪文串口屏T5L STM32 51驱动程序分享</title>
@@ -46,7 +213,7 @@
     <link href="https://359303267.github.io/STM32_UART_TxRx_DMA/"/>
     <id>https://359303267.github.io/STM32_UART_TxRx_DMA/</id>
     <published>2021-07-22T14:16:37.000Z</published>
-    <updated>2021-07-22T16:21:43.272Z</updated>
+    <updated>2021-08-06T13:49:30.597Z</updated>
     
     <summary type="html">
     
@@ -484,106 +651,6 @@
       <category term="分享" scheme="https://359303267.github.io/tags/%E5%88%86%E4%BA%AB/"/>
     
       <category term="笔记" scheme="https://359303267.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用好fastboot命令，刷机加锁不用再找工具！</title>
-    <link href="https://359303267.github.io/fastboot-01/"/>
-    <id>https://359303267.github.io/fastboot-01/</id>
-    <published>2018-09-02T14:14:15.000Z</published>
-    <updated>2019-08-23T07:51:24.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;手机刷机我想很多人都折腾过吧，我想大多数人都是去找对应品牌的专用刷机工具。其实现在很多手机都有fastboot模式（可以重启到Bootloader进入），这是可以说是一种快速通用的刷机模式，那么我们通过fastboot这个工具就可以对手机进行刷写了。fastbo
-        
-      
-    
-    </summary>
-    
-    
-      <category term="杂七杂八的教程" scheme="https://359303267.github.io/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="刷机" scheme="https://359303267.github.io/tags/%E5%88%B7%E6%9C%BA/"/>
-    
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-      <category term="fastboot" scheme="https://359303267.github.io/tags/fastboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈Kindle这个玩意儿</title>
-    <link href="https://359303267.github.io/kindle-01/"/>
-    <id>https://359303267.github.io/kindle-01/</id>
-    <published>2018-09-01T10:58:37.000Z</published>
-    <updated>2019-08-08T17:19:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Kindle只能看书&quot;&gt;&lt;a href=&quot;#Kindle只能看书&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="我的Kindle" scheme="https://359303267.github.io/categories/%E6%88%91%E7%9A%84Kindle/"/>
-    
-    
-      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-      <category term="Kindle" scheme="https://359303267.github.io/tags/Kindle/"/>
-    
-      <category term="杂谈" scheme="https://359303267.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我修改PE的一点小经验</title>
-    <link href="https://359303267.github.io/PE-01/"/>
-    <id>https://359303267.github.io/PE-01/</id>
-    <published>2018-08-31T09:44:57.000Z</published>
-    <updated>2018-11-17T14:32:04.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="WinPE" scheme="https://359303267.github.io/categories/WinPE/"/>
-    
-    
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-      <category term="WinPE" scheme="https://359303267.github.io/tags/WinPE/"/>
-    
-      <category term="U盘启动" scheme="https://359303267.github.io/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/"/>
-    
-      <category term="工具集" scheme="https://359303267.github.io/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
     
   </entry>
   

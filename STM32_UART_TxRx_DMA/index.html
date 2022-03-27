@@ -169,10 +169,6 @@
         <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
       </div>
       
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
     </div>
     <nav id="nav" class="nav">
       <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
@@ -259,7 +255,7 @@
 <p>最后测试，串口可以同时收发数据，不会发生卡死的情况了。<br>如果发送的时候不想占用CPU资源，也可以使用DMA来发送数据，在CubeMX里面添加串口发送的DMA通道，并设置优先级，这里的优先级可以设置与接收相同。发送时只需要调用HAL_UART_Transmit_DMA这个函数就可以发送了。</p>
 <p>HAL_UART_Transmit_DMA(&amp;huart2, “uart2 send test\r\n”, sizeof(“uart2 send test\r\n”));</p>
 <p>比如fputc函数可以这样改：</p>
-<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fputc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ch,FILE *f)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">uint8_t</span> temp[<span class="hljs-number">1</span>]=&#123;ch&#125;;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> USE_HAL_DRIVER</span><br>    HAL_UART_Transmit(&amp;huart1,temp,<span class="hljs-number">1</span>,<span class="hljs-number">0xff</span>);        <span class="hljs-comment">//UartHandle是串口的句柄</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span><br>    USART1-&gt;DR = temp[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">while</span>((USART1-&gt;SR &amp; <span class="hljs-number">0x40</span>) == <span class="hljs-number">0</span>);<br><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fputc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ch,FILE *f)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">uint8_t</span> temp[<span class="hljs-number">1</span>]=&#123;ch&#125;;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> USE_HAL_DRIVER</span><br>    HAL_UART_Transmit_DMA(&amp;huart1,temp,<span class="hljs-number">1</span>);        <span class="hljs-comment">//UartHandle是串口的句柄</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span><br>    USART1-&gt;DR = temp[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">while</span>((USART1-&gt;SR &amp; <span class="hljs-number">0x40</span>) == <span class="hljs-number">0</span>);<br><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
     </main>
@@ -364,21 +360,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">18</a></div>
+      <div><a href="/archives/">23</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">7</a></div>
+      <div><a href="/categories/">8</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">28</a></div>
+      <div><a href="/tags/">36</a></div>
     </div>
     
     
@@ -439,7 +435,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2021</span>
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2022</span>
         </div>
         
         <div class="busuanzi">
