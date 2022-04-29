@@ -202,6 +202,120 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/" itemprop="url">嵌入式QT屏幕旋转</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-04-22T15:28:23+08:00">2022-04-22 15:28:23</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      嵌入式QT屏幕旋转我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程： 修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量： 1234#旋转屏幕90度export QT_QPA_EGLFS_ROTATION=90 #旋转触摸屏90度export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/QT/" rel="tag"><i class="fas fa-tags"></i>QT</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/" itemprop="url">破解Linux用户名密码（使用john暴力破解）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-04-22T15:10:03+08:00">2022-04-22 15:10:03</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      破解Linux用户名密码（使用john暴力破解）买了一块华清远见的FS-MP1A（MP157）开发板，结果刷ubuntu系统的时候，发现登录不了，找了好久都没有找到登录密码，于是开始bing…就找到了使用john工具暴力破解密码的方法，下面是操作过程： 先下载john工具，下载地址：John the Ripper password cracker (openwall.com)我下载的是Windows版。 提取出需要破解系统的**/etc/passwd和/etc/shadow**文件。 执行命令，用于合并passwd和shadow中的内容： 1.\unshadow.exe C:\Users\Lenovo\Desktop\passwd C:\Users\Lenovo\Desktop\shadow &gt; test.txt 执行命令，开始破解： 1.\john.exe test.txt 这里会报错： 1Error: UTF-16 BOM seen in input file. 使用记事本将编码转换为ANSI格式，再次执行破解命令，得到输出： 123456789101112131415161
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
+        
+        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tags"></i>教程</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -652,110 +766,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_noDMA/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_UART_TxRx_noDMA/" itemprop="url">STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-07-16T16:02:22+08:00">2021-07-16 16:02:22</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。 我也尝试了使用网络上的例程来实现，不知是HAL库的原因还是什么，要么是无法正常接收数据，要么就是无法进入空闲中断，因此自己摸索了好久。 现在的代码思路是：STM32的串口有一个空闲中断的功能，串口在没有数据传输的时候会进入空闲中断，因此利用空闲中断可以接收任意不定长且无起始和结束标志的数据。 首先在STM32 CubeMX中正常配置串口接收，并打开串口中断，我这里勾选了创建默认HAL_UART_IRQHandler函数的选项。 工程创建完毕之后，在main.c文件中，创建两个串口缓冲数组，以及两个unsigned char型变量用来存放接收到的串口数据。在main函数中，需要调用HAL_UART_Receive_IT函数来对串口接收中断进行配置。 
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_POCSAG_Transmit/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_POCSAG_Transmit/" itemprop="url">基于STM32的寻呼发射器开源啦！！</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-26T19:22:30+08:00">2021-01-26 19:22:30</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      基于STM32的寻呼发射器开源啦！！这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系&#x33;&#x35;&#57;&#x33;&#48;&#51;&#50;&#x36;&#x37;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d; 项目介绍这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：https://www.bilibili.com/video/BV1YE411N7p7/ 相当于小型寻呼台
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/PCB/" rel="tag"><i class="fas fa-tags"></i>PCB</a>
-        
-        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -802,21 +812,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">24</a></div>
+      <div><a href="/archives/">26</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">8</a></div>
+      <div><a href="/categories/">9</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">36</a></div>
+      <div><a href="/tags/">40</a></div>
     </div>
     
     

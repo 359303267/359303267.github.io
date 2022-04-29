@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>嵌入式QT屏幕旋转</title>
+      <link href="/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/"/>
+      <url>/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/</url>
+      
+        <content type="html"><![CDATA[<h1 id="嵌入式QT屏幕旋转"><a href="#嵌入式QT屏幕旋转" class="headerlink" title="嵌入式QT屏幕旋转"></a>嵌入式QT屏幕旋转</h1><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p><ol><li><p>修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90       <br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> QT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>破解Linux用户名密码（使用john暴力破解）</title>
+      <link href="/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/"/>
+      <url>/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="破解Linux用户名密码（使用john暴力破解）"><a href="#破解Linux用户名密码（使用john暴力破解）" class="headerlink" title="破解Linux用户名密码（使用john暴力破解）"></a>破解Linux用户名密码（使用john暴力破解）</h1><p>买了一块华清远见的FS-MP1A（MP157）开发板，结果刷ubuntu系统的时候，发现登录不了，找了好久都没有找到登录密码，于是开始bing…就找到了使用<strong>john</strong>工具暴力破解密码的方法，下面是操作过程：</p><ol><li><p>先下载john工具，下载地址：<a href="https://www.openwall.com/john/">John the Ripper password cracker (openwall.com)</a>我下载的是Windows版。</p></li><li><p>提取出需要破解系统的**/etc/passwd<strong>和</strong>/etc/shadow**文件。</p></li><li><p>执行命令，用于合并passwd和shadow中的内容：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">.\unshadow.exe C:\Users\Lenovo\Desktop\passwd C:\Users\Lenovo\Desktop\shadow &gt; test.txt<br></code></pre></td></tr></table></figure></li><li><p>执行命令，开始破解：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">.\john.exe test.txt<br></code></pre></td></tr></table></figure><p>这里会报错：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Error: UTF-16 BOM seen in input file.<br></code></pre></td></tr></table></figure><p>使用记事本将编码转换为ANSI格式，再次执行破解命令，得到输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs plain">Warning: detected hash type &quot;sha512crypt&quot;, but the string is also recognized as &quot;sha512crypt-opencl&quot;<br>Use the &quot;--format&#x3D;sha512crypt-opencl&quot; option to force loading these as that type instead<br>Using default input encoding: UTF-8<br>Loaded 2 password hashes with 2 different salts (sha512crypt, crypt(3) $6$ [SHA512 128&#x2F;128 SSE2 2x])<br>Cost 1 (iteration count) is 5000 for all loaded hashes<br>Will run 4 OpenMP threads<br>Proceeding with single, rules:Single<br>Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status<br>Warning: Only 2 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 4 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 6 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 2 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 4 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 5 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 3 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 5 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 3 candidates buffered for the current salt, minimum 8 needed for performance.<br>Warning: Only 7 candidates buffered for the current salt, minimum 8 needed for performance.<br>Further messages of this type will be suppressed.<br>To see less of these warnings, enable &#39;RelaxKPCWarningCheck&#39; in john.conf<br>Almost done: Processing the remaining buffered candidate passwords, if any.<br>Proceeding with wordlist:&#x2F;run&#x2F;password.lst, rules:Wordlist<br>1                (linux)<br>1                (root)<br>2g 0:00:00:04 DONE 2&#x2F;3 (2022-04-22 15:21) 0.4839g&#x2F;s 1023p&#x2F;s 1645c&#x2F;s 1645C&#x2F;s chacha..ford<br>Use the &quot;--show&quot; option to display all of the cracked passwords reliably<br>Session completed<br></code></pre></td></tr></table></figure></li><li><p>查看破解结果，使用记事本打开john.pot文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">$6$J9pIEJ7t$d7Lnt154swKT.deamo.KWpu66wLfEHd&#x2F;YAhW5bqcZqDXH3zlAPs3I3nJdOnq0o3zL7AL&#x2F;v6GfzGQmAuzVnDHx1:1<br>$6$b1xnKYmz$G4fIZsc5PWvPcZ0yKcVx7GkJodRYE5OMOm3nGdHOCu9W6NYlD9D4D7wMhPusErUeL8nFLuMTq25znw2OXIoy31:1<br></code></pre></td></tr></table></figure><p>冒号后面的就是明文密码，可以看到密码为“1”。</p><p>真是服了，忙活半天原来密码这么简单。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32 F429 LittleVGL 使用DMA2D 加速（阻塞式）</title>
       <link href="/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/"/>
       <url>/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/</url>
