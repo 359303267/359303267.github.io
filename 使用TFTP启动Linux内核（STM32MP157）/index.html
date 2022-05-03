@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: 知识就是力量 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>使用TFTP启动Linux内核（STM32MP157） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -197,22 +197,155 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">知识就是力量</h1>
+<div id="post" class="page">
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/zhishijiushililiang/" itemprop="url">《知识就是力量第六期笔记分享》</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-04T12:10:42+08:00">09-04</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">使用TFTP启动Linux内核（STM32MP157）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-03T23:16:04+08:00">2022-05-03 23:16:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="使用TFTP启动Linux内核（STM32MP157）"><a href="#使用TFTP启动Linux内核（STM32MP157）" class="headerlink" title="使用TFTP启动Linux内核（STM32MP157）"></a>使用TFTP启动Linux内核（STM32MP157）</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>在<strong>Ubuntu</strong>虚拟机中，安装TFTP服务：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install tftpd-hpa<br></code></pre></td></tr></table></figure>
+
+<p>然后将内核文件复制到**/var/lib/tftpboot**目录中：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp uImage /var/lib/tftpboot<br></code></pre></td></tr></table></figure>
+
+<p>复制设备树文件：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot<br></code></pre></td></tr></table></figure>
+
+<p>测试服务端是否正常（可以忽略）：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp localhost<br>tftp&gt; get uImage<br>Received 7574653 bytes in 1.7 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="开发板配置"><a href="#开发板配置" class="headerlink" title="开发板配置"></a>开发板配置</h2><p>进入U-boot命令，下载内核：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp 0xc2000040 uImage<br></code></pre></td></tr></table></figure>
+
+<p>下载设备树：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp 0xc1000000 stm32mp157a-fsmp1a-mipi050.dtb<br></code></pre></td></tr></table></figure>
+
+<p>启动：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootm 0xc2000040 - 0xc1000000<br></code></pre></td></tr></table></figure>
+
+<p>测试可以启动。</p>
+<p>为了避免每次启动都输入这么多命令，可以将这些命令保存成变量：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set tftpboot &#39;tftp 0xc2000040 uImage;tftp 0xc1000000 stm32mp157a-fsmp1a-mipi050.dtb;bootm 0xc2000040 - 0xc1000000&#39;<br></code></pre></td></tr></table></figure>
+
+<p>将变量保存到SD/MMC：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">env save<br># saveenv    命令也可以<br></code></pre></td></tr></table></figure>
+
+<p>保存过后，需要启动的时候只需要在U-boot中输入命令：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">run tftpboot<br></code></pre></td></tr></table></figure>
+
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/NFS/" rel="tag"><i class="fas fa-tags"></i>NFS</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/" rel="next" title="使用NFS挂载rootfs启动Linux（STM32MP157）"><i class="fas fa-angle-left"></i><span class="nav-title">使用NFS挂载rootfs启动Linux（STM32MP157）</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "mp",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -275,6 +408,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89"><span class="toc-text">使用TFTP启动Linux内核（STM32MP157）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">服务端配置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%BC%80%E5%8F%91%E6%9D%BF%E9%85%8D%E7%BD%AE"><span class="toc-text">开发板配置</span></a></li></ol></li></ol></div>
+    </div>
+    
     
     
     <hr>

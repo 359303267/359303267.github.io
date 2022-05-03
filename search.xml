@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>使用TFTP启动Linux内核（STM32MP157）</title>
+      <link href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/"/>
+      <url>/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用TFTP启动Linux内核（STM32MP157）"><a href="#使用TFTP启动Linux内核（STM32MP157）" class="headerlink" title="使用TFTP启动Linux内核（STM32MP157）"></a>使用TFTP启动Linux内核（STM32MP157）</h1><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>在<strong>Ubuntu</strong>虚拟机中，安装TFTP服务：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install tftpd-hpa<br></code></pre></td></tr></table></figure><p>然后将内核文件复制到**/var/lib/tftpboot**目录中：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp uImage /var/lib/tftpboot<br></code></pre></td></tr></table></figure><p>复制设备树文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot<br></code></pre></td></tr></table></figure><p>测试服务端是否正常（可以忽略）：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp localhost<br>tftp&gt; get uImage<br>Received 7574653 bytes in 1.7 seconds<br></code></pre></td></tr></table></figure><h2 id="开发板配置"><a href="#开发板配置" class="headerlink" title="开发板配置"></a>开发板配置</h2><p>进入U-boot命令，下载内核：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp 0xc2000040 uImage<br></code></pre></td></tr></table></figure><p>下载设备树：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp 0xc1000000 stm32mp157a-fsmp1a-mipi050.dtb<br></code></pre></td></tr></table></figure><p>启动：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootm 0xc2000040 - 0xc1000000<br></code></pre></td></tr></table></figure><p>测试可以启动。</p><p>为了避免每次启动都输入这么多命令，可以将这些命令保存成变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set tftpboot &#39;tftp 0xc2000040 uImage;tftp 0xc1000000 stm32mp157a-fsmp1a-mipi050.dtb;bootm 0xc2000040 - 0xc1000000&#39;<br></code></pre></td></tr></table></figure><p>将变量保存到SD/MMC：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">env save<br># saveenv    命令也可以<br></code></pre></td></tr></table></figure><p>保存过后，需要启动的时候只需要在U-boot中输入命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">run tftpboot<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> NFS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用NFS挂载rootfs启动Linux（STM32MP157）</title>
+      <link href="/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/"/>
+      <url>/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用NFS挂载rootfs启动Linux（STM32MP157）"><a href="#使用NFS挂载rootfs启动Linux（STM32MP157）" class="headerlink" title="使用NFS挂载rootfs启动Linux（STM32MP157）"></a>使用NFS挂载rootfs启动Linux（STM32MP157）</h1><p>今天尝试使用NFS挂载的方式启动华清远见FSMP-1A开发板，又碰到了很多问题，卡了我很长时间，现在解决了，笔记分享一下。</p><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>首先在<strong>Ubuntu</strong>主机内安装nfs服务：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install nfs-kernel-server<br></code></pre></td></tr></table></figure><p>修改nfs服务的配置文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vi /etc/exports<br></code></pre></td></tr></table></figure><p>添加以下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain"># 下面的路径需要修改<br>&#x2F;home&#x2F;ubuntu&#x2F;nfs_rootfs        *(rw,sync,no_root_squash)<br></code></pre></td></tr></table></figure><p>然后重启nfs-kernel-server服务：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl restart nfs-kernel-server<br></code></pre></td></tr></table></figure><p>如果此时发生错误，通常是路径不对，请检查这个路径的目录是否存在！</p><h2 id="开发板配置"><a href="#开发板配置" class="headerlink" title="开发板配置"></a>开发板配置</h2><p>进入U-boot命令，然后设置<strong>bootargs</strong>变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set bootargs root&#x3D;&#x2F;dev&#x2F;nfs nfsroot&#x3D;192.168.108.219:&#x2F;home&#x2F;ubuntu&#x2F;nfs_rootfs,nfsvers&#x3D;3 ip&#x3D;dhcp rootwait rw earlyprintk console&#x3D;ttySTM0,115200<br></code></pre></td></tr></table></figure><p>参数解释：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set bootargs root&#x3D;&#x2F;dev&#x2F;nfs nfsroot&#x3D;$服务端IP:$服务端路径,nfsvers&#x3D;3 ip&#x3D;dhcp rootwait rw earlyprintk console&#x3D;ttySTM0,115200<br></code></pre></td></tr></table></figure><p>其中，nfsvers=3参数一定要加，之前一直无法挂载成功就是这个原因。具体原因是内核默认使用v2版本的nfs协议，而现在nfs-kernel-server默认v3以上版本协议，所以造成无法挂载。</p><p>然后就可以尽情玩耍了，后来发现dev目录下没有console和null节点也可以挂载，如果碰到不能启动的情况，可以试试手动创建console和null节点。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> NFS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>嵌入式QT屏幕旋转</title>
       <link href="/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/"/>
       <url>/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/</url>

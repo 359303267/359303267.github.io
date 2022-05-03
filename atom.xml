@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2022-04-22T09:44:08.440Z</updated>
+  <updated>2022-05-03T15:30:51.242Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用TFTP启动Linux内核（STM32MP157）</title>
+    <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/</id>
+    <published>2022-05-03T15:16:04.000Z</published>
+    <updated>2022-05-03T15:30:51.242Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用TFTP启动Linux内核（STM32MP157）&quot;&gt;&lt;a href=&quot;#使用TFTP启动Linux内核（STM32MP157）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用NFS挂载rootfs启动Linux（STM32MP157）</title>
+    <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/</id>
+    <published>2022-05-03T14:57:58.000Z</published>
+    <updated>2022-05-03T15:33:35.625Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用NFS挂载rootfs启动Linux（STM32MP157）&quot;&gt;&lt;a href=&quot;#使用NFS挂载rootfs启动Linux（STM32MP157）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
+    
+  </entry>
   
   <entry>
     <title>嵌入式QT屏幕旋转</title>
@@ -577,73 +639,6 @@
       <category term="单片机" scheme="https://359303267.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
       <category term="POCSAG" scheme="https://359303267.github.io/tags/POCSAG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何获得BP机的地址码和工作频率？</title>
-    <link href="https://359303267.github.io/Get-BP-Code/"/>
-    <id>https://359303267.github.io/Get-BP-Code/</id>
-    <published>2019-08-23T04:01:27.000Z</published>
-    <updated>2019-08-25T08:43:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;禁止转载&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;前言少叙&quot;&gt;&lt;a href=&quot;#前言少叙&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
-    
-    
-      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="BP机" scheme="https://359303267.github.io/tags/BP%E6%9C%BA/"/>
-    
-      <category term="单片机" scheme="https://359303267.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-      <category term="摩托罗拉" scheme="https://359303267.github.io/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/"/>
-    
-      <category term="POCSAG" scheme="https://359303267.github.io/tags/POCSAG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用PCB板做一把尺子</title>
-    <link href="https://359303267.github.io/PCB_Ruler/"/>
-    <id>https://359303267.github.io/PCB_Ruler/</id>
-    <published>2019-05-09T04:12:12.000Z</published>
-    <updated>2019-08-23T07:49:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;信仰&quot;&gt;&lt;a href=&quot;#信仰&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="PCB" scheme="https://359303267.github.io/categories/PCB/"/>
-    
-    
-      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="PCB" scheme="https://359303267.github.io/tags/PCB/"/>
-    
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
