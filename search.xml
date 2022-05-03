@@ -62,11 +62,11 @@
     
     
     <entry>
-      <title>嵌入式QT屏幕旋转</title>
-      <link href="/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/"/>
-      <url>/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/</url>
+      <title>嵌入式QT屏幕旋转（STM32MP157）</title>
+      <link href="/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/"/>
+      <url>/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<h1 id="嵌入式QT屏幕旋转"><a href="#嵌入式QT屏幕旋转" class="headerlink" title="嵌入式QT屏幕旋转"></a>嵌入式QT屏幕旋转</h1><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p><ol><li><p>修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90       <br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="嵌入式QT屏幕旋转（STM32MP157）"><a href="#嵌入式QT屏幕旋转（STM32MP157）" class="headerlink" title="嵌入式QT屏幕旋转（STM32MP157）"></a>嵌入式QT屏幕旋转（STM32MP157）</h1><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p><ol><li><p>修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90       <br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure></li></ol>]]></content>
       
       
       <categories>

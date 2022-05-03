@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>嵌入式QT屏幕旋转 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>嵌入式QT屏幕旋转（STM32MP157） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -201,7 +201,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="小小小日天">
        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
@@ -212,7 +212,7 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">嵌入式QT屏幕旋转</h1>
+      <h1 class="post-title" itemprop="name headline">嵌入式QT屏幕旋转（STM32MP157）</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -234,7 +234,7 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="嵌入式QT屏幕旋转"><a href="#嵌入式QT屏幕旋转" class="headerlink" title="嵌入式QT屏幕旋转"></a>嵌入式QT屏幕旋转</h1><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p>
+      <h1 id="嵌入式QT屏幕旋转（STM32MP157）"><a href="#嵌入式QT屏幕旋转（STM32MP157）" class="headerlink" title="嵌入式QT屏幕旋转（STM32MP157）"></a>嵌入式QT屏幕旋转（STM32MP157）</h1><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p>
 <ol>
 <li><p>修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量：</p>
 <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90       <br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure>
@@ -396,7 +396,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC"><span class="toc-text">嵌入式QT屏幕旋转</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89"><span class="toc-text">嵌入式QT屏幕旋转（STM32MP157）</span></a></li></ol></div>
     </div>
     
     
