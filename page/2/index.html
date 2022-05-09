@@ -202,6 +202,185 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_F429_LittleVGL_01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_F429_LittleVGL_01/" itemprop="url">正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-21T23:49:54+08:00">2022-03-21 23:49:54</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 编写画点函数LittleVGL的移植需要自己实现在屏幕任一点画颜色点的函数。 这里使用4.3寸RGB接口的屏幕，分辨率为800*480，并使用了外部SDRAM的部分空间作为显存使用。 F429板载的SDRAM读写地址从0xC0000000开始，这里就将这个地址作为显存的起始地址。 颜色格式使用RGB565，即一个像素点占用两个字节，可以计算得出800480分辨率屏幕占用的显存大小为$$800480*2=768000(byte)$$在ltdc.c中添加以下代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061/* USER CODE BEGIN 0 */#define GSDRA
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/LittleVGL/" rel="tag"><i class="fas fa-tags"></i>LittleVGL</a>
+        
+        <a class="post-tag button" href="/tags/lvgl/" rel="tag"><i class="fas fa-tags"></i>lvgl</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_SDRAM_01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_SDRAM_01/" itemprop="url">正点原子F429开发板使用STM32CubeMX驱动板载SDRAM</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-21T02:40:34+08:00">2022-03-21 02:40:34</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      正点原子F429开发板使用STM32CubeMX驱动板载SDRAM发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 由于我需要使用到SDRAM作为显存来使用，使用内部的SRAM空间作为显存显然不是明智的，因为屏幕的像素点很多，这样将会占用大量的内存，导致无法运行其他的东西。 STM32CubeMX配置工程废话不多说，首先打开STM32CubeMX，找到FMC选项，对其进行设置。这里的参数不是随便设置的，需要根据SDRAM芯片的参数进行设置。 这部分是时序相关的参数，根据SDRAM芯片手册并计算进行确定。 为了测试SDRAM是否正常工作，这里打开USART1，使用串口对SDRAM的读写进行测试。 这里只用到了串口发送部分，因此不需要进行其他设置。 使用Keil修改代码增加SDRAM命令函数参考正点原子例程代码，在fmc.c文件中添加如下代码，具体参数计算已在注释中说明。 123456789101112131415161718192021222324252627282930313233343536
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/SDRAM/" rel="tag"><i class="fas fa-tags"></i>SDRAM</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_LTDC_RGB_800x480_01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_LTDC_RGB_800x480_01/" itemprop="url">正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-21T01:32:22+08:00">2022-03-21 01:32:22</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 ​ 我不是买了一块4.3寸野火和正点原子双兼容的屏幕嘛，在测试和使用过程中积累了些许的经验，在此分享一下。 为什么这块屏幕能够做到双兼容？​ 首先要说明的是这块屏幕使用的是RGB的接口，并不是使用的MCU接口。RGB屏幕在使用时只需要配置好屏幕的时钟和一些扫描参数就可以了，而MCU屏幕需要对其写入指令，较为复杂。因此找到一款扫描参数和原厂相同的RGB屏幕要比找到一款使用相同主控的MCU屏幕容易得多，甚至你可以找到不同面板（TN和IPS）的RGB屏幕，而MCU屏幕除了进行定制，往往只能找到和原厂一样面板的屏幕（吐槽正点原子4.3寸800*480分辨率的MCU屏使用的是TN面板）。 STM32CubeMX配置步骤首先配置F429的RCC时钟部分，使用外部时钟信号。 接下来配置GPIO部分。 PB5为背光控制引脚，高电平时背光打开。 接下来是LTDC部分的引脚。因为正点原子F
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/RGBLCD/" rel="tag"><i class="fas fa-tags"></i>RGBLCD</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/DWinUart_Driver/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -286,7 +465,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      STM32 HAL库 使用DMA同时收发串口数据在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。 于是我开始在网络上查找资料（顺便吐槽一下，网络上的资料大部分都是转载，原创资料少之又少，就连老子的文章也被哪个阉人转载到了其他地方），发现HAL库有一个锁定机制，如果串口在发送数据的时候又接收数据，就会导致程序锁住，表现为卡死。于是我用STLink调试跟踪，发现最终程序死在了HAL_UART_IRQHandler函数中。网友大多表示要么放弃HAL库，要么就自己实现接收函数。我为了保证整个程序的移植性，最后决定继续使用HAL库，尝试使用其他办法解决串口同时收发的问题。 我突然想到之前有一个项目里使用的DMA来接收串口数据，哪个项目里串口是可以同时收发数据且多个串口都是可以同时使用的。于是我在此项目中使用DMA接收数据，发现程序运行良好，不再卡死。 使用DMA需要在CubeMX中串口的选项中
+      STM32 HAL库 使用DMA同时收发串口数据发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。 于是我开始在网络上查找资料（顺便吐槽一下，网络上的资料大部分都是转载，原创资料少之又少，就连老子的文章也被哪个阉人转载到了其他地方），发现HAL库有一个锁定机制，如果串口在发送数据的时候又接收数据，就会导致程序锁住，表现为卡死。于是我用STLink调试跟踪，发现最终程序死在了HAL_UART_IRQHandler函数中。网友大多表示要么放弃HAL库，要么就自己实现接收函数。我为了保证整个程序的移植性，最后决定继续使用HAL库，尝试使用其他办法解决串口同时收发的问题。 我突然想到之前有一个项目里使用的DMA来接收串口数据，哪个项目里串口是可以同时收
       
     </main>
     <footer class="post-footer">
@@ -333,7 +512,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。 我也尝试了使用网络上的例程来实现，不知是HAL库的原因还是什么，要么是无法正常接收数据，要么就是无法进入空闲中断，因此自己摸索了好久。 现在的代码思路是：STM32的串口有一个空闲中断的功能，串口在没有数据传输的时候会进入空闲中断，因此利用空闲中断可以接收任意不定长且无起始和结束标志的数据。 首先在STM32 CubeMX中正常配置串口接收，并打开串口中断，我这里勾选了创建默认HAL_UART_IRQHandler函数的选项。 工程创建完毕之后，在main.c文件中，创建两个串口缓冲数组，以及两个unsigned char型变量用来存放接收到的串口数据。在main函数中，需要调用HAL_UART_Receive_IT函数来对串口接收中断进行配置。 
+      STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。 我也尝试了使用网络上的例程来实现，不知是HAL库的原因还是什么，要么是无法正常接收数据，要么就是无法进入空闲中断，因此自己摸索了好久。 现在的代码思路是：STM32的串口有一个空闲中断的功能，串口在没有数据传输的时候会进入空闲中断，因此利用空闲中断可以接收任意不定长且无起始和结束标志的数据。 首先在STM32 CubeMX中正常配置串口接收，并打开串口中断，我这里勾选了创建默认HAL_UART_IRQHandler函数的选项。 工程创建完毕之后，在main.c文件中，创建两个串口缓冲数组，以及两个unsig
       
     </main>
     <footer class="post-footer">
@@ -553,190 +732,9 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/kindle-02/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/kindle-02/" itemprop="url">记一次kindle Paperwhite3 拆机降级</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-22T00:40:33+08:00">2020-01-22 00:40:33</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%88%91%E7%9A%84Kindle/" itemprop="url" rel="index"><span itemprop="name">我的Kindle</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      记一次kindle Paperwhite3 拆机降级降级步骤拆机降级理论上支持任何版本，也可以救砖。 原理就是进入fastboot模式，使用fastboot刷写内核和文件系统。懂的就不用往下看了，不懂得继续please. 先拆机，使用usb转串口模块连接kpw3，我用的3.3v电平的模块，kindle是1.8v电平的，所以最好别使用5v TTL电平。 打开putty软件，打开对应的串口号，波特率是115200。 重启kindle，putty此时会输出一大堆debug信息，不要管，重启之后立即狂按enter键（一定是记得是重启之后立马狂按，否则就会错过进入uboot的机会）。 几秒之后会出现uboot命令行，这时候输入命令进入bist： 1bist 接着再输入命令进入fastboot模式： 1fastboot 使用zadig安装驱动，驱动类型选择libusb 使用kindletool.exe对固件进行解包，想刷哪个版本的就解对应的包，解包命令： 1kindletool extract [固件.bin] [输出文件夹] 解包输出的uImage文件就是内核，可以直接刷入，rootfs.img
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
-        
-        <a class="post-tag button" href="/tags/Kindle/" rel="tag"><i class="fas fa-tags"></i>Kindle</a>
-        
-        <a class="post-tag button" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fas fa-tags"></i>杂谈</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/BP-Password/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/BP-Password/" itemprop="url">几种BP机的解密方法</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-25T17:13:45+08:00">2019-08-25 17:13:45</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      摩托罗拉大顾问型号解密： 一、首先你需要一个BP机写码设备（USB转TTL串口小板也可以，要保证写入数据时接触良好）。二、你需要一个配套的解密软件，可以从闲鱼平台向我购买。这个软件是我自己编写的，为了防止他人盗用，加入了一个简单的激活码认证。购买时留言从博客上看到的只需要十块钱就可以得到这个软件，比什么60块钱的解密小板靠谱多了，经过了很多大顾问的测试。 其原理是向CPU写入一段特殊的数据，使其将EEPROM中的加密使能位清除。 其他资料来源中国知网学问：
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
-        
-        <a class="post-tag button" href="/tags/%E5%A4%A7%E9%A1%BE%E9%97%AE/" rel="tag"><i class="fas fa-tags"></i>大顾问</a>
-        
-        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
-        
-        <a class="post-tag button" href="/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/" rel="tag"><i class="fas fa-tags"></i>摩托罗拉</a>
-        
-        <a class="post-tag button" href="/tags/%E5%AF%BB%E5%91%BC%E6%9C%BA%E8%A7%A3%E5%AF%86/" rel="tag"><i class="fas fa-tags"></i>寻呼机解密</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/POCSAG/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/POCSAG/" itemprop="url">开源！使用单片机发送POCSAG编码呼响BP机</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T14:11:17+08:00">2019-08-23 14:11:17</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      禁止转载 ​ 需要注意的是，现在BP机工作频段已经被国家收回，所以自己使用手台、车台等大功率无线发射器在这个频段发射无线电波是违法的，所以需要进行发射信号的衰减，无线发射功率控制在0.1W之内是没有问题的。 ​ 单片机使用STC公司的IAP15W4K58S4，时钟频率为27MHz，使用串口1来发送数据，串口波特率为115200。支持1200和512比特速率的POCSAG编码，支持正负相位，可以发送数字信息和汉字信息（不支持混输） ​ 对讲机我用的是宝峰UV-5R。单片机的P36接对讲机的压控振荡器输入端，P35接对讲机的PTT控制端，还要和对讲机共地（至于这三个接线端具体接在哪一个位置，网上一搜就有了）。对讲机的发射频率需要调到BP机的工作频率一样。 ​ BP机我用摩托罗拉精英王和大顾问实验成功，如果不响可以试试切换一下相位。如果显示乱码就换一个响声/功能位。​​ 如果就是不响，要知道哪有这么容易响？地址码、BP机工作频率、对讲机频率调到和BP机工作频率一致、对讲机不能有频偏。如果就是不响，要考虑BP机是否被改过频率，很多BP机在使用的时候都是改过频率的，或者就是对讲机有频偏，可以使用
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
-        
-        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
-        
-        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
   </nav>
   
   
@@ -780,14 +778,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     

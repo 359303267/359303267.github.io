@@ -234,7 +234,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="正点原子F429开发板使用STM32CubeMX驱动板载SDRAM"><a href="#正点原子F429开发板使用STM32CubeMX驱动板载SDRAM" class="headerlink" title="正点原子F429开发板使用STM32CubeMX驱动板载SDRAM"></a>正点原子F429开发板使用STM32CubeMX驱动板载SDRAM</h1><p>由于我需要使用到SDRAM作为显存来使用，使用内部的SRAM空间作为显存显然不是明智的，因为屏幕的像素点很多，这样将会占用大量的内存，导致无法运行其他的东西。</p>
+      <h1 id="正点原子F429开发板使用STM32CubeMX驱动板载SDRAM"><a href="#正点原子F429开发板使用STM32CubeMX驱动板载SDRAM" class="headerlink" title="正点原子F429开发板使用STM32CubeMX驱动板载SDRAM"></a>正点原子F429开发板使用STM32CubeMX驱动板载SDRAM</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p>由于我需要使用到SDRAM作为显存来使用，使用内部的SRAM空间作为显存显然不是明智的，因为屏幕的像素点很多，这样将会占用大量的内存，导致无法运行其他的东西。</p>
 <h2 id="STM32CubeMX配置工程"><a href="#STM32CubeMX配置工程" class="headerlink" title="STM32CubeMX配置工程"></a>STM32CubeMX配置工程</h2><p>废话不多说，首先打开STM32CubeMX，找到FMC选项，对其进行设置。这里的参数不是随便设置的，需要根据SDRAM芯片的参数进行设置。</p>
 <p><img src="/images/STM32_SDRAM_01/Snipaste_2022-03-21_01-45-00.png"></p>
 <p>这部分是时序相关的参数，根据SDRAM芯片手册并计算进行确定。</p>
@@ -376,14 +377,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     

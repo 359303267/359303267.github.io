@@ -234,7 +234,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD"><a href="#正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD" class="headerlink" title="正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD"></a>正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</h1><p>​    我不是买了一块4.3寸野火和正点原子双兼容的屏幕嘛，在测试和使用过程中积累了些许的经验，在此分享一下。</p>
+      <h1 id="正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD"><a href="#正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD" class="headerlink" title="正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD"></a>正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p>​    我不是买了一块4.3寸野火和正点原子双兼容的屏幕嘛，在测试和使用过程中积累了些许的经验，在此分享一下。</p>
 <h2 id="为什么这块屏幕能够做到双兼容？"><a href="#为什么这块屏幕能够做到双兼容？" class="headerlink" title="为什么这块屏幕能够做到双兼容？"></a>为什么这块屏幕能够做到双兼容？</h2><p>​    首先要说明的是这块屏幕使用的是RGB的接口，并不是使用的MCU接口。RGB屏幕在使用时只需要配置好屏幕的时钟和一些扫描参数就可以了，而MCU屏幕需要对其写入指令，较为复杂。因此找到一款扫描参数和原厂相同的RGB屏幕要比找到一款使用相同主控的MCU屏幕容易得多，甚至你可以找到不同面板（TN和IPS）的RGB屏幕，而MCU屏幕除了进行定制，往往只能找到和原厂一样面板的屏幕（吐槽正点原子4.3寸800*480分辨率的MCU屏使用的是TN面板）。</p>
 <h2 id="STM32CubeMX配置步骤"><a href="#STM32CubeMX配置步骤" class="headerlink" title="STM32CubeMX配置步骤"></a>STM32CubeMX配置步骤</h2><p>首先配置F429的RCC时钟部分，使用外部时钟信号。</p>
 <p><img src="/images/STM32_LTDC_RGB_800x480_01/Snipaste_2022-03-20_20-01-39.png"></p>
@@ -383,14 +384,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     

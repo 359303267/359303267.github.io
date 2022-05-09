@@ -234,7 +234,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）"><a href="#正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）" class="headerlink" title="正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）"></a>正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）</h1><h2 id="编写画点函数"><a href="#编写画点函数" class="headerlink" title="编写画点函数"></a>编写画点函数</h2><p>LittleVGL的移植需要自己实现在屏幕任一点画颜色点的函数。</p>
+      <h1 id="正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）"><a href="#正点原子F429开发板移植LittleVGL-6-0-2（4-3寸-RGB-LCD，无触摸）" class="headerlink" title="正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）"></a>正点原子F429开发板移植LittleVGL 6.0.2（4.3寸 RGB LCD，无触摸）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<h2 id="编写画点函数"><a href="#编写画点函数" class="headerlink" title="编写画点函数"></a>编写画点函数</h2><p>LittleVGL的移植需要自己实现在屏幕任一点画颜色点的函数。</p>
 <p>这里使用4.3寸RGB接口的屏幕，分辨率为800*480，并使用了外部SDRAM的部分空间作为显存使用。</p>
 <p>F429板载的SDRAM读写地址从0xC0000000开始，这里就将这个地址作为显存的起始地址。</p>
 <p>颜色格式使用<code>RGB565</code>，即一个像素点占用两个字节，可以计算得出800<em>480分辨率屏幕占用的显存大小为<br>$$<br>800</em>480*2=768000(byte)<br>$$<br>在ltdc.c中添加以下代码：</p>
@@ -448,14 +449,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     

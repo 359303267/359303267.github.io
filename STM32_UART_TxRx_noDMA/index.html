@@ -234,7 +234,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"><a href="#STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）" class="headerlink" title="STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"></a>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</h1><p>今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。</p>
+      <h1 id="STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"><a href="#STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）" class="headerlink" title="STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）"></a>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p>今天在HAL库串口接收任意长度上卡了好久，之前用的都是标准库或者HAL库+DMA的方式来写，今天这个项目用的是F429木有标准库可用，需要和其他模块配合，其他模块发的是不定长的数据且无起始和结束标志，串口又不能用DMA，所以只得使用接收中断和空闲中断的方式来解决。</p>
 <p>我也尝试了使用网络上的例程来实现，不知是HAL库的原因还是什么，要么是无法正常接收数据，要么就是无法进入空闲中断，因此自己摸索了好久。</p>
 <p>现在的代码思路是：STM32的串口有一个空闲中断的功能，串口在没有数据传输的时候会进入空闲中断，因此利用空闲中断可以接收任意不定长且无起始和结束标志的数据。</p>
 <p>首先在STM32 CubeMX中正常配置串口接收，并打开串口中断，我这里勾选了创建默认HAL_UART_IRQHandler函数的选项。</p>
@@ -353,14 +354,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     

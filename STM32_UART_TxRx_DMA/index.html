@@ -234,7 +234,8 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="STM32-HAL库-使用DMA同时收发串口数据"><a href="#STM32-HAL库-使用DMA同时收发串口数据" class="headerlink" title="STM32 HAL库 使用DMA同时收发串口数据"></a>STM32 HAL库 使用DMA同时收发串口数据</h1><p>在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。</p>
+      <h1 id="STM32-HAL库-使用DMA同时收发串口数据"><a href="#STM32-HAL库-使用DMA同时收发串口数据" class="headerlink" title="STM32 HAL库 使用DMA同时收发串口数据"></a>STM32 HAL库 使用DMA同时收发串口数据</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p>在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。</p>
 <p>于是我开始在网络上查找资料（顺便吐槽一下，网络上的资料大部分都是转载，原创资料少之又少，就连老子的文章也被哪个阉人转载到了其他地方），发现HAL库有一个锁定机制，如果串口在发送数据的时候又接收数据，就会导致程序锁住，表现为卡死。于是我用STLink调试跟踪，发现最终程序死在了HAL_UART_IRQHandler函数中。网友大多表示要么放弃HAL库，要么就自己实现接收函数。我为了保证整个程序的移植性，最后决定继续使用HAL库，尝试使用其他办法解决串口同时收发的问题。</p>
 <p>我突然想到之前有一个项目里使用的DMA来接收串口数据，哪个项目里串口是可以同时收发数据且多个串口都是可以同时使用的。于是我在此项目中使用DMA接收数据，发现程序运行良好，不再卡死。</p>
 <p>使用DMA需要在CubeMX中串口的选项中添加DMA通道：</p>
@@ -360,14 +361,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">28</a></div>
+      <div><a href="/archives/">31</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
+      <div><a href="/categories/">10</a></div>
     </div>
     
     
