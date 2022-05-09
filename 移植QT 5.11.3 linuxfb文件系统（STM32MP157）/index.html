@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>移植QT 5.11.3 linuxfb文件系统（STM32MP157） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">移植QT 5.11.3 linuxfb文件系统（STM32MP157）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-09T20:48:42+08:00">2022-05-09 20:48:42</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="移植QT-5-11-3-linuxfb文件系统（STM32MP157）"><a href="#移植QT-5-11-3-linuxfb文件系统（STM32MP157）" class="headerlink" title="移植QT 5.11.3 linuxfb文件系统（STM32MP157）"></a>移植QT 5.11.3 linuxfb文件系统（STM32MP157）</h1><p><strong>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</strong></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>解压<strong>qt-everywhere-src-5.11.3.tar.xz</strong>到/opt目录下：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo tar -xvf qt-everywhere-src-5.11.3.tar.xz -C /opt<br></code></pre></td></tr></table></figure>
+
+<p>进入/opt/qt-everywhere-src-5.11.3目录：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">cd &#x2F;opt&#x2F;qt-everywhere-src-5.11.3<br></code></pre></td></tr></table></figure>
+
+<p>安装依赖（参考野火）：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install python -y<br>sudo apt install g++ make qt3d5-dev-tools -y<br>sudo apt install qml-module-qtquick-xmllistmodel -y<br>sudo apt install qml-module-qtquick-virtualkeyboard qml-module-qtquick-privatewidgets qml-module-qtquick-dialogs qml -y<br>sudo apt install libqt53dquickscene2d5 libqt53dquickrender5 libqt53dquickinput5 libqt53dquickextras5 libqt53dquickanimation5 libqt53dquick5 -y<br>sudo apt install qtdeclarative5-dev qml-module-qtwebengine qml-module-qtwebchannel qml-module-qtmultimedia qml-module-qtaudioengine -y<br></code></pre></td></tr></table></figure>
+
+<p>修改qmake.conf配置文件：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vi qtbase/mkspecs/linux-arm-gnueabi-g++/qmake.conf<br></code></pre></td></tr></table></figure>
+
+<p>修改如下（主要修改交叉编译器路径）：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><br><span class="hljs-meta">#</span><span class="bash"> qmake configuration <span class="hljs-keyword">for</span> building with arm-linux-gnueabi-g++</span><br><span class="hljs-meta">#</span><br><br>MAKEFILE_GENERATOR      = UNIX<br>CONFIG                 += incremental<br>QMAKE_INCREMENTAL_STYLE = sublib<br><br>include(../common/linux.conf)<br>include(../common/gcc-base-unix.conf)<br>include(../common/g++-unix.conf)<br><br><span class="hljs-meta">#</span><span class="bash"> modifications to g++.conf</span><br>QMAKE_CC                = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc<br>QMAKE_CXX               = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++<br>QMAKE_LINK              = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++<br>QMAKE_LINK_SHLIB        = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++<br><br><span class="hljs-meta">#</span><span class="bash"> modifications to linux.conf</span><br>QMAKE_AR                = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ar cqs<br>QMAKE_OBJCOPY           = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-objcopy<br>QMAKE_NM                = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-nm -P<br>QMAKE_STRIP             = /opt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-strip<br>load(qt_config)<br></code></pre></td></tr></table></figure>
+
+<p>查看特征列表：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./configure -list-features<br></code></pre></td></tr></table></figure>
+
+<p>这里时间比较长，耐心等一下，大概两分钟。</p>
+<p>设置编译选项（参考野火和正点原子）：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs plain">.&#x2F;configure \<br>     -prefix &#x2F;opt&#x2F;qt-armhf-5.11.3 \<br>     -xplatform linux-arm-gnueabi-g++ \<br>     -release \<br>     -opensource \<br>     -confirm-license \<br>     -no-openssl \<br>     -no-opengl \<br>     -no-xcb \<br>     -no-compile-examples \<br>     -no-pkg-config \<br>     -no-iconv \<br>     -no-glib \<br>     -skip qt3d \<br>     -skip qtactiveqt \<br>     -skip qtandroidextras \<br>     -skip qtcanvas3d \<br>     -skip qtconnectivity \<br>     -skip qtdatavis3d \<br>     -skip qtdoc \<br>     -skip qtgamepad \<br>     -skip qtlocation \<br>     -skip qtmacextras \<br>     -skip qtnetworkauth \<br>     -skip qtpurchasing \<br>     -skip qtremoteobjects \<br>     -skip qtscript \<br>     -skip qtscxml \<br>     -skip qtsensors \<br>     -skip qtspeech \<br>     -skip qtsvg \<br>     -skip qttools \<br>     -skip qttranslations \<br>     -skip qtwayland \<br>     -skip qtwebengine \<br>     -skip qtwebview \<br>     -skip qtwinextras \<br>     -skip qtx11extras \<br>     -skip qtxmlpatterns \<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><code class="hljs plain">Creating qmake...<br>.Done.<br><br>This is the Qt Open Source Edition.<br><br>You have already accepted the terms of the Open Source license.<br><br>Running configuration tests...<br>Done running configuration tests.<br><br>Configure summary:<br><br>Building on: linux-g++ (x86_64, CPU features: mmx sse sse2)<br>Building for: linux-arm-gnueabi-g++ (arm, CPU features: &lt;none&gt;)<br>Configuration: cross_compile use_gold_linker enable_new_dtags largefile precompile_header shared rpath release c++11 c++14 c++1z concurrent dbus no-pkg-config reduce_exports stl<br>Build options:<br>  Mode ................................... release<br>  Optimize release build for size ........ no<br>  Building shared libraries .............. yes<br>  Using C++ standard ..................... C++1z<br>  Using ccache ........................... no<br>  Using gold linker ...................... yes<br>  Using new DTAGS ........................ yes<br>  Using precompiled headers .............. yes<br>  Using LTCG ............................. no<br>  Target compiler supports:<br>    NEON ................................. no<br>  Build parts ............................ libs examples<br>Qt modules and options:<br>  Qt Concurrent .......................... yes<br>  Qt D-Bus ............................... yes<br>  Qt D-Bus directly linked to libdbus .... no<br>  Qt Gui ................................. yes<br>  Qt Network ............................. yes<br>  Qt Sql ................................. yes<br>  Qt Testlib ............................. yes<br>  Qt Widgets ............................. yes<br>  Qt Xml ................................. yes<br>Support enabled for:<br>  Using pkg-config ....................... no<br>  udev ................................... no<br>  Using system zlib ...................... no<br>Qt Core:<br>  DoubleConversion ....................... yes<br>    Using system DoubleConversion ........ no<br>  GLib ................................... no<br>  iconv .................................. no<br>  ICU .................................... no<br>  Tracing backend ........................ &lt;none&gt;<br>  Logging backends:<br>    journald ............................. no<br>    syslog ............................... no<br>    slog2 ................................ no<br>  Using system PCRE2 ..................... no<br>Qt Network:<br>  getifaddrs() ........................... yes<br>  IPv6 ifname ............................ yes<br>  libproxy ............................... no<br>  Linux AF_NETLINK ....................... yes<br>  OpenSSL ................................ no<br>    Qt directly linked to OpenSSL ........ no<br>  OpenSSL 1.1 ............................ no<br>  SCTP ................................... no<br>  Use system proxies ..................... yes<br>Qt Gui:<br>  Accessibility .......................... yes<br>  FreeType ............................... yes<br>    Using system FreeType ................ no<br>  HarfBuzz ............................... yes<br>    Using system HarfBuzz ................ no<br>  Fontconfig ............................. no<br>  Image formats:<br>    GIF .................................. yes<br>    ICO .................................. yes<br>    JPEG ................................. yes<br>      Using system libjpeg ............... no<br>    PNG .................................. yes<br>      Using system libpng ................ no<br>  EGL .................................... no<br>  OpenVG ................................. no<br>  OpenGL:<br>    Desktop OpenGL ....................... no<br>    OpenGL ES 2.0 ........................ no<br>    OpenGL ES 3.0 ........................ no<br>    OpenGL ES 3.1 ........................ no<br>    OpenGL ES 3.2 ........................ no<br>  Vulkan ................................. no<br>  Session Management ..................... yes<br>Features used by QPA backends:<br>  evdev .................................. yes<br>  libinput ............................... no<br>  INTEGRITY HID .......................... no<br>  mtdev .................................. no<br>  tslib .................................. no<br>  xkbcommon-evdev ........................ no<br>QPA backends:<br>  DirectFB ............................... no<br>  EGLFS .................................. no<br>  LinuxFB ................................ yes<br>  VNC .................................... yes<br>  Mir client ............................. no<br>Qt Widgets:<br>  GTK+ ................................... no<br>  Styles ................................. Fusion Windows<br>Qt PrintSupport:<br>  CUPS ................................... no<br>Qt Sql:<br>  DB2 (IBM) .............................. no<br>  InterBase .............................. no<br>  MySql .................................. no<br>  OCI (Oracle) ........................... no<br>  ODBC ................................... no<br>  PostgreSQL ............................. no<br>  SQLite2 ................................ no<br>  SQLite ................................. yes<br>    Using system provided SQLite ......... no<br>  TDS (Sybase) ........................... no<br>Qt Testlib:<br>  Tester for item models ................. yes<br>Qt SerialBus:<br>  Socket CAN ............................. yes<br>  Socket CAN FD .......................... yes<br>Qt QML:<br>  QML network support .................... yes<br>  QML debugging and profiling support .... yes<br>  QML delegate model ..................... yes<br>Qt Quick:<br>  Direct3D 12 ............................ no<br>  AnimatedImage item ..................... yes<br>  Canvas item ............................ yes<br>  Support for Qt Quick Designer .......... yes<br>  Flipable item .......................... yes<br>  GridView item .......................... yes<br>  ListView item .......................... yes<br>  Path support ........................... yes<br>  PathView item .......................... yes<br>  Positioner items ....................... yes<br>  Repeater item .......................... yes<br>  ShaderEffect item ...................... yes<br>  Sprite item ............................ yes<br>Qt Quick Controls 2:<br>  Styles ................................. Default Fusion Imagine Material Universal<br>Qt Quick Templates 2:<br>  Hover support .......................... yes<br>  Multi-touch support .................... yes<br>Qt Multimedia:<br>  ALSA ................................... no<br>  GStreamer 1.0 .......................... no<br>  GStreamer 0.10 ......................... no<br>  Video for Linux ........................ yes<br>  OpenAL ................................. no<br>  PulseAudio ............................. no<br>  Resource Policy (libresourceqt5) ....... no<br>  Windows Audio Services ................. no<br>  DirectShow ............................. no<br>  Windows Media Foundation ............... no<br><br>Note: Also available for Linux: linux-clang linux-icc<br><br>Qt is now configured for building. Just run &#39;make&#39;.<br>Once everything is built, you must run &#39;make install&#39;.<br>Qt will be installed into &#39;&#x2F;opt&#x2F;qt-armhf-5.11.3&#39;.<br><br>Prior to reconfiguration, make sure you remove any leftovers from<br>the previous build.<br><br></code></pre></td></tr></table></figure>
+
+<p>无报错，开始编译：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">make -j4<br></code></pre></td></tr></table></figure>
+
+<p>漫长的过程，等啊等啊等啊等。。。。。我的电脑编译了近40分钟。</p>
+<p>编译完成后没有成功的提示，只要日志没有错误信息就可以了。</p>
+<p>然后安装：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo make install<br></code></pre></td></tr></table></figure>
+
+<p>安装完成后，进入/opt/qt-armhf-5.11.3目录会看到QT的文件。</p>
+<p>在开发板上使用QT时，需要将这些文件拷贝到开发板相同的目录中才可以。</p>
+<p>拷贝到nfs_rootfs目录：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp -r qt-armhf-5.11.3 ~/nfs_rootfs/opt<br></code></pre></td></tr></table></figure>
+
+<p>设置环境变量：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">vi ~&#x2F;.bashrc<br></code></pre></td></tr></table></figure>
+
+<p>添加如下内容：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">export QTDIR&#x3D;&#x2F;opt&#x2F;qt-armhf-5.11.3<br>export QT_QPA_PLATFORM_PLUGIN_PATH&#x3D;$QTDIR&#x2F;plugins<br>export LD_LIBRARY_PATH&#x3D;$QTDIR&#x2F;lib:$QTDIR&#x2F;plugins&#x2F;platforms<br>export QT_QPA_FONTDIR&#x3D;$QTDIR&#x2F;lib&#x2F;fonts<br>export QT_QPA_PLATFORM&#x3D;linuxfb:fb&#x3D;&#x2F;dev&#x2F;fb0<br></code></pre></td></tr></table></figure>
+
+<p>建立字体存放文件夹：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkdir ~/nfs_rootfs/opt/qt-armhf-5.11.3/lib/fonts<br></code></pre></td></tr></table></figure>
+
+<p>下载文泉驿正黑字体：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install fonts-wqy-zenhei<br></code></pre></td></tr></table></figure>
+
+<p>复制字体：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc ~/nfs_rootfs/opt/qt-armhf-5.11.3/lib/fonts/<br></code></pre></td></tr></table></figure>
+
+<p>运行时需要添加参数：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">-platform linuxfb<br></code></pre></td></tr></table></figure>
+
+<p>完成！</p>
+<p>参考资料：</p>
+<p>[1] <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37654240/article/details/109639331">Qt源码编译configure参数列表（全）_尛少年的博客-CSDN博客_qt 编译参数</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/qt/embed/zh/latest/ebf_qt/install/install_arm.html">Qt环境搭建–ARM — 嵌入式Qt应用开发实战——基于鲁班猫 文档 (embedfire.com)</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/QT/" rel="tag"><i class="fas fa-tags"></i>QT</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/%E9%99%8D%E7%BA%A7VMware10%E8%83%BD%E5%A4%9F%E6%8F%90%E9%AB%98VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%843D%E8%83%BD%E5%8A%9B%E5%92%8C%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6/" rel="next" title="降级VMware10能够提高VMware虚拟机的3D能力和运行速度"><i class="fas fa-angle-left"></i><span class="nav-title">降级VMware10能够提高VMware虚拟机的3D能力和运行速度</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "mp",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">32</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">10</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">41</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E7%A7%BB%E6%A4%8DQT-5-11-3-linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89"><span class="toc-text">移植QT 5.11.3 linuxfb文件系统（STM32MP157）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2022</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

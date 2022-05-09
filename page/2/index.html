@@ -202,6 +202,65 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_F429_LittleVGL_02/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_F429_LittleVGL_02/" itemprop="url">STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-26T01:57:42+08:00">2022-03-26 01:57:42</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      STM32F429 移植LittleVGL 8.2（4.3寸RGB 800*480，SDRAM双缓冲区，有触摸）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 移植LittleVGL 8.2首先保证你的工程显示功能和触摸屏功能正常。 移植前需要完成的接口： 屏幕画点函数 触摸按下与释放识别函数 触摸坐标读取函数 OK，接下来进入正式的移植过程。 首先设置工程，使用AC6编译器，并勾选使用微库（因为工程中使用到了printf函数，不勾选会卡死）。 在工程中创建一个GUI目录，然后在GUI目录下新建两个文件夹： 解压lvgl-8.2.0.zip，将lvgl-8.2.0文件夹里的所有内容全部解压至lvgl目录中。 然后将lvgl目录下的lv_conf_template.h和lvgl.h移至父目录，即lvgl目录中。 将lv_conf_template.h更名为lv_conf.h： 将工程目录\GUI\lvgl\examples\porting下的所有文件复制到工程目录\GUI\lvgl_porti
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/LittleVGL8/" rel="tag"><i class="fas fa-tags"></i>LittleVGL8</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_F429_LittleVGL_01/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -693,45 +752,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/blog-update-info01/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/blog-update-info01/" itemprop="url">2020.02.05博客更新说明</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-02-05T15:20:09+08:00">2020-02-05 15:20:09</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      原Coding Page已经失效，且无法删除，所以重新更换了域名并关闭了https访问（开启https会大幅度降低网站的访问速度）。 更新了ARIA主题，对原来一些失效的链接进行重定向。 更换了评论系统，由于Github业务调整，所以原来的Gitment评论系统换成Valine，所以原有的评论不会显示在页面上。请大家在评论的时候主动提交昵称和邮箱，这样才会接到回复提醒，也可以使用Github账号在原来的https://github.com/359303267/Gitment/issues链接上进行评论。
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -778,7 +798,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">31</a></div>
+      <div><a href="/archives/">32</a></div>
     </div>
     
     
