@@ -235,10 +235,10 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       <h1 id="嵌入式QT屏幕旋转（STM32MP157）"><a href="#嵌入式QT屏幕旋转（STM32MP157）" class="headerlink" title="嵌入式QT屏幕旋转（STM32MP157）"></a>嵌入式QT屏幕旋转（STM32MP157）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
-<p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p>
+<h2 id="EGLFS"><a href="#EGLFS" class="headerlink" title="EGLFS"></a>EGLFS</h2><p>我用的是华清远见的FS-MP1A开发板+MIPI5寸屏幕，这块屏幕是竖屏的，而我经常需要做横屏的项目，我找到了修改QT环境变量来旋转屏幕的方法，下面给出具体操作过程：</p>
 <ol>
 <li><p>修改/etc/profile.d/qt-eglfs.sh文件，添加环境变量：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90       <br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">旋转屏幕90度</span><br>export QT_QPA_EGLFS_ROTATION=90<br><span class="hljs-meta">#</span><span class="bash">关闭LIBINPUT</span><br>export QT_QPA_EGLFS_NO_LIBINPUT=1<br><span class="hljs-meta">#</span><span class="bash">旋转触摸屏90度</span><br>export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event0:rotate=90<br></code></pre></td></tr></table></figure>
 
 
 
@@ -397,7 +397,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89"><span class="toc-text">嵌入式QT屏幕旋转（STM32MP157）</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89"><span class="toc-text">嵌入式QT屏幕旋转（STM32MP157）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#EGLFS"><span class="toc-text">EGLFS</span></a></li></ol></li></ol></div>
     </div>
     
     
