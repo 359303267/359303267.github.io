@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</title>
+      <link href="/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+      <url>/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法"><a href="#华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法" class="headerlink" title="华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法"></a>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</h1><p><strong>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</strong></p><p>我在学习和编译华清远见FS-MP1A开发板的内核时，根据教程移植5寸MIPI LCD的驱动，结果发现屏幕并不能够正常显示，具体表现为白屏。</p><p>开始我还以为是我某个地方操作不对，试了一遍又一遍，屏幕就是不能显示，编译也无报错。后来发现使用官方移植好的uImage文件，还是不能够正常显示，这就奇怪了，明明镜像里的uImage文件能够正常驱动屏幕，而官方提供的移植文件夹中的内核却不行呢？</p><p>后来我又发现，在ubuntu源码中提供的ubuntu内核源码可以正常驱动屏幕，于是我使用VSCode对.config文件进行比较，最后发现官方教程里少了一个步骤，导致屏幕不能够正常驱动。</p><p>解决方法：在内核中开启<strong>Enable legacy fbdev support for your modesetting driver</strong>就好了<strong>，Overallocation of the fbdev buffer</strong>选项保持默认100。再次编译内核，发现屏幕能够进入tty命令行了。</p><p>另外，如果发现屏幕有显示但不正确，应该是<strong>panel-sitronix-st7701.c</strong>文件没有替换正确，需要重新替换屏幕驱动文件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">--- Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)        │ │  <br>  │ │    [ ]   DRM DP AUX Interface                                                 │ │  <br>  │ │    [ ]   Insert extra checks and debug info into the DRM range managers       │ │  <br>  │ │    &lt; &gt;   kselftests for DRM                                                   │ │  <br>  │ │    [*]   Enable legacy fbdev support for your modesetting driver              │ │  <br>  │ │    (100)   Overallocation of the fbdev buffer                                 │ │  <br>  │ │    [ ]     Shamelessly allow leaking of fbdev physical address (DANGEROUS)    │ │  <br>  │ │    [ ]   Allow to specify an EDID data set instead of probing for it<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 内核 </tag>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> 驱动移植 </tag>
+            
+            <tag> MIPI LCD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>移植QT 5.11.3 EGLFS文件系统（STM32MP157）</title>
+      <link href="/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
+      <url>/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="移植QT-5-11-3-EGLFS文件系统（STM32MP157）"><a href="#移植QT-5-11-3-EGLFS文件系统（STM32MP157）" class="headerlink" title="移植QT 5.11.3 EGLFS文件系统（STM32MP157）"></a>移植QT 5.11.3 EGLFS文件系统（STM32MP157）</h1><p>正在研究，更新中。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">sudo apt install libgles2-mesa-dev<br></code></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs plain">.&#x2F;configure \<br>     -prefix &#x2F;opt&#x2F;qt-armhf-5.11.3 \<br>     -xplatform linux-arm-gnueabi-g++ \<br>     -release \<br>     -opensource \<br>     -confirm-license \<br>     -opengl es2 \<br>     -eglfs \<br>     -no-openssl \<br>     -no-xcb \<br>     -no-compile-examples \<br>     -no-pkg-config \<br>     -no-iconv \<br>     -no-glib \<br>     -skip qt3d \<br>     -skip qtactiveqt \<br>     -skip qtandroidextras \<br>     -skip qtcanvas3d \<br>     -skip qtconnectivity \<br>     -skip qtdatavis3d \<br>     -skip qtdoc \<br>     -skip qtgamepad \<br>     -skip qtlocation \<br>     -skip qtmacextras \<br>     -skip qtnetworkauth \<br>     -skip qtpurchasing \<br>     -skip qtremoteobjects \<br>     -skip qtscript \<br>     -skip qtscxml \<br>     -skip qtsensors \<br>     -skip qtspeech \<br>     -skip qtsvg \<br>     -skip qttools \<br>     -skip qttranslations \<br>     -skip qtwayland \<br>     -skip qtwebengine \<br>     -skip qtwebview \<br>     -skip qtwinextras \<br>     -skip qtx11extras \<br>     -skip qtxmlpatterns \<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> QT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>移植QT 5.11.3 linuxfb文件系统（STM32MP157）</title>
       <link href="/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
       <url>/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</url>

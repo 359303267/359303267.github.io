@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: 瞎折腾 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -197,113 +197,136 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">瞎折腾</h1>
+<div id="post" class="page">
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_POCSAG_Transmit/" itemprop="url">基于STM32的寻呼发射器开源啦！！</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-26T19:22:30+08:00">01-26</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-16T23:16:04+08:00">2022-05-16 23:16:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法"><a href="#华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法" class="headerlink" title="华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法"></a>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</h1><p><strong>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</strong></p>
+<p>我在学习和编译华清远见FS-MP1A开发板的内核时，根据教程移植5寸MIPI LCD的驱动，结果发现屏幕并不能够正常显示，具体表现为白屏。</p>
+<p>开始我还以为是我某个地方操作不对，试了一遍又一遍，屏幕就是不能显示，编译也无报错。后来发现使用官方移植好的uImage文件，还是不能够正常显示，这就奇怪了，明明镜像里的uImage文件能够正常驱动屏幕，而官方提供的移植文件夹中的内核却不行呢？</p>
+<p>后来我又发现，在ubuntu源码中提供的ubuntu内核源码可以正常驱动屏幕，于是我使用VSCode对.config文件进行比较，最后发现官方教程里少了一个步骤，导致屏幕不能够正常驱动。</p>
+<p>解决方法：在内核中开启<strong>Enable legacy fbdev support for your modesetting driver</strong>就好了<strong>，Overallocation of the fbdev buffer</strong>选项保持默认100。再次编译内核，发现屏幕能够进入tty命令行了。</p>
+<p>另外，如果发现屏幕有显示但不正确，应该是<strong>panel-sitronix-st7701.c</strong>文件没有替换正确，需要重新替换屏幕驱动文件。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">--- Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)        │ │  <br>  │ │    [ ]   DRM DP AUX Interface                                                 │ │  <br>  │ │    [ ]   Insert extra checks and debug info into the DRM range managers       │ │  <br>  │ │    &lt; &gt;   kselftests for DRM                                                   │ │  <br>  │ │    [*]   Enable legacy fbdev support for your modesetting driver              │ │  <br>  │ │    (100)   Overallocation of the fbdev buffer                                 │ │  <br>  │ │    [ ]     Shamelessly allow leaking of fbdev physical address (DANGEROUS)    │ │  <br>  │ │    [ ]   Allow to specify an EDID data set instead of probing for it<br></code></pre></td></tr></table></figure>
+
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E5%86%85%E6%A0%B8/" rel="tag"><i class="fas fa-tags"></i>内核</a>
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D/" rel="tag"><i class="fas fa-tags"></i>驱动移植</a>
+        
+        <a class="post-tag button" href="/tags/MIPI-LCD/" rel="tag"><i class="fas fa-tags"></i>MIPI LCD</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/kindle-02/" itemprop="url">记一次kindle Paperwhite3 拆机降级</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2020-01-22T00:40:33+08:00">01-22</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/BP-Password/" itemprop="url">几种BP机的解密方法</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-25T17:13:45+08:00">08-25</time>
-      </span>
-      
-    </header>
-  </article>
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/POCSAG/" itemprop="url">开源！使用单片机发送POCSAG编码呼响BP机</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T14:11:17+08:00">08-23</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/Get-BP-Code/" itemprop="url">如何获得BP机的地址码和工作频率？</a>
-      </h1>
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T12:01:27+08:00">08-23</time>
-      </span>
+      <a href="/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/" rel="next" title="移植QT 5.11.3 EGLFS文件系统（STM32MP157）"><i class="fas fa-angle-left"></i><span class="nav-title">移植QT 5.11.3 EGLFS文件系统（STM32MP157）</span></a>
       
-    </header>
-  </article>
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/PCB_Ruler/" itemprop="url">用PCB板做一把尺子</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T12:12:12+08:00">05-09</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/fastboot-01/" itemprop="url">用好fastboot命令，刷机加锁不用再找工具！</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-02T22:14:15+08:00">09-02</time>
-      </span>
-      
-    </header>
-  </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/kindle-01/" itemprop="url">谈谈Kindle这个玩意儿</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-09-01T18:58:37+08:00">09-01</time>
-      </span>
-      
-    </header>
-  </article>
+
+<div class="comments" id="comments">
   
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "mp",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -366,6 +389,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>

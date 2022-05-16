@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2022-05-09T15:54:20.322Z</updated>
+  <updated>2022-05-16T15:30:21.899Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</title>
+    <link href="https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2022-05-16T15:16:04.000Z</published>
+    <updated>2022-05-16T15:30:21.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法&quot;&gt;&lt;a href=&quot;#华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+    
+      <category term="内核" scheme="https://359303267.github.io/tags/%E5%86%85%E6%A0%B8/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="驱动移植" scheme="https://359303267.github.io/tags/%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D/"/>
+    
+      <category term="MIPI LCD" scheme="https://359303267.github.io/tags/MIPI-LCD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移植QT 5.11.3 EGLFS文件系统（STM32MP157）</title>
+    <link href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</id>
+    <published>2022-05-09T15:55:43.000Z</published>
+    <updated>2022-05-09T16:22:13.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;移植QT-5-11-3-EGLFS文件系统（STM32MP157）&quot;&gt;&lt;a href=&quot;#移植QT-5-11-3-EGLFS文件系统（STM32MP157）&quot; class=&quot;headerlink&quot; title=&quot;移植QT 5.11.3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
+    
+  </entry>
   
   <entry>
     <title>移植QT 5.11.3 linuxfb文件系统（STM32MP157）</title>
@@ -565,71 +631,6 @@
       <category term="PCB" scheme="https://359303267.github.io/tags/PCB/"/>
     
       <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GY906传感器校准数据备份</title>
-    <link href="https://359303267.github.io/GY906jiaozhunshuju/"/>
-    <id>https://359303267.github.io/GY906jiaozhunshuju/</id>
-    <published>2020-12-19T14:03:00.000Z</published>
-    <updated>2020-12-19T14:10:04.181Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;最近在做一个项目，测试GY906红外测温传感器的时候，不小心把配置寄存器1中的校准数据刷掉了，并且没有备份。无奈之下又买了一个，读出配置寄存器的值为&lt;strong&gt;0xaff4&lt;/strong&gt;（BCC型号，其他型号不确定）。如果不小心将这个寄存器的值刷掉了，重
-        
-      
-    
-    </summary>
-    
-    
-      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="GY906" scheme="https://359303267.github.io/tags/GY906/"/>
-    
-      <category term="人体红外" scheme="https://359303267.github.io/tags/%E4%BA%BA%E4%BD%93%E7%BA%A2%E5%A4%96/"/>
-    
-      <category term="红外测温" scheme="https://359303267.github.io/tags/%E7%BA%A2%E5%A4%96%E6%B5%8B%E6%B8%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2020)一个不知道叫什么好的U盘启动工具集</title>
-    <link href="https://359303267.github.io/PE/"/>
-    <id>https://359303267.github.io/PE/</id>
-    <published>2020-04-23T09:22:54.000Z</published>
-    <updated>2020-04-22T13:04:22.685Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h1&gt;&lt;p&gt;​        没错，这是最后一个版本，以后不再更新。&lt;br&gt;​       
-        
-      
-    
-    </summary>
-    
-    
-      <category term="WinPE" scheme="https://359303267.github.io/categories/WinPE/"/>
-    
-    
-      <category term="WinPE" scheme="https://359303267.github.io/tags/WinPE/"/>
-    
-      <category term="U盘启动" scheme="https://359303267.github.io/tags/U%E7%9B%98%E5%90%AF%E5%8A%A8/"/>
-    
-      <category term="工具集" scheme="https://359303267.github.io/tags/%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
-    
-      <category term="Windows" scheme="https://359303267.github.io/tags/Windows/"/>
     
   </entry>
   

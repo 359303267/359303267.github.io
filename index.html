@@ -202,6 +202,124 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="url">华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-16T23:16:04+08:00">2022-05-16 23:16:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 我在学习和编译华清远见FS-MP1A开发板的内核时，根据教程移植5寸MIPI LCD的驱动，结果发现屏幕并不能够正常显示，具体表现为白屏。 开始我还以为是我某个地方操作不对，试了一遍又一遍，屏幕就是不能显示，编译也无报错。后来发现使用官方移植好的uImage文件，还是不能够正常显示，这就奇怪了，明明镜像里的uImage文件能够正常驱动屏幕，而官方提供的移植文件夹中的内核却不行呢？ 后来我又发现，在ubuntu源码中提供的ubuntu内核源码可以正常驱动屏幕，于是我使用VSCode对.config文件进行比较，最后发现官方教程里少了一个步骤，导致屏幕不能够正常驱动。 解决方法：在内核中开启Enable legacy fbdev support for your modesetting driver就好了，Overallocation of the fbdev buffer选项保持默
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E5%86%85%E6%A0%B8/" rel="tag"><i class="fas fa-tags"></i>内核</a>
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D/" rel="tag"><i class="fas fa-tags"></i>驱动移植</a>
+        
+        <a class="post-tag button" href="/tags/MIPI-LCD/" rel="tag"><i class="fas fa-tags"></i>MIPI LCD</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/" itemprop="url">移植QT 5.11.3 EGLFS文件系统（STM32MP157）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-09T23:55:43+08:00">2022-05-09 23:55:43</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      移植QT 5.11.3 EGLFS文件系统（STM32MP157）正在研究，更新中。 1sudo apt install libgles2-mesa-dev 12345678910111213141516171819202122232425262728293031323334353637383940.&#x2F;configure \ -prefix &#x2F;opt&#x2F;qt-armhf-5.11.3 \ -xplatform linux-arm-gnueabi-g++ \ -release \ -opensource \ -confirm-license \ -opengl es2 \ -eglfs \ -no-openssl \ -no-xcb \ -no-compile-examples \ -no-pkg-config \ -no-iconv \ -no-glib \ -skip qt3d \ -skip qtactiveqt \ -skip qtandroidextras \ -skip qtcanvas3d \ -skip qtconnectivity \ -sk
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/QT/" rel="tag"><i class="fas fa-tags"></i>QT</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -652,126 +770,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/" itemprop="url">STM32 F429 LittleVGL 使用DMA2D 加速（阻塞式）</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-28T18:58:22+08:00">2022-03-28 18:58:22</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      STM32 F429 LittleVGL 使用DMA2D 加速（阻塞式）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 步骤在ltdc.c文件中添加使用DMA2D画点的函数（先在STM32CubeMX中启用DMA2D） 12345678910111213141516171819202122232425262728293031323334353637383940void LTDC_DMA2D_Fill_Color(uint16_t start_x, uint16_t start_y, uint16_t end_x, uint16_t end_y, uint16_t *color)&#123; #define LTDC_FRAMEBUF_ADDR 0xc0000000; //显存基地址 #define TFT_WEIGHT 800 //屏幕宽 #define TFT_WIDTH 480 //屏幕高 DMA2D_InitTypeDef DMA2D_InitStruct; uint32_t Xadd
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
-        
-        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
-        
-        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
-        
-        <a class="post-tag button" href="/tags/LittleVGL/" rel="tag"><i class="fas fa-tags"></i>LittleVGL</a>
-        
-        <a class="post-tag button" href="/tags/lvgl/" rel="tag"><i class="fas fa-tags"></i>lvgl</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_F429_LTDC_issus_01/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_F429_LTDC_issus_01/" itemprop="url">STM32F429 LTDC 驱动RGB屏幕出现抖动的解决方法</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-26T02:03:12+08:00">2022-03-26 02:03:12</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      STM32F429 LTDC 驱动RGB屏幕出现抖动的解决方法发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 我使用的是4.3寸800*480分辨率屏幕，在使用过程中发现在长时间运行后屏幕会出现下面这样的抖动，控件和字体边缘会出现拖影，有时还会出现黑线。 开始我以为是SDRAM时序问题，后来发现不是，然后不断查找资料，包括参考了 调试状态或者刚下载LCD的程序到F429里面，屏幕会抖动，这个是正常现象 - STM32F429 - 硬汉嵌入式论坛 - Powered by Discuz! (armbbs.cn)，还是没能解决。 经过不断尝试，终于找到了解决方法。就是LCD-TFT的**频率太高了，将频率从30MHz将为25MHz**就解决了。 但是这样会看到轻微的频闪。 不知道为什么，在使用静态图片测试时，使用30MHz的LCD频率完全没有问题，而使用LittleVGL库就会出现问题。
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
-        
-        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
-        
-        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
-        
-        <a class="post-tag button" href="/tags/LTDC%E4%B8%8D%E7%A8%B3%E5%AE%9A/" rel="tag"><i class="fas fa-tags"></i>LTDC不稳定</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -818,7 +816,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">32</a></div>
+      <div><a href="/archives/">34</a></div>
     </div>
     
     
@@ -832,7 +830,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">41</a></div>
+      <div><a href="/tags/">43</a></div>
     </div>
     
     
