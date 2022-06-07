@@ -581,7 +581,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      使用TFTP启动Linux内核（STM32MP157）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 服务端配置在Ubuntu虚拟机中，安装TFTP服务： 1sudo apt-get install tftpd-hpa 然后将内核文件复制到**/var/lib/tftpboot**目录中： 1sudo cp uImage /var/lib/tftpboot 复制设备树文件： 1sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot 测试服务端是否正常（可以忽略）： 123tftp localhosttftp&gt; get uImageReceived 7574653 bytes in 1.7 seconds 开发板配置进入U-boot命令，下载内核： 1tftp 0xc2000040 uImage 下载设备树： 1tftp 0xc1000000 stm32mp157a-fsmp1a-mipi050.dtb 启动： 1bootm 0x
+      使用TFTP启动Linux内核（STM32MP157）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 服务端配置在Ubuntu虚拟机中，安装TFTP服务： 1sudo apt-get install tftpd-hpa 然后将内核文件复制到**/var/lib/tftpboot**目录中： 12sudo cp uImage /var/lib/tftpboot# 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp 复制设备树文件： 1sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot 测试服务端是否正常（可以忽略）： 123tftp localhosttftp&gt; get uImageReceived 7574653 bytes in 1.7 seconds 开发板配置进入U-boot命令，下载内核： 1tftp 0xc2000040 uImage 下载设备树： 1tftp 0xc1000000 
       
     </main>
     <footer class="post-footer">

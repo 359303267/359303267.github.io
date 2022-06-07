@@ -239,7 +239,7 @@
 <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install tftpd-hpa<br></code></pre></td></tr></table></figure>
 
 <p>然后将内核文件复制到**/var/lib/tftpboot**目录中：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp uImage /var/lib/tftpboot<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp uImage /var/lib/tftpboot<br><span class="hljs-meta">#</span><span class="bash"> 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp</span><br></code></pre></td></tr></table></figure>
 
 <p>复制设备树文件：</p>
 <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot<br></code></pre></td></tr></table></figure>
