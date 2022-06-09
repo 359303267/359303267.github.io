@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2022-05-16T15:30:21.899Z</updated>
+  <updated>2022-06-09T05:57:00.747Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</title>
+    <link href="https://359303267.github.io/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/"/>
+    <id>https://359303267.github.io/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/</id>
+    <published>2022-06-09T05:23:18.000Z</published>
+    <updated>2022-06-09T05:57:00.747Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;解决DaVinci-Resolve-17剪辑软件在Windows高DPI下的缩放问题&quot;&gt;&lt;a href=&quot;#解决DaVinci-Resolve-17剪辑软件在Windows高DPI下的缩放问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DaVinciResolve" scheme="https://359303267.github.io/categories/DaVinciResolve/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="教程" scheme="https://359303267.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="视频剪辑" scheme="https://359303267.github.io/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    
+  </entry>
   
   <entry>
     <title>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</title>
@@ -600,37 +631,6 @@
     
       <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>基于STM32的寻呼发射器开源啦！！</title>
-    <link href="https://359303267.github.io/STM32_POCSAG_Transmit/"/>
-    <id>https://359303267.github.io/STM32_POCSAG_Transmit/</id>
-    <published>2021-01-26T11:22:30.000Z</published>
-    <updated>2021-02-25T13:03:11.365Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;基于STM32的寻呼发射器开源啦！！&quot;&gt;&lt;a href=&quot;#基于STM32的寻呼发射器开源啦！！&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="BP机" scheme="https://359303267.github.io/categories/BP%E6%9C%BA/"/>
-    
-    
-      <category term="瞎折腾" scheme="https://359303267.github.io/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="PCB" scheme="https://359303267.github.io/tags/PCB/"/>
-    
-      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
     
   </entry>
   

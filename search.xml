@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</title>
+      <link href="/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/"/>
+      <url>/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="解决DaVinci-Resolve-17剪辑软件在Windows高DPI下的缩放问题"><a href="#解决DaVinci-Resolve-17剪辑软件在Windows高DPI下的缩放问题" class="headerlink" title="解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题"></a>解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p><p>最近在学习达芬奇17剪辑软件，由于我使用的是15.6寸2.5K笔记本电脑来剪辑视频，达芬奇17软件默认情况下界面的字体没有进行缩放，因此看起来字体非常小，这给我使用带来了不小的困扰。</p><p>经过我在网上查找，找了了这两种解决达芬奇17软件缩放问题的方法：</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>在达芬奇17的软件图标上，右击点击属性按钮，然后“<strong>兼容性=&gt;更改高DPI设置=&gt;打勾替代高DPI缩放行为=&gt;下拉选择系统=&gt;应用设置</strong>”<br>这种方法虽然在一定程度上解决了达芬奇17的缩放问题，但是缩放后字体边缘发虚，这在高DPI屏幕下的体验并不好，因此不推荐使用这种方法。</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ol><li><p>需要先关闭方法一中的设置，<strong>关闭替代高DPI缩放行为</strong>。</p></li><li><p>在软件快捷方式的图标上<strong>右击</strong>，点击<strong>属性</strong>，选择<strong>快捷方式选项卡</strong>，在目标中，用下面的代码替换原来的内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">powershell.exe -WindowStyle Hidden &quot; $Env:QT_SCALE_FACTOR&#x3D;1.5;start &#39;D:\Program Files\Blackmagic Design\DaVinci Resolve\Resolve.exe&#39;&quot;<br></code></pre></td></tr></table></figure><p>其中<strong>QT_SCALE_FACTOR=1.5</strong>表示软件缩放1.5倍，1.5可以根据自己的屏幕做相应调整。然后再次打开达芬奇17软件，可以发现字体变大了，并且字体没有发虚的现象，体验非常好。下面还有另外几个QT的环境变量，可以自己根据屏幕的情况去选择和开启，直接替换上面代码中的<strong>QT_SCALE_FACTOR</strong>即可，这里不再赘述。</p></li></ol><p>PS： QT环境变量</p><table><thead><tr><th>名称</th><th>功能</th></tr></thead><tbody><tr><td>QT_AUTO_SCREEN_SCALE_FACTOR [boolean]</td><td>基于显示器的像素密度实现自动缩放。 这不会改变点大小字体的大小，因为点是物理单位。 多个屏幕可能会获得不同的比例因子</td></tr><tr><td>QT_SCALE_FACTOR [numeric]</td><td>定义整个应用程序的全局比例因子，包括点大小的字体。</td></tr><tr><td>QT_SCREEN_SCALE_FACTORS [list]</td><td>定每个屏幕的比例因子。 这不会改变点大小字体的大小。 此环境变量主要用于调试，或者用于具有错误的 EDID information 的显示器（扩展显示标识数据）。格式可以是分号分隔的比例因子列表，它们与 QGuiApplication::screens 的顺序相同，也可以是分号分隔的 name = value 对列表，其名称与 QScreen::name 相同。</td></tr></tbody></table><p>B乎居然还有人说你用错了屏幕，这屏幕不是给剪辑用的。真是无语，我就是偶尔使用笔记本电脑临时剪剪视频，寻找一个让达芬奇可用的方法，我要真是专业剪辑师，还轮得到你指指点点？B乎的用户质量真的是差了很多。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.jianshu.com/p/269462ea4540">Qt 对高 DPI 显示器的支持简介 - 简书 (jianshu.com)</a></p><p>[2] <a href="https://blog.himbeer.me/2020/03/07/fixing-davinci-resolve-high-dpi-scaling-on-windows/">Fixing DaVinci Resolve high-DPI scaling on Windows – Himbeer’s Blog</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DaVinciResolve </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 视频剪辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>华清远见FS-MP1A编译内核移植5寸MIPI屏幕不显示的解决方法</title>
       <link href="/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
       <url>/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
