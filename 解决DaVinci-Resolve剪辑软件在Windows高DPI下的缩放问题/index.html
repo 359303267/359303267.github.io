@@ -269,6 +269,9 @@
 </tr>
 </tbody></table>
 <p>B乎居然还有人说你用错了屏幕，这屏幕不是给剪辑用的。真是无语，我就是偶尔使用笔记本电脑临时剪剪视频，寻找一个让达芬奇可用的方法，我要真是专业剪辑师，还轮得到你指指点点？B乎的用户质量真的是差了很多。</p>
+<h2 id="2022-06-11发现的问题"><a href="#2022-06-11发现的问题" class="headerlink" title="2022-06-11发现的问题"></a>2022-06-11发现的问题</h2><p>在使用达芬奇17软件调音时，发现1.5倍缩放后调音面板变成了这样：</p>
+<p><img src="/images/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/Snipaste_2022-06-11_00-27-09.png" alt="Snipaste_2022-06-11_00-27-09.png"></p>
+<p>界面中的声音轨道显示出了问题，且控件显示和实际位置对应不上，经过测试发现2倍整数缩放没有这个问题，猜测应该是调音面板使用旧版QT编写导致。如果需要分数缩放，还需要使用方法一才能够正常调音。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/269462ea4540">Qt 对高 DPI 显示器的支持简介 - 简书 (jianshu.com)</a></p>
 <p>[2] <a target="_blank" rel="noopener" href="https://blog.himbeer.me/2020/03/07/fixing-davinci-resolve-high-dpi-scaling-on-windows/">Fixing DaVinci Resolve high-DPI scaling on Windows – Himbeer’s Blog</a></p>
 
@@ -422,7 +425,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E8%A7%A3%E5%86%B3DaVinci-Resolve-17%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98"><span class="toc-text">解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E8%A7%A3%E5%86%B3DaVinci-Resolve-17%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98"><span class="toc-text">解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2022-06-11%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">2022-06-11发现的问题</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li></ol></div>
     </div>
     
     
