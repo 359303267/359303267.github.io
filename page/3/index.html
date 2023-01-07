@@ -202,6 +202,53 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_DMA/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_UART_TxRx_DMA/" itemprop="url">STM32 HAL库 使用DMA同时收发串口数据</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-07-22T22:16:37+08:00">2021-07-22 22:16:37</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      STM32 HAL库 使用DMA同时收发串口数据发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。 于是我开始在网络上查找资料（顺便吐槽一下，网络上的资料大部分都是转载，原创资料少之又少，就连老子的文章也被哪个阉人转载到了其他地方），发现HAL库有一个锁定机制，如果串口在发送数据的时候又接收数据，就会导致程序锁住，表现为卡死。于是我用STLink调试跟踪，发现最终程序死在了HAL_UART_IRQHandler函数中。网友大多表示要么放弃HAL库，要么就自己实现接收函数。我为了保证整个程序的移植性，最后决定继续使用HAL库，尝试使用其他办法解决串口同时收发的问题。 我突然想到之前有一个项目里使用的DMA来接收串口数据，哪个项目里串口是可以同时收
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_noDMA/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -701,63 +748,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/PCB_Ruler/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/PCB_Ruler/" itemprop="url">用PCB板做一把尺子</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T12:12:12+08:00">2019-05-09 12:12:12</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PCB/" itemprop="url" rel="index"><span itemprop="name">PCB</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      信仰前些天在某宝上发现了刻有电子专业信仰的尺子，做工不错，上面不仅有mm，mil这样的常用单位，还有各种元器件的封装和焊盘，用沉金工艺做的，简直是又好看又使用。没错，又是没钱，正好自己刚考了CAED认证，决定画一个自己的信仰。正好赶上某PCB打样的厂家放出5块钱打样还包邮的优惠，连夜赶出两个图纸。绿色阻焊和黑色阻焊各打了两版，花了20个大洋，这波羊毛薅的还行哈~刻度我是放置的焊盘，这样做PCB的时候刻度可以喷锡保护，还耐磨。下面直接放置器件就好了，原理图都不用画，这可简单多了。免费为厂家打个广告：厂家的链接：嘉立创 效果图 实物图 实物到手后手感还是不错了，黑色阻焊表面是磨砂的，手感非常好。以后有钱了，就打个沉金的，然后收藏，哈哈~ PS:当然大部分尺子都送给我们班妹子了，果然还是把东西分享给被人看到别人快乐时的快乐要比自己得到东西时的快乐更要快乐˚‧♡ॢ˃̶̤̀◡˂̶̤́♡ॢ‧˚ PCB文件现将PCB文件分享出来，水平不高见谅。链接：本地文件
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/PCB/" rel="tag"><i class="fas fa-tags"></i>PCB</a>
-        
-        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -804,7 +794,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">36</a></div>
+      <div><a href="/archives/">37</a></div>
     </div>
     
     
@@ -818,7 +808,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">45</a></div>
+      <div><a href="/tags/">46</a></div>
     </div>
     
     

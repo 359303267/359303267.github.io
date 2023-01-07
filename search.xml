@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</title>
+      <link href="/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
+      <url>/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）"><a href="#加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）" class="headerlink" title="加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）"></a>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p><p>今天根据正点原子的教程编写newchrdev驱动时，在使用modprobe命令加载ko文件时，报了Unknown symbol device_create错误：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/# modprobe leddev<br>leddev: loading out-of-tree module taints kernel.<br>leddev: disagrees about version of symbol device_create<br>leddev: Unknown symbol device_create (err -22)<br>leddev: disagrees about version of symbol device_destroy<br>leddev: Unknown symbol device_destroy (err -22)<br>modprobe: can&#x27;t load module leddev (leddev.ko): Invalid argument<br></code></pre></td></tr></table></figure><p>经过查找，找到原因是开发板使用的内核与编译驱动时的内核不是同一个，虽然版本相同，所以之前加载其他驱动时没有报错，加载这个驱动就报找不到符号的错误。解决方法就是再将这个内核编译一遍，然后让开发板使用新编译的内核就解决了</p><p>经过内核替换之后，使用相同的命令加载驱动，就会发现错误已经没有了，驱动可以正常加载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/lib/modules# modprobe newchrled.ko<br>newcheled major=245,minor=0<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 嵌入式Linux </tag>
+            
+            <tag> NFS </tag>
+            
+            <tag> kernel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</title>
       <link href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
       <url>/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</url>

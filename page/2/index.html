@@ -202,6 +202,63 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/" itemprop="url">使用NFS挂载rootfs启动Linux（STM32MP157）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-03T22:57:58+08:00">2022-05-03 22:57:58</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      使用NFS挂载rootfs启动Linux（STM32MP157）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 今天尝试使用NFS挂载的方式启动华清远见FSMP-1A开发板，又碰到了很多问题，卡了我很长时间，现在解决了，笔记分享一下。 服务端配置首先在Ubuntu主机内安装nfs服务： 1sudo apt install nfs-kernel-server 修改nfs服务的配置文件： 1vi /etc/exports 添加以下内容： 12# 下面的路径需要修改&#x2F;home&#x2F;ubuntu&#x2F;nfs_rootfs *(rw,sync,no_root_squash) 然后重启nfs-kernel-server服务： 1sudo systemctl restart nfs-kernel-server 如果此时发生错误，通常是路径不对，请检查这个路径的目录是否存在！ 开发板配置进入U-boot命令，然后设置bootargs变量： 1env set bootargs root&
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/NFS/" rel="tag"><i class="fas fa-tags"></i>NFS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -719,53 +776,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_DMA/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_UART_TxRx_DMA/" itemprop="url">STM32 HAL库 使用DMA同时收发串口数据</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-07-22T22:16:37+08:00">2021-07-22 22:16:37</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      STM32 HAL库 使用DMA同时收发串口数据发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 在上个文章里，我介绍了使用串口空闲中断的方法来接收任意长度的数据，但是在我调试串口屏的的时候，发现了一个严重的问题。我是用的是北京迪文科技的串口屏，当向串口屏发送写入数据指令的时候，串口屏会返回一个应答，正是这个应答就导致了STM32在运行的时候会卡死。 于是我开始在网络上查找资料（顺便吐槽一下，网络上的资料大部分都是转载，原创资料少之又少，就连老子的文章也被哪个阉人转载到了其他地方），发现HAL库有一个锁定机制，如果串口在发送数据的时候又接收数据，就会导致程序锁住，表现为卡死。于是我用STLink调试跟踪，发现最终程序死在了HAL_UART_IRQHandler函数中。网友大多表示要么放弃HAL库，要么就自己实现接收函数。我为了保证整个程序的移植性，最后决定继续使用HAL库，尝试使用其他办法解决串口同时收发的问题。 我突然想到之前有一个项目里使用的DMA来接收串口数据，哪个项目里串口是可以同时收
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -812,7 +822,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">36</a></div>
+      <div><a href="/archives/">37</a></div>
     </div>
     
     
@@ -826,7 +836,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">45</a></div>
+      <div><a href="/tags/">46</a></div>
     </div>
     
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2023-01-07T14:19:01.022Z</updated>
+  <updated>2023-01-07T15:38:15.969Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</title>
+    <link href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</id>
+    <published>2023-01-07T15:33:04.000Z</published>
+    <updated>2023-01-07T15:38:15.969Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
+    
+      <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
+    
+  </entry>
   
   <entry>
     <title>使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</title>
@@ -606,31 +639,6 @@
         
         
           &lt;h1 id=&quot;迪文串口屏T5L-STM32-51驱动程序分享&quot;&gt;&lt;a href=&quot;#迪文串口屏T5L-STM32-51驱动程序分享&quot; class=&quot;headerlink&quot; title=&quot;迪文串口屏T5L STM32 51驱动程序分享&quot;&gt;&lt;/a&gt;迪文串口屏T5L STM32
-        
-      
-    
-    </summary>
-    
-    
-      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>STM32 HAL库 使用DMA同时收发串口数据</title>
-    <link href="https://359303267.github.io/STM32_UART_TxRx_DMA/"/>
-    <id>https://359303267.github.io/STM32_UART_TxRx_DMA/</id>
-    <published>2021-07-22T14:16:37.000Z</published>
-    <updated>2022-05-04T07:44:49.332Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;STM32-HAL库-使用DMA同时收发串口数据&quot;&gt;&lt;a href=&quot;#STM32-HAL库-使用DMA同时收发串口数据&quot; class=&quot;headerlink&quot; title=&quot;STM32 HAL库 使用DMA同时收发串口数据&quot;&gt;&lt;/a&gt;STM32 HAL库
         
       
     
