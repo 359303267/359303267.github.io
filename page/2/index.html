@@ -768,7 +768,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      迪文串口屏T5L STM32 51驱动程序分享最近在研究迪文的串口屏，网络上好像没有找到迪文的串口驱动程序。虽然这个东西不难，就是发送几个命令的事，但是仍然踩了不少坑。我用的型号是DMG48270C043_03WTC，不过应该和型号没关系。使用前需要用DGUS工具做好界面并设置好变量地址和描述地址，具体可以看迪文官方在bilibili发布的教程迪文智能屏T5L_DGUSII教程1_开发步骤_哔哩哔哩_bilibili和 原子哥上的教程T5L迪文屏C51开发教程 - 原子哥，专注电子技术教学 (yuanzige.com)。 这个驱动只实现了极少一部分功能，可供快速调试时使用。移植时只需要实现DWin_SendDat函数即可。 12345void DWin_SendDat(unsigned char* dat, unsigned int length)&#123; USART2_SendData(dat, length); HAL_Delay(20);&#125; 驱动地址：—上传中—
+      迪文串口屏T5L STM32 51驱动程序分享最近在研究迪文的串口屏，网络上好像没有找到迪文的串口驱动程序。虽然这个东西不难，就是发送几个命令的事，但是仍然踩了不少坑。我用的型号是DMG48270C043_03WTC，不过应该和型号没关系。使用前需要用DGUS工具做好界面并设置好变量地址和描述地址，具体可以看迪文官方在bilibili发布的教程迪文智能屏T5L_DGUSII教程1_开发步骤_哔哩哔哩_bilibili和 原子哥上的教程T5L迪文屏C51开发教程 - 原子哥，专注电子技术教学 (yuanzige.com)。 这个驱动只实现了极少一部分功能，可供快速调试时使用。移植时只需要实现DWin_SendDat函数即可。 12345void DWin_SendDat(unsigned char* dat, unsigned int length)&#123; USART2_SendData(dat, length); HAL_Delay(20);&#125; DWIN.c： 1234567891011121314151617181920212223242526272829303132
       
     </main>
     <footer class="post-footer">
