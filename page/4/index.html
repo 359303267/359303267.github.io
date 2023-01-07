@@ -202,6 +202,65 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/FloppyKernel-02/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/FloppyKernel-02/" itemprop="url">Floppy内核关闭温控教程</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-08T17:41:13+08:00">2019-02-08 17:41:13</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      按照上一篇Floppy 内核关闭背光调节器的方法介绍的方法，我们直接打开ramdisk目录里的init.floppy.rc文件，我们开始修改脚本。 我们可以看到类似这种的配置，这些数据便是Floppy内核的温控配置 还要注意这里，这两个on boot和on charger分别代表启动时和充电时的状态，所以如果要修改启动时的温度控制代码，就修改on boot下面的，同理，想要修改充电时的温度控制代码，就修改on charger下面的。 下面这一行代码表示系统启动完成要修改的配置，所以当手机正常使用并且没有充电时，是这一行代码下面的配置在起作用。 1on property:sys.boot_completed&#x3D;1 如果我们只是想关闭内核的温控，那么就好办了，直接将文件中所有的这样一行代码后面的1改为0就好了。 1write &#x2F;sys&#x2F;kernel&#x2F;msm_thermal&#x2F;enabled 1 改为如图这样就好了，CPU烧到100度都不降频，贼鸡儿爽！
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E5%B0%8F%E7%B1%B35/" rel="tag"><i class="fas fa-tags"></i>小米5</a>
+        
+        <a class="post-tag button" href="/tags/%E5%86%85%E6%A0%B8/" rel="tag"><i class="fas fa-tags"></i>内核</a>
+        
+        <a class="post-tag button" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>折腾</a>
+        
+        <a class="post-tag button" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>刷机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/FloppyKernel-01/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -543,7 +602,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">35</a></div>
+      <div><a href="/archives/">36</a></div>
     </div>
     
     
@@ -557,7 +616,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">44</a></div>
+      <div><a href="/tags/">45</a></div>
     </div>
     
     
@@ -607,7 +666,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2022</span>
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2023</span>
         </div>
         
         <div class="busuanzi">

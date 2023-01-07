@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2022-06-10T17:27:42.076Z</updated>
+  <updated>2023-01-07T14:19:01.022Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</title>
+    <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</id>
+    <published>2023-01-07T15:16:04.000Z</published>
+    <updated>2023-01-07T14:19:01.022Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用TFTP启动Linux内核（小梅哥ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#使用TFTP启动Linux内核（小梅哥ZYNQ-7010）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
+    
+      <category term="Kernel" scheme="https://359303267.github.io/tags/Kernel/"/>
+    
+  </entry>
   
   <entry>
     <title>解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</title>
@@ -598,31 +631,6 @@
         
         
           &lt;h1 id=&quot;STM32-HAL库-使用DMA同时收发串口数据&quot;&gt;&lt;a href=&quot;#STM32-HAL库-使用DMA同时收发串口数据&quot; class=&quot;headerlink&quot; title=&quot;STM32 HAL库 使用DMA同时收发串口数据&quot;&gt;&lt;/a&gt;STM32 HAL库
-        
-      
-    
-    </summary>
-    
-    
-      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>STM32 HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）</title>
-    <link href="https://359303267.github.io/STM32_UART_TxRx_noDMA/"/>
-    <id>https://359303267.github.io/STM32_UART_TxRx_noDMA/</id>
-    <published>2021-07-16T08:02:22.000Z</published>
-    <updated>2022-05-04T07:44:55.592Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）&quot;&gt;&lt;a href=&quot;#STM32-HAL库多串口任意长度接收的方法（无起始和结束标志，不使用DMA）&quot; class=&quot;headerlink&quot; title=&quot;STM32
         
       
     
