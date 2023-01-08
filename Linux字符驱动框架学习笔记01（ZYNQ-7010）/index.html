@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, 小小小日天, 359303267">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="小小小日天的博客" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          // $(e).before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          // $(e).parent().before("<button class=\"copy button\">复制</button>");
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                "code",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              return trigger.parentNode.parentNode.nextElementSibling;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Linux字符驱动框架学习笔记01（ZYNQ-7010） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+  <meta name="generator" content="Hexo 5.0.0"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">小小小日天的博客</a></h1>
+        <h2 class="subtitle">瞧！这里有个不知道叫什么好的小玩意！</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+        <li role="menuitem"><a href="/PE/"><i class="fab fa-usb"></i><span class="menu-text">U启工具集</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="小小小日天">
+       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Linux字符驱动框架学习笔记01（ZYNQ-7010）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-08T13:33:04+08:00">2023-01-08 13:33:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="Linux字符驱动框架学习笔记01（ZYNQ-7010）"><a href="#Linux字符驱动框架学习笔记01（ZYNQ-7010）" class="headerlink" title="Linux字符驱动框架学习笔记01（ZYNQ-7010）"></a>Linux字符驱动框架学习笔记01（ZYNQ-7010）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p><strong>以此笔记记录我在驱动学习过程中的知识点，仅此而已。</strong></p>
+<p>模块基本框架：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">module_init(newchrled_init);<br>module_exit(newchrled_exit);<br>MODULE_AUTHOR(<span class="hljs-string">&quot;verylk&quot;</span>);<br>MODULE_DESCRIPTION(<span class="hljs-string">&quot;ZYNQ New Char Driver&quot;</span>);<br>MODULE_LICENSE(<span class="hljs-string">&quot;GPL&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>头文件：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/types.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/kernel.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/delay.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/ide.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/init.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/module.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/errno.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/gpio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;asm/mach/map.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;asm/uaccess.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;asm/io.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/cdev.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>宏定义：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NEWCHRLED_CNT    1    <span class="hljs-comment">/* 设备号个数 */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NEWCHRLED_NAME    <span class="hljs-meta-string">&quot;newchrled&quot;</span> <span class="hljs-comment">/* 名字 */</span></span><br></code></pre></td></tr></table></figure>
+
+<p>GPIO寄存器地址：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ZYNQ_GPIO_REG_BASE    0xE000A000</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DATA_OFFSET    0x00000040</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DIRM_OFFSET    0x00000204</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> OUTEN_OFFSET    0x00000208</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INTDIS_OFFSET    0x00000214</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> APER_CLK_CTRL    0xF800012C</span><br></code></pre></td></tr></table></figure>
+
+<p>地址映射，虚拟地址到物理地址映射：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __iomem *data_addr;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __iomem *dirm_addr;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __iomem *outen_addr;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __iomem *intdis_addr;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __iomem *aper_clk_ctrl_addr;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">led_ioremap</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span><span class="hljs-comment">//使用内联函数，以空间换时间，减小压栈和出栈时间，提高执行效率</span></span><br><span class="hljs-function"></span>&#123;<br>    data_addr = ioremap(ZYNQ_GPIO_REG_BASE + DATA_OFFSET, <span class="hljs-number">4</span>);<br>    dirm_addr = ioremap(ZYNQ_GPIO_REG_BASE + DIRM_OFFSET, <span class="hljs-number">4</span>);<br>    outen_addr = ioremap(ZYNQ_GPIO_REG_BASE + OUTEN_OFFSET, <span class="hljs-number">4</span>);<br>    intdis_addr = ioremap(ZYNQ_GPIO_REG_BASE + INTDIS_OFFSET, <span class="hljs-number">4</span>);<br>    aper_clk_ctrl_addr = ioremap(APER_CLK_CTRL, <span class="hljs-number">4</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">led_iounmap</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    iounmap(data_addr);<br>    iounmap(dirm_addr);<br>    iounmap(outen_addr);<br>    iounmap(intdis_addr);<br>    iounmap(aper_clk_ctrl_addr);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>字符设备的结构体：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">newchrled_dev</span> &#123;</span><br><span class="hljs-keyword">dev_t</span> devid;    <span class="hljs-comment">/* 设备号 */</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">cdev</span> <span class="hljs-title">cdev</span>;</span>    <span class="hljs-comment">/* cdev */</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">class</span> *<span class="hljs-title">class</span>;</span>    <span class="hljs-comment">/* 类 */</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">device</span> *<span class="hljs-title">device</span>;</span>    <span class="hljs-comment">/* 设备 */</span><br><span class="hljs-keyword">int</span> major;    <span class="hljs-comment">/* 主设备号 */</span><br><span class="hljs-keyword">int</span> minor;    <span class="hljs-comment">/* 次设备号 */</span><br>&#125;;<br><br><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">newchrled_dev</span> <span class="hljs-title">newchrled</span>;</span> <span class="hljs-comment">/* led 设备 */</span><br></code></pre></td></tr></table></figure>
+
+<p>设备操作函数：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* 设备操作函数 */</span><br><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">file_operations</span> <span class="hljs-title">newchrled_fops</span> = &#123;</span><br>.owner = THIS_MODULE,<br>.open = led_open,    <span class="hljs-comment">//需要实现这几个函数</span><br>.read = led_read,<br>.write = led_write,<br>.release = led_release,<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>操作函数实现，函数参数可以参考内核中现有的驱动，这里主要实现open和write函数：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">led_open</span><span class="hljs-params">(struct inode *inode, struct file *filp)</span></span><br><span class="hljs-function"></span>&#123;<br>    filp-&gt;private_data = &amp;newchrled; <span class="hljs-comment">/* 设置私有数据，私有数据指向设备结构体 */</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">ssize_t</span> <span class="hljs-title">led_read</span><span class="hljs-params">(struct file *filp, <span class="hljs-keyword">char</span> __user *buf, <span class="hljs-keyword">size_t</span> cnt, <span class="hljs-keyword">loff_t</span> *offt)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">ssize_t</span> <span class="hljs-title">led_write</span><span class="hljs-params">(struct file *filp, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> __user *buf, <span class="hljs-keyword">size_t</span> cnt, <span class="hljs-keyword">loff_t</span> *offt)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> ret;<br>    <span class="hljs-keyword">int</span> val;<br>    <span class="hljs-keyword">char</span> kern_buf[<span class="hljs-number">1</span>];<br><br>    ret = copy_from_user(kern_buf, buf, cnt); <span class="hljs-comment">// 得到应用层传递过来的数据</span><br>    <span class="hljs-keyword">if</span>(<span class="hljs-number">0</span> &gt; ret) &#123;<br>        printk(KERN_ERR <span class="hljs-string">&quot;kernel write failed!\r\n&quot;</span>);<br>        <span class="hljs-keyword">return</span> -EFAULT;<br>    &#125;<br><br>    val = readl(data_addr);<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> == kern_buf[<span class="hljs-number">0</span>])<br>        val &amp;= ~(<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>); <span class="hljs-comment">// 如果传递过来的数据是 0 则关闭 led</span><br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> == kern_buf[<span class="hljs-number">0</span>])<br>        val |= (<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>); <span class="hljs-comment">// 如果传递过来的数据是 1 则点亮 led</span><br><br>    writel(val, data_addr);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">led_release</span><span class="hljs-params">(struct inode *inode, struct file *filp)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最重要的驱动入口函数和出口函数实现：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> __init <span class="hljs-title">led_init</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    u32 val;<br>    <span class="hljs-keyword">int</span> ret;<br><br>    <span class="hljs-comment">/* 1.寄存器地址映射 */</span><br>    led_ioremap();<br><br>    <span class="hljs-comment">/* 2.使能 GPIO 时钟 */</span><br>    val = readl(aper_clk_ctrl_addr);<br>    val |= (<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">22</span>);<br>    writel(val, aper_clk_ctrl_addr);<br><br>    <span class="hljs-comment">/* 3.关闭中断功能 */</span><br>    val |= (<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>);<br>    writel(val, intdis_addr);<br><br>    <span class="hljs-comment">/* 4.设置 GPIO 为输出功能 */</span><br>    val = readl(dirm_addr);<br>    val |= (<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>);<br>    writel(val, dirm_addr);<br><br>    <span class="hljs-comment">/* 5.使能 GPIO 输出功能 */</span><br>    val = readl(outen_addr);<br>    val |= (<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>);<br>    writel(val, outen_addr);<br><br>    <span class="hljs-comment">/* 6.默认关闭 LED */</span><br>    val = readl(data_addr);<br>    val &amp;= ~(<span class="hljs-number">0x1</span>U &lt;&lt; <span class="hljs-number">7</span>);<br>    writel(val, data_addr);<br><br>    <span class="hljs-comment">/* 7.注册字符设备驱动 */</span><br>    <span class="hljs-comment">/* 创建设备号 */</span><br>    <span class="hljs-keyword">if</span> (newchrled.major) &#123;<br>        newchrled.devid = MKDEV(newchrled.major, <span class="hljs-number">0</span>);<br><br>        ret = register_chrdev_region(newchrled.devid, NEWCHRLED_CNT, NEWCHRLED_NAME);<br>        <span class="hljs-keyword">if</span> (ret)<br>            <span class="hljs-keyword">goto</span> out1;<span class="hljs-comment">//如果执行出错了，需要将所做的操作进行回滚</span><br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        ret = alloc_chrdev_region(&amp;newchrled.devid, <span class="hljs-number">0</span>, NEWCHRLED_CNT, NEWCHRLED_NAME);<br>        <span class="hljs-keyword">if</span> (ret)<br>            <span class="hljs-keyword">goto</span> out1;<br><br>        newchrled.major = MAJOR(newchrled.devid);<br>        newchrled.minor = MINOR(newchrled.devid);<br>    &#125;<br><br>    printk(<span class="hljs-string">&quot;newcheled major=%d,minor=%d\r\n&quot;</span>,newchrled.major, newchrled.minor);<br><br>    <span class="hljs-comment">/* 初始化 cdev */</span><br>    newchrled.cdev.owner = THIS_MODULE;<br>    cdev_init(&amp;newchrled.cdev, &amp;newchrled_fops);<br><br>    <span class="hljs-comment">/* 添加一个 cdev */</span><br>    ret = cdev_add(&amp;newchrled.cdev, newchrled.devid, NEWCHRLED_CNT);<br>    <span class="hljs-keyword">if</span> (ret)<br>        <span class="hljs-keyword">goto</span> out2;<br><br>    <span class="hljs-comment">/* 创建类 */</span><br>    newchrled.class = class_create(THIS_MODULE, NEWCHRLED_NAME);<br>    <span class="hljs-keyword">if</span> (IS_ERR(newchrled.class)) &#123;<br>        ret = PTR_ERR(newchrled.class);<br>        <span class="hljs-keyword">goto</span> out3;<br>    &#125;<br><br>    <span class="hljs-comment">/* 创建设备 */</span><br>    newchrled.device = device_create(newchrled.class, <span class="hljs-literal">NULL</span>,<br>    newchrled.devid, <span class="hljs-literal">NULL</span>, NEWCHRLED_NAME);<br>    <span class="hljs-keyword">if</span> (IS_ERR(newchrled.device)) &#123;<br>        ret = PTR_ERR(newchrled.device);<br>        <span class="hljs-keyword">goto</span> out4;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>out4:<br>    class_destroy(newchrled.class);<br><br>out3:<br>    cdev_del(&amp;newchrled.cdev);<br><br>out2:<br>    unregister_chrdev_region(newchrled.devid, NEWCHRLED_CNT);<br><br>out1:<br>    led_iounmap();<br><br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __exit <span class="hljs-title">led_exit</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">/* 注销设备 */</span><br>    device_destroy(newchrled.class, newchrled.devid);<br><br>    <span class="hljs-comment">/* 注销类 */</span><br>    class_destroy(newchrled.class);<br><br>    <span class="hljs-comment">/* 删除 cdev */</span><br>    cdev_del(&amp;newchrled.cdev);<br><br>    <span class="hljs-comment">/* 注销设备号 */</span><br>    unregister_chrdev_region(newchrled.devid, NEWCHRLED_CNT);<br><br>    <span class="hljs-comment">/* 取消地址映射 */</span><br>    led_iounmap();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>至此，驱动编写完毕。</p>
+<p>编写驱动编译makefile文件：</p>
+<figure class="hljs highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs makefile">KERN_DIR := /home/ubuntu/Zynq-Pfj/ACZ702_Linux_Base/linux/kernel<br><span class="hljs-comment">#需要修改为对应内核源码路径</span><br>obj-m := newchrled.o<br><span class="hljs-comment">#需要修改为.c文件对应的.o文件，.c文件make会自动查找</span><br><span class="hljs-section">all:</span><br>    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C <span class="hljs-variable">$(KERN_DIR)</span> M=`pwd` modules<br><span class="hljs-section">clean:</span><br>    make -C <span class="hljs-variable">$(KERN_DIR)</span> M=`pwd` clean<br><br></code></pre></td></tr></table></figure>
+
+<p>使用make命令编译驱动：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">make -j12 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-<br></code></pre></td></tr></table></figure>
+
+<p>编译没有错误会生成.ko文件：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C /home/ubuntu/Zynq-Pfj/ACZ702_Linux_Base/linux/kernel M=`pwd` modules<br>make[1]: warning: jobserver unavailable: using -j1.  Add &#x27;+&#x27; to parent make rule.<br>make[1]: Entering directory &#x27;/home/ubuntu/Zynq-Pfj/ACZ702_Linux_Base/linux/kernel&#x27;<br>  CC [M]  /home/ubuntu/Zynq-Pfj/3_newchrled/newchrled.o<br>  Building modules, stage 2.<br>  MODPOST 1 modules<br>  CC      /home/ubuntu/Zynq-Pfj/3_newchrled/newchrled.mod.o<br>  LD [M]  /home/ubuntu/Zynq-Pfj/3_newchrled/newchrled.ko<br>make[1]: Leaving directory &#x27;/home/ubuntu/Zynq-Pfj/ACZ702_Linux_Base/linux/kernel&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>复制.ko文件到文件系统中：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp newchrled.ko ~/zynq/linux/nfs/lib/modules/4.14.0-xilinx<br></code></pre></td></tr></table></figure>
+
+<p>连接ZYNQ开发板，在开发板上执行命令：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:~# depmod<br>root@ACZ702_System:~# modprobe newchrled.ko<br>newcheled major=245,minor=0<br></code></pre></td></tr></table></figure>
+
+<p>查看/dev目录下是否自动创建了newchrled设备：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:~# ls /dev | grep newchrled<br>newchrled<br></code></pre></td></tr></table></figure>
+
+<p>打开LED，测试newchrled设备是否正常：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo 1 &gt; /dev/newchrled<br><span class="hljs-meta">#</span><span class="bash">不要尝试，会死机</span><br></code></pre></td></tr></table></figure>
+
+<p>这样直接向设备写字符会导致死机，这里需要写一个APP，让APP去向newchrled写入数据：</p>
+<p>APP.c：</p>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/types.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/stat.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;fcntl.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * @description        : main主程序</span><br><span class="hljs-comment"> * @param - argc    : argv数组元素个数</span><br><span class="hljs-comment"> * @param - argv    : 具体参数</span><br><span class="hljs-comment"> * @return            : 0 成功;其他 失败</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> fd, ret;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> buf[<span class="hljs-number">1</span>];<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">3</span> != argc)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Usage:\n&quot;</span><br>               <span class="hljs-string">&quot;\t./ledApp /dev/led 1        @ close LED\n&quot;</span><br>               <span class="hljs-string">&quot;\t./ledApp /dev/led 0        @ open LED\n&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-comment">/* 打开设备 */</span><br>    fd = open(argv[<span class="hljs-number">1</span>], O_RDWR);<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &gt; fd)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;file %s open failed!\r\n&quot;</span>, argv[<span class="hljs-number">1</span>]);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-comment">/* 将字符串转换为int型数据 */</span><br>    buf[<span class="hljs-number">0</span>] = atoi(argv[<span class="hljs-number">2</span>]);<br>    <span class="hljs-comment">/* 向驱动写入数据 */</span><br>    ret = write(fd, buf, <span class="hljs-keyword">sizeof</span>(buf));<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &gt; ret)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;LED Control Failed!\r\n&quot;</span>);<br>        close(fd);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-comment">/* 关闭设备 */</span><br>    close(fd);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>交叉编译后，执行：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:~# ./APP /dev/newchrled 1<br></code></pre></td></tr></table></figure>
+
+<p>发现LED灯亮了，至此驱动编写完成。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/kernel/" rel="tag"><i class="fas fa-tags"></i>kernel</a>
+        
+        <a class="post-tag button" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" rel="tag"><i class="fas fa-tags"></i>驱动程序</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/" rel="next" title="加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）"><i class="fas fa-angle-left"></i><span class="nav-title">加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div id="vcomments" class="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    new Valine({
+      "el": "#vcomments",
+      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
+      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
+      "verify": "true",
+      "notify": "true",
+      "avatar": "mp",
+      "meta": ["nick", "mail", "link"],
+      "pageSize": 10,
+      "lang": "zh-cn",
+      "visitor": "false",
+      "highlight": "true",
+      "placeholder": "在这里说点什么……",
+      "avatarForce": "false"
+    });
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="小小小日天">
+  
+  <h1 class="author-name">小小小日天</h1>
+  <h2 class="author-description">当家门在开启时，我会向故乡顶礼——许巍</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">11</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">47</a></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89"><span class="toc-text">Linux字符驱动框架学习笔记01（ZYNQ-7010）</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:359303267@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://359303267.github.io/" target="_blank">GitHub Pages</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">小小小日天</span><span class="year"><i class="far fa-copyright"></i>2023</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

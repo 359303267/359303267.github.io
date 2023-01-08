@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2023-01-07T15:38:15.969Z</updated>
+  <updated>2023-01-08T07:24:11.982Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</title>
-    <link href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
-    <id>https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</id>
-    <published>2023-01-07T15:33:04.000Z</published>
-    <updated>2023-01-07T15:38:15.969Z</updated>
+    <title>Linux字符驱动框架学习笔记01（ZYNQ-7010）</title>
+    <link href="https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/"/>
+    <id>https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/</id>
+    <published>2023-01-08T05:33:04.000Z</published>
+    <updated>2023-01-08T07:24:11.982Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,40 @@
       
         
         
-          &lt;h1 id=&quot;加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）&quot;
+          &lt;h1 id=&quot;Linux字符驱动框架学习笔记01（ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#Linux字符驱动框架学习笔记01（ZYNQ-7010）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
+    
+      <category term="驱动程序" scheme="https://359303267.github.io/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</title>
+    <link href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/</id>
+    <published>2023-01-07T15:33:04.000Z</published>
+    <updated>2023-01-08T06:01:57.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;加载驱动报Unknown-symbol-device-create错误解决（ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#加载驱动报Unknown-symbol-device-create错误解决（ZYNQ-7010）&quot; class=&quot;headerlink&quot;
         
       
     
@@ -50,11 +83,11 @@
   </entry>
   
   <entry>
-    <title>使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</title>
-    <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/"/>
-    <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/</id>
+    <title>使用TFTP启动Linux内核（ZYNQ-7010）</title>
+    <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89/"/>
+    <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89/</id>
     <published>2023-01-07T15:16:04.000Z</published>
-    <updated>2023-01-07T14:19:01.022Z</updated>
+    <updated>2023-01-08T06:01:42.824Z</updated>
     
     <summary type="html">
     
@@ -62,7 +95,7 @@
       
         
         
-          &lt;h1 id=&quot;使用TFTP启动Linux内核（小梅哥ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#使用TFTP启动Linux内核（小梅哥ZYNQ-7010）&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;使用TFTP启动Linux内核（ZYNQ-7010）&quot;&gt;&lt;a href=&quot;#使用TFTP启动Linux内核（ZYNQ-7010）&quot; class=&quot;headerlink&quot;
         
       
     
@@ -622,31 +655,6 @@
       <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
     
       <category term="RGBLCD" scheme="https://359303267.github.io/tags/RGBLCD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>迪文串口屏T5L STM32 51驱动程序分享</title>
-    <link href="https://359303267.github.io/DWinUart_Driver/"/>
-    <id>https://359303267.github.io/DWinUart_Driver/</id>
-    <published>2021-07-22T16:05:18.000Z</published>
-    <updated>2023-01-07T15:49:54.317Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;迪文串口屏T5L-STM32-51驱动程序分享&quot;&gt;&lt;a href=&quot;#迪文串口屏T5L-STM32-51驱动程序分享&quot; class=&quot;headerlink&quot; title=&quot;迪文串口屏T5L STM32 51驱动程序分享&quot;&gt;&lt;/a&gt;迪文串口屏T5L STM32
-        
-      
-    
-    </summary>
-    
-    
-      <category term="STM32" scheme="https://359303267.github.io/categories/STM32/"/>
-    
     
   </entry>
   

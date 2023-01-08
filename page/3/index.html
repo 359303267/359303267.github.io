@@ -202,6 +202,53 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/DWinUart_Driver/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/DWinUart_Driver/" itemprop="url">迪文串口屏T5L STM32 51驱动程序分享</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-07-23T00:05:18+08:00">2021-07-23 00:05:18</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STM32/" itemprop="url" rel="index"><span itemprop="name">STM32</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      迪文串口屏T5L STM32 51驱动程序分享最近在研究迪文的串口屏，网络上好像没有找到迪文的串口驱动程序。虽然这个东西不难，就是发送几个命令的事，但是仍然踩了不少坑。我用的型号是DMG48270C043_03WTC，不过应该和型号没关系。使用前需要用DGUS工具做好界面并设置好变量地址和描述地址，具体可以看迪文官方在bilibili发布的教程迪文智能屏T5L_DGUSII教程1_开发步骤_哔哩哔哩_bilibili和 原子哥上的教程T5L迪文屏C51开发教程 - 原子哥，专注电子技术教学 (yuanzige.com)。 这个驱动只实现了极少一部分功能，可供快速调试时使用。移植时只需要实现DWin_SendDat函数即可。 12345void DWin_SendDat(unsigned char* dat, unsigned int length)&#123; USART2_SendData(dat, length); HAL_Delay(20);&#125; DWIN.c： 1234567891011121314151617181920212223242526272829303132
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_UART_TxRx_DMA/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -687,67 +734,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Get-BP-Code/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/Get-BP-Code/" itemprop="url">如何获得BP机的地址码和工作频率？</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T12:01:27+08:00">2019-08-23 12:01:27</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      禁止转载 前言少叙现在玩BP机的应该都是为了那点情怀吧？奈何我家穷，当年买不起BP机，所以直到最近才在网络上购买了几个二手BP机。 现在是2019年。在2006年，中国最后一家寻呼运营商停止了寻呼服务，BP机寻呼台的信号也随之消失，老百姓手中的BP机也随之成了收藏品。 现在电商平台上有个人制作的小型寻呼台在卖，但是都太贵（坑）了，也许很多人只是想简单的让自己的呼机响起来，并不需要GSM、蓝牙、Wifi各种花里胡哨的功能，因此，本文出于情怀和让人人呼响BP机的目的，介绍如何呼响手中的BP机。 寻呼服务到底是怎样的呢？呼号、地址码、工作频率都是什么？ 根据我的了解和猜测，当年买了寻呼机之后是不能直接使用的，需要到当地运营商哪里对BP机进行写码（这里是地址码）和改频（BP机的工作频率），改好之后可能会对BP机进行加密，加密之后的BP机如果没有解密，是不能再次进行写码操作的（读取也不可以）。完了之后呢，运营商会给这个BP机分配一个呼号（相当于现在的手机号码），一个呼号对应一个地址码和工作频率。然后BP机就可以装上电池拿回家使用了。 当有人拨通你的呼号时，运营商会将此呼号对应的地址码和工作频率找
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
-        
-        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
-        
-        <a class="post-tag button" href="/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/" rel="tag"><i class="fas fa-tags"></i>摩托罗拉</a>
-        
-        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -794,7 +780,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">37</a></div>
+      <div><a href="/archives/">38</a></div>
     </div>
     
     
@@ -808,7 +794,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">46</a></div>
+      <div><a href="/tags/">47</a></div>
     </div>
     
     

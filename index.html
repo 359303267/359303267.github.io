@@ -202,7 +202,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
         <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
@@ -214,7 +214,66 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/" itemprop="url">加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</a>
+        <a class="post-title-link post-title-link-external" href="/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/" itemprop="url">Linux字符驱动框架学习笔记01（ZYNQ-7010）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-08T13:33:04+08:00">2023-01-08 13:33:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      Linux字符驱动框架学习笔记01（ZYNQ-7010）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 以此笔记记录我在驱动学习过程中的知识点，仅此而已。 模块基本框架： 12345module_init(newchrled_init);module_exit(newchrled_exit);MODULE_AUTHOR(&quot;verylk&quot;);MODULE_DESCRIPTION(&quot;ZYNQ New Char Driver&quot;);MODULE_LICENSE(&quot;GPL&quot;); 头文件： 123456789101112#include &lt;linux/types.h&gt;#include &lt;linux/kernel.h&gt;#include &lt;linux/delay.h&gt;#include &lt;linux/ide.h&gt;#include &lt;linux/init.h&gt;#include &lt;linu
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/kernel/" rel="tag"><i class="fas fa-tags"></i>kernel</a>
+        
+        <a class="post-tag button" href="/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/" rel="tag"><i class="fas fa-tags"></i>驱动程序</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/" itemprop="url">加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</a>
       </h1>
       <div class="post-meta">
         
@@ -239,7 +298,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 今天根据正点原子的教程编写newchrdev驱动时，在使用modprobe命令加载ko文件时，报了Unknown symbol device_create错误： 1234567root@ACZ702_System:/# modprobe leddevleddev: loading out-of-tree module taints kernel.leddev: disagrees about version of symbol device_createleddev: Unknown symbol device_create (err -22)leddev: disagrees about version of symbol device_destroyleddev: Unknown symbol device_destroy (err -22
+      加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 今天根据正点原子的教程编写newchrdev驱动时，在使用modprobe命令加载ko文件时，报了Unknown symbol device_create错误： 1234567root@ACZ702_System:/# modprobe leddevleddev: loading out-of-tree module taints kernel.leddev: disagrees about version of symbol device_createleddev: Unknown symbol device_create (err -22)leddev: disagrees about version of symbol device_destroyleddev: Unknown symbol device_destroy (err -22)mo
       
     </main>
     <footer class="post-footer">
@@ -261,7 +320,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
         <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
@@ -273,7 +332,7 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/" itemprop="url">使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</a>
+        <a class="post-title-link post-title-link-external" href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89/" itemprop="url">使用TFTP启动Linux内核（ZYNQ-7010）</a>
       </h1>
       <div class="post-meta">
         
@@ -298,7 +357,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      使用TFTP启动Linux内核（小梅哥ZYNQ-7010）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 ZYNQ的启动与普通的LINUX芯片不太一样，需要在启动内核之前通过u-boot加载比特流文件，否则会因为没有FPGA的程序导致外设无法正常运行。 服务端配置在Ubuntu虚拟机中，安装TFTP服务： 1sudo apt-get install tftpd-hpa 然后将内核文件复制到**/tftpboot**目录中： 12sudo cp zImage /tftpboot# 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp 复制设备树文件： 1sudo cp zynq-zc702.dtb /tftpboot 测试服务端是否正常（可以忽略）： 123tftp localhosttftp&gt; get zImageReceived 7574653 bytes in 1.7 seconds 开发板配置进入U-boot命令，从TFTP服务器获取比特流文件： 1
+      使用TFTP启动Linux内核（ZYNQ-7010）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 ZYNQ的启动与普通的LINUX芯片不太一样，需要在启动内核之前通过u-boot加载比特流文件，否则会因为没有FPGA的程序导致外设无法正常运行。 服务端配置在Ubuntu虚拟机中，安装TFTP服务： 1sudo apt-get install tftpd-hpa 然后将内核文件复制到**/tftpboot**目录中： 12sudo cp zImage /tftpboot# 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp 复制设备树文件： 1sudo cp zynq-zc702.dtb /tftpboot 测试服务端是否正常（可以忽略）： 123tftp localhosttftp&gt; get zImageReceived 7574653 bytes in 1.7 seconds 开发板配置进入U-boot命令，从TFTP服务器获取比特流文件： 12#Z
       
     </main>
     <footer class="post-footer">
@@ -717,63 +776,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/" itemprop="url">使用TFTP启动Linux内核（STM32MP157）</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-03T23:16:04+08:00">2022-05-03 23:16:04</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      使用TFTP启动Linux内核（STM32MP157）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 服务端配置在Ubuntu虚拟机中，安装TFTP服务： 1sudo apt-get install tftpd-hpa 然后将内核文件复制到**/var/lib/tftpboot**目录中： 12sudo cp uImage /var/lib/tftpboot# 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp 复制设备树文件： 1sudo cp stm32mp157a-fsmp1a-mipi050.dtb /var/lib/tftpboot 测试服务端是否正常（可以忽略）： 123tftp localhosttftp&gt; get uImageReceived 7574653 bytes in 1.7 seconds 开发板配置进入U-boot命令，下载内核： 1tftp 0xc2000040 uImage 下载设备树： 1tftp 0xc1000000 
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
-        
-        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
-        
-        <a class="post-tag button" href="/tags/NFS/" rel="tag"><i class="fas fa-tags"></i>NFS</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -820,7 +822,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">37</a></div>
+      <div><a href="/archives/">38</a></div>
     </div>
     
     
@@ -834,7 +836,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">46</a></div>
+      <div><a href="/tags/">47</a></div>
     </div>
     
     

@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>标签: 驱动程序 | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -197,135 +197,22 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+<div id="tag" class="tag page">
+  <h1 class="page-title">驱动程序</h1>
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="小小小日天">
-       <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-       <meta itemprop="image" content="/images/avatar.png">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/" itemprop="url">Linux字符驱动框架学习笔记01（ZYNQ-7010）</a>
+      </h1>
+      
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-08T13:33:04+08:00">01-08</time>
       </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-07T23:33:04+08:00">2023-01-07 23:33:04</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">笔记分享</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
+      
     </header>
-    <main class="post-main" itemprop="articleBody">
-      <h1 id="加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）"><a href="#加载驱动报Unknown-symbol-device-create错误解决（小梅哥ZYNQ-7010）" class="headerlink" title="加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）"></a>加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
-<p>今天根据正点原子的教程编写newchrdev驱动时，在使用modprobe命令加载ko文件时，报了Unknown symbol device_create错误：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/# modprobe leddev<br>leddev: loading out-of-tree module taints kernel.<br>leddev: disagrees about version of symbol device_create<br>leddev: Unknown symbol device_create (err -22)<br>leddev: disagrees about version of symbol device_destroy<br>leddev: Unknown symbol device_destroy (err -22)<br>modprobe: can&#x27;t load module leddev (leddev.ko): Invalid argument<br></code></pre></td></tr></table></figure>
-
-<p>经过查找，找到原因是开发板使用的内核与编译驱动时的内核不是同一个，虽然版本相同，所以之前加载其他驱动时没有报错，加载这个驱动就报找不到符号的错误。解决方法就是再将这个内核编译一遍，然后让开发板使用新编译的内核就解决了</p>
-<p>经过内核替换之后，使用相同的命令加载驱动，就会发现错误已经没有了，驱动可以正常加载：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/lib/modules# modprobe newchrled.ko<br>newcheled major=245,minor=0<br></code></pre></td></tr></table></figure>
-
-
-
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
-        
-        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
-        
-        <a class="post-tag button" href="/tags/NFS/" rel="tag"><i class="fas fa-tags"></i>NFS</a>
-        
-        <a class="post-tag button" href="/tags/kernel/" rel="tag"><i class="fas fa-tags"></i>kernel</a>
-        
-      </div>
-      
-    </footer>
   </article>
   
-  
-<div class="reward" id="reward">
-  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-  
-  
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/" rel="next" title="使用TFTP启动Linux内核（小梅哥ZYNQ-7010）"><i class="fas fa-angle-left"></i><span class="nav-title">使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-    </div>
-  </nav>
-  
-  
-  
-
-<div class="comments" id="comments">
-  
-  
-  <div id="vcomments" class="vcomments"></div>
-  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function () {
-    new Valine({
-      "el": "#vcomments",
-      "appId": "71hzYitLAa9GNYqk9A2UMO4n-gzGzoHsz",
-      "appKey": "4orLV8tWGqVkMsz64rE9QLrJ",
-      "verify": "true",
-      "notify": "true",
-      "avatar": "mp",
-      "meta": ["nick", "mail", "link"],
-      "pageSize": 10,
-      "lang": "zh-cn",
-      "visitor": "false",
-      "highlight": "true",
-      "placeholder": "在这里说点什么……",
-      "avatarForce": "false"
-    });
-  });
-  </script>
-  
-  
-</div>
-
-
-
   
 </div>
 
@@ -356,7 +243,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">37</a></div>
+      <div><a href="/archives/">38</a></div>
     </div>
     
     
@@ -370,7 +257,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">46</a></div>
+      <div><a href="/tags/">47</a></div>
     </div>
     
     
@@ -388,17 +275,6 @@
 
 
   <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown-symbol-device-create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89"><span class="toc-text">加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</span></a></li></ol></div>
-    </div>
-    
     
     
     <hr>

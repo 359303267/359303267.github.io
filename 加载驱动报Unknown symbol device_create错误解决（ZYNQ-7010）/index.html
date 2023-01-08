@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>使用TFTP启动Linux内核（小梅哥ZYNQ-7010） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
+    <title>加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010） | 小小小日天的博客 - 瞧！这里有个不知道叫什么好的小玩意！</title>
   <meta name="generator" content="Hexo 5.0.0"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -201,7 +201,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="小小小日天">
        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
@@ -212,11 +212,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</h1>
+      <h1 class="post-title" itemprop="name headline">加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-07T23:16:04+08:00">2023-01-07 23:16:04</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2023-01-07T23:33:04+08:00">2023-01-07 23:33:04</time></span>
         </span>
         
         
@@ -234,47 +234,13 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="使用TFTP启动Linux内核（小梅哥ZYNQ-7010）"><a href="#使用TFTP启动Linux内核（小梅哥ZYNQ-7010）" class="headerlink" title="使用TFTP启动Linux内核（小梅哥ZYNQ-7010）"></a>使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
-<p><strong>ZYNQ的启动与普通的LINUX芯片不太一样，需要在启动内核之前通过u-boot加载比特流文件，否则会因为没有FPGA的程序导致外设无法正常运行。</strong></p>
-<h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>在<strong>Ubuntu</strong>虚拟机中，安装TFTP服务：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install tftpd-hpa<br></code></pre></td></tr></table></figure>
+      <h1 id="加载驱动报Unknown-symbol-device-create错误解决（ZYNQ-7010）"><a href="#加载驱动报Unknown-symbol-device-create错误解决（ZYNQ-7010）" class="headerlink" title="加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）"></a>加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</h1><p>发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。</p>
+<p>今天根据正点原子的教程编写newchrdev驱动时，在使用modprobe命令加载ko文件时，报了Unknown symbol device_create错误：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/# modprobe leddev<br>leddev: loading out-of-tree module taints kernel.<br>leddev: disagrees about version of symbol device_create<br>leddev: Unknown symbol device_create (err -22)<br>leddev: disagrees about version of symbol device_destroy<br>leddev: Unknown symbol device_destroy (err -22)<br>modprobe: can&#x27;t load module leddev (leddev.ko): Invalid argument<br></code></pre></td></tr></table></figure>
 
-<p>然后将内核文件复制到**/tftpboot**目录中：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp zImage /tftpboot<br><span class="hljs-meta">#</span><span class="bash"> 在Ubuntu 20.04中，tftpd-hpa的默认路径改为：/srv/tftp</span><br></code></pre></td></tr></table></figure>
-
-<p>复制设备树文件：</p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo cp zynq-zc702.dtb /tftpboot<br></code></pre></td></tr></table></figure>
-
-<p>测试服务端是否正常（可以忽略）：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">tftp localhost<br>tftp&gt; get zImage<br>Received 7574653 bytes in 1.7 seconds<br></code></pre></td></tr></table></figure>
-
-<h2 id="开发板配置"><a href="#开发板配置" class="headerlink" title="开发板配置"></a>开发板配置</h2><p>进入U-boot命令，从TFTP服务器获取比特流文件：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">#ZYNQ的U-boot环境中没有tftp命令，使用bootp命令代替<br>bootp 0x00100000 system.bit<br></code></pre></td></tr></table></figure>
-
-<p>加载比特流文件：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">fpga loadb 0 0x100000 0x300000<br>#loadb [dev] [address] [size]  Load device from bitstream buffer (Xilinx only)<br></code></pre></td></tr></table></figure>
-
-<p>正常情况下，比特流文件加载之后，FPGA程序就开始正常跑了，u-boot会有如下输出：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">Bytes transferred &#x3D; 2083866 (1fcc1a hex)<br>  design filename &#x3D; &quot;system_wrapper;UserID&#x3D;0XFFFFFFFF;Version&#x3D;2018.3_AR71948_AR71948&quot;<br>  part number &#x3D; &quot;7z010clg400&quot;<br>  date &#x3D; &quot;2022&#x2F;06&#x2F;27&quot;<br>  time &#x3D; &quot;15:53:54&quot;<br>  bytes in bitstream &#x3D; 2083740<br>zynq_align_dma_buffer: Align buffer at 10007e to fff80(swap 1)<br></code></pre></td></tr></table></figure>
-
-<p>获取内核：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x08000000 zImage<br>#这里使用gzip压缩的zImage，也可以使用uImage<br></code></pre></td></tr></table></figure>
-
-<p>下载设备树：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x09000000 zynq-zc702.dtb<br></code></pre></td></tr></table></figure>
-
-<p>启动：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootz 0x08000000 - 0x09000000<br>#使用uImage格式的内核，需要将bootz命令改为bootm<br></code></pre></td></tr></table></figure>
-
-<p>测试可以启动。</p>
-<p>为了避免每次启动都输入这么多命令，可以将这些命令保存成变量：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set tftpboot &#39;bootp 0x100000 system.bit;fpga loadb 0 0x100000 0x300000;bootp 0x08000000 zImage;bootp 0x09000000 zynq-zc702.dtb;bootz 0x08000000 - 0x09000000&#39;<br></code></pre></td></tr></table></figure>
-
-<p>保存变量到Flash中：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">env save<br># saveenv    命令也可以<br></code></pre></td></tr></table></figure>
-
-<p>保存过后，需要启动的时候只需要在U-boot中输入命令：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">run tftpboot<br></code></pre></td></tr></table></figure>
+<p>经过查找，找到原因是开发板使用的内核与编译驱动时的内核不是同一个，虽然版本相同，所以之前加载其他驱动时没有报错，加载这个驱动就报找不到符号的错误。解决方法就是再将这个内核编译一遍，然后让开发板使用新编译的内核就解决了</p>
+<p>经过内核替换之后，使用相同的命令加载驱动，就会发现错误已经没有了，驱动可以正常加载：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@ACZ702_System:/lib/modules# modprobe newchrled.ko<br>newcheled major=245,minor=0<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
@@ -287,7 +253,7 @@
         
         <a class="post-tag button" href="/tags/NFS/" rel="tag"><i class="fas fa-tags"></i>NFS</a>
         
-        <a class="post-tag button" href="/tags/Kernel/" rel="tag"><i class="fas fa-tags"></i>Kernel</a>
+        <a class="post-tag button" href="/tags/kernel/" rel="tag"><i class="fas fa-tags"></i>kernel</a>
         
       </div>
       
@@ -316,12 +282,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/%E8%A7%A3%E5%86%B3DaVinci-Resolve%E5%89%AA%E8%BE%91%E8%BD%AF%E4%BB%B6%E5%9C%A8Windows%E9%AB%98DPI%E4%B8%8B%E7%9A%84%E7%BC%A9%E6%94%BE%E9%97%AE%E9%A2%98/" rel="next" title="解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题"><i class="fas fa-angle-left"></i><span class="nav-title">解决DaVinci Resolve 17剪辑软件在Windows高DPI下的缩放问题</span></a>
+      <a href="/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89/" rel="next" title="使用TFTP启动Linux内核（ZYNQ-7010）"><i class="fas fa-angle-left"></i><span class="nav-title">使用TFTP启动Linux内核（ZYNQ-7010）</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown%20symbol%20device_create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89/" rel="prev" title="加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）"><span class="nav-title">加载驱动报Unknown symbol device_create错误解决（小梅哥ZYNQ-7010）</span><i class="fas fa-angle-right"></i></a>
+      <a href="/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/" rel="prev" title="Linux字符驱动框架学习笔记01（ZYNQ-7010）"><span class="nav-title">Linux字符驱动框架学习笔记01（ZYNQ-7010）</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -390,7 +356,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">37</a></div>
+      <div><a href="/archives/">38</a></div>
     </div>
     
     
@@ -404,7 +370,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">46</a></div>
+      <div><a href="/tags/">47</a></div>
     </div>
     
     
@@ -430,7 +396,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88%E5%B0%8F%E6%A2%85%E5%93%A5ZYNQ-7010%EF%BC%89"><span class="toc-text">使用TFTP启动Linux内核（小梅哥ZYNQ-7010）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">服务端配置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%BC%80%E5%8F%91%E6%9D%BF%E9%85%8D%E7%BD%AE"><span class="toc-text">开发板配置</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8A%A0%E8%BD%BD%E9%A9%B1%E5%8A%A8%E6%8A%A5Unknown-symbol-device-create%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%EF%BC%88ZYNQ-7010%EF%BC%89"><span class="toc-text">加载驱动报Unknown symbol device_create错误解决（ZYNQ-7010）</span></a></li></ol></div>
     </div>
     
     
