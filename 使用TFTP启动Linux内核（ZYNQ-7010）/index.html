@@ -258,23 +258,26 @@
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">Bytes transferred &#x3D; 2083866 (1fcc1a hex)<br>  design filename &#x3D; &quot;system_wrapper;UserID&#x3D;0XFFFFFFFF;Version&#x3D;2018.3_AR71948_AR71948&quot;<br>  part number &#x3D; &quot;7z010clg400&quot;<br>  date &#x3D; &quot;2022&#x2F;06&#x2F;27&quot;<br>  time &#x3D; &quot;15:53:54&quot;<br>  bytes in bitstream &#x3D; 2083740<br>zynq_align_dma_buffer: Align buffer at 10007e to fff80(swap 1)<br></code></pre></td></tr></table></figure>
 
 <p>获取内核：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x08000000 zImage<br>#这里使用gzip压缩的zImage，也可以使用uImage<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x02080000 zImage<br>#这里使用gzip压缩的zImage，也可以使用uImage<br></code></pre></td></tr></table></figure>
 
 <p>下载设备树：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x09000000 zynq-zc702.dtb<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootp 0x02000000 system.dtb<br></code></pre></td></tr></table></figure>
 
 <p>启动：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootz 0x08000000 - 0x09000000<br>#使用uImage格式的内核，需要将bootz命令改为bootm<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">bootz 0x02080000 - 0x02000000<br>#使用uImage格式的内核，需要将bootz命令改为bootm<br></code></pre></td></tr></table></figure>
 
 <p>测试可以启动。</p>
-<p>为了避免每次启动都输入这么多命令，可以将这些命令保存成变量：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set tftpboot &#39;bootp 0x100000 system.bit;fpga loadb 0 0x100000 0x300000;bootp 0x08000000 zImage;bootp 0x09000000 zynq-zc702.dtb;bootz 0x08000000 - 0x09000000&#39;<br></code></pre></td></tr></table></figure>
+<h2 id="直接启动"><a href="#直接启动" class="headerlink" title="直接启动"></a>直接启动</h2><p>为了避免每次启动都输入这么多命令，可以将这些命令保存成变量：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">env set userboot &#39;bootp 0x100000 system.bit;fpga loadb 0 0x100000 0x300000;bootp 0x02080000 zImage;bootp 0x02000000 system.dtb;bootz 0x02080000 - 0x02000000&#39;<br></code></pre></td></tr></table></figure>
 
 <p>保存变量到Flash中：</p>
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">env save<br># saveenv    命令也可以<br></code></pre></td></tr></table></figure>
 
 <p>保存过后，需要启动的时候只需要在U-boot中输入命令：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">run tftpboot<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">run userboot<br></code></pre></td></tr></table></figure>
+
+<h2 id="使用SD卡启动"><a href="#使用SD卡启动" class="headerlink" title="使用SD卡启动"></a>使用SD卡启动</h2><p>可以在SD卡的FAT分区里使用<strong>uEnv.txt</strong>文件来设置u-boot的变量：</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">bitstream_load_address=0x100000<br>bitstream_image=system.bit<br>bitstream_size=0x300000<br>kernel_image=zImage<br>devicetree_image=system.dtb<br>userboot=bootp $&#123;bitstream_load_address&#125; $&#123;bitstream_image&#125; &amp;&amp; fpga loadb 0 $&#123;bitstream_load_address&#125; $&#123;bitstream_size&#125; &amp;&amp; bootp $&#123;kernel_load_address&#125; $&#123;kernel_image&#125; &amp;&amp; bootp $&#123;devicetree_load_address&#125; $&#123;devicetree_image&#125;  &amp;&amp; bootz $&#123;kernel_load_address&#125; - $&#123;devicetree_load_address&#125;;<br>uenvcmd=saveenv;<br>bootcmd=run userboot;<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
@@ -430,7 +433,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89"><span class="toc-text">使用TFTP启动Linux内核（ZYNQ-7010）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">服务端配置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%BC%80%E5%8F%91%E6%9D%BF%E9%85%8D%E7%BD%AE"><span class="toc-text">开发板配置</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88ZYNQ-7010%EF%BC%89"><span class="toc-text">使用TFTP启动Linux内核（ZYNQ-7010）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">服务端配置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%BC%80%E5%8F%91%E6%9D%BF%E9%85%8D%E7%BD%AE"><span class="toc-text">开发板配置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%90%AF%E5%8A%A8"><span class="toc-text">直接启动</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8SD%E5%8D%A1%E5%90%AF%E5%8A%A8"><span class="toc-text">使用SD卡启动</span></a></li></ol></li></ol></div>
     </div>
     
     
