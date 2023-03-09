@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://359303267.github.io/"/>
-  <updated>2023-01-08T07:24:11.982Z</updated>
+  <updated>2023-03-09T14:47:00.545Z</updated>
   <id>https://359303267.github.io/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>优利德uti260m红外热成像RAW数据分析记录</title>
+    <link href="https://359303267.github.io/%E4%BC%98%E5%88%A9%E5%BE%B7uti260m%E7%BA%A2%E5%A4%96%E7%83%AD%E6%88%90%E5%83%8FRAW%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95/"/>
+    <id>https://359303267.github.io/%E4%BC%98%E5%88%A9%E5%BE%B7uti260m%E7%BA%A2%E5%A4%96%E7%83%AD%E6%88%90%E5%83%8FRAW%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95/</id>
+    <published>2023-02-12T05:33:04.000Z</published>
+    <updated>2023-03-09T14:47:00.545Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;优利德uti260m红外热成像RAW数据分析记录&quot;&gt;&lt;a href=&quot;#优利德uti260m红外热成像RAW数据分析记录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="热成像" scheme="https://359303267.github.io/tags/%E7%83%AD%E6%88%90%E5%83%8F/"/>
+    
+      <category term="数据分析" scheme="https://359303267.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="笔记" scheme="https://359303267.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux字符驱动框架学习笔记01（ZYNQ-7010）</title>
     <link href="https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/"/>
     <id>https://359303267.github.io/Linux%E5%AD%97%E7%AC%A6%E9%A9%B1%E5%8A%A8%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%88ZYNQ-7010%EF%BC%89/</id>
     <published>2023-01-08T05:33:04.000Z</published>
-    <updated>2023-01-08T07:24:11.982Z</updated>
+    <updated>2023-02-10T09:02:21.856Z</updated>
     
     <summary type="html">
     
@@ -43,9 +74,9 @@
     
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
-      <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
-    
       <category term="驱动程序" scheme="https://359303267.github.io/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
     
   </entry>
   
@@ -76,9 +107,9 @@
     
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
-      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
-    
       <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
+    
+      <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
     
   </entry>
   
@@ -151,7 +182,7 @@
     <link href="https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>https://359303267.github.io/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81FS-MP1A%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E7%A7%BB%E6%A4%8D5%E5%AF%B8MIPI%E5%B1%8F%E5%B9%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
     <published>2022-05-16T15:16:04.000Z</published>
-    <updated>2022-05-16T15:30:21.899Z</updated>
+    <updated>2022-05-16T15:30:21.000Z</updated>
     
     <summary type="html">
     
@@ -186,7 +217,7 @@
     <link href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20EGLFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-05-09T15:55:43.000Z</published>
-    <updated>2022-05-09T16:22:13.361Z</updated>
+    <updated>2022-05-09T16:22:13.000Z</updated>
     
     <summary type="html">
     
@@ -217,7 +248,7 @@
     <link href="https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/%E7%A7%BB%E6%A4%8DQT%205.11.3%20linuxfb%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-05-09T12:48:42.000Z</published>
-    <updated>2022-05-09T15:54:20.322Z</updated>
+    <updated>2022-05-09T15:54:20.000Z</updated>
     
     <summary type="html">
     
@@ -248,7 +279,7 @@
     <link href="https://359303267.github.io/%E9%99%8D%E7%BA%A7VMware10%E8%83%BD%E5%A4%9F%E6%8F%90%E9%AB%98VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%843D%E8%83%BD%E5%8A%9B%E5%92%8C%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6/"/>
     <id>https://359303267.github.io/%E9%99%8D%E7%BA%A7VMware10%E8%83%BD%E5%A4%9F%E6%8F%90%E9%AB%98VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%843D%E8%83%BD%E5%8A%9B%E5%92%8C%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6/</id>
     <published>2022-05-09T06:52:48.000Z</published>
-    <updated>2022-05-09T10:44:50.287Z</updated>
+    <updated>2022-05-09T10:44:50.000Z</updated>
     
     <summary type="html">
     
@@ -275,7 +306,7 @@
     <link href="https://359303267.github.io/Linux%E5%86%85%E6%A0%B8%E6%B7%BB%E5%8A%A0RTL8723DU%E9%A9%B1%E5%8A%A8%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/Linux%E5%86%85%E6%A0%B8%E6%B7%BB%E5%8A%A0RTL8723DU%E9%A9%B1%E5%8A%A8%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-05-04T13:52:17.000Z</published>
-    <updated>2022-05-04T14:49:11.534Z</updated>
+    <updated>2022-05-04T14:49:11.000Z</updated>
     
     <summary type="html">
     
@@ -306,7 +337,7 @@
     <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8Debootstrap%E5%88%B6%E4%BD%9CDebian%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8Debootstrap%E5%88%B6%E4%BD%9CDebian%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-05-04T07:14:00.000Z</published>
-    <updated>2022-05-04T13:38:59.909Z</updated>
+    <updated>2022-05-04T13:38:59.000Z</updated>
     
     <summary type="html">
     
@@ -368,7 +399,7 @@
     <link href="https://359303267.github.io/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/%E4%BD%BF%E7%94%A8NFS%E6%8C%82%E8%BD%BDrootfs%E5%90%AF%E5%8A%A8Linux%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-05-03T14:57:58.000Z</published>
-    <updated>2022-05-04T07:45:28.045Z</updated>
+    <updated>2022-05-04T07:45:28.000Z</updated>
     
     <summary type="html">
     
@@ -399,7 +430,7 @@
     <link href="https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/"/>
     <id>https://359303267.github.io/%E5%B5%8C%E5%85%A5%E5%BC%8FQT%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%EF%BC%88STM32MP157%EF%BC%89/</id>
     <published>2022-04-22T07:28:23.000Z</published>
-    <updated>2022-05-09T10:23:52.278Z</updated>
+    <updated>2022-05-09T10:23:52.000Z</updated>
     
     <summary type="html">
     
@@ -430,7 +461,7 @@
     <link href="https://359303267.github.io/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/"/>
     <id>https://359303267.github.io/%E7%A0%B4%E8%A7%A3Linux%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%BF%E7%94%A8john%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%89/</id>
     <published>2022-04-22T07:10:03.000Z</published>
-    <updated>2022-05-04T07:43:04.851Z</updated>
+    <updated>2022-05-04T07:43:04.000Z</updated>
     
     <summary type="html">
     
@@ -461,7 +492,7 @@
     <link href="https://359303267.github.io/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/"/>
     <id>https://359303267.github.io/STM32-F429-LittleVGL-%E4%BD%BF%E7%94%A8DMA2D-%E5%8A%A0%E9%80%9F%EF%BC%88%E9%98%BB%E5%A1%9E%E5%BC%8F%EF%BC%89/</id>
     <published>2022-03-28T10:58:22.000Z</published>
-    <updated>2022-05-04T07:45:11.685Z</updated>
+    <updated>2022-05-04T07:45:11.000Z</updated>
     
     <summary type="html">
     
@@ -496,7 +527,7 @@
     <link href="https://359303267.github.io/STM32_F429_LTDC_issus_01/"/>
     <id>https://359303267.github.io/STM32_F429_LTDC_issus_01/</id>
     <published>2022-03-25T18:03:12.000Z</published>
-    <updated>2022-05-04T07:44:30.749Z</updated>
+    <updated>2022-05-04T07:44:30.000Z</updated>
     
     <summary type="html">
     
@@ -529,7 +560,7 @@
     <link href="https://359303267.github.io/STM32_F429_LittleVGL_02/"/>
     <id>https://359303267.github.io/STM32_F429_LittleVGL_02/</id>
     <published>2022-03-25T17:57:42.000Z</published>
-    <updated>2022-05-04T07:44:25.253Z</updated>
+    <updated>2022-05-04T07:44:25.000Z</updated>
     
     <summary type="html">
     
@@ -562,7 +593,7 @@
     <link href="https://359303267.github.io/STM32_F429_LittleVGL_01/"/>
     <id>https://359303267.github.io/STM32_F429_LittleVGL_01/</id>
     <published>2022-03-21T15:49:54.000Z</published>
-    <updated>2022-05-04T07:44:18.957Z</updated>
+    <updated>2022-05-04T07:44:18.000Z</updated>
     
     <summary type="html">
     
@@ -597,7 +628,7 @@
     <link href="https://359303267.github.io/STM32_SDRAM_01/"/>
     <id>https://359303267.github.io/STM32_SDRAM_01/</id>
     <published>2022-03-20T18:40:34.000Z</published>
-    <updated>2022-05-04T07:44:42.939Z</updated>
+    <updated>2022-05-04T07:44:42.000Z</updated>
     
     <summary type="html">
     
@@ -622,39 +653,6 @@
       <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
     
       <category term="SDRAM" scheme="https://359303267.github.io/tags/SDRAM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</title>
-    <link href="https://359303267.github.io/STM32_LTDC_RGB_800x480_01/"/>
-    <id>https://359303267.github.io/STM32_LTDC_RGB_800x480_01/</id>
-    <published>2022-03-20T17:32:22.000Z</published>
-    <updated>2022-05-04T07:44:37.081Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD&quot;&gt;&lt;a href=&quot;#正点原子F429开发板使用STM32CubeMX驱动4-3寸-RGB-LCD&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="嵌入式STM32笔记" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="https://359303267.github.io/tags/STM32/"/>
-    
-      <category term="嵌入式" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    
-      <category term="F429" scheme="https://359303267.github.io/tags/F429/"/>
-    
-      <category term="RGBLCD" scheme="https://359303267.github.io/tags/RGBLCD/"/>
     
   </entry>
   

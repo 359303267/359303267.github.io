@@ -202,6 +202,63 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8Debootstrap%E5%88%B6%E4%BD%9CDebian%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/%E4%BD%BF%E7%94%A8Debootstrap%E5%88%B6%E4%BD%9CDebian%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%88STM32MP157%EF%BC%89/" itemprop="url">使用Debootstrap制作Debian文件系统（STM32MP157）</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-05-04T15:14:00+08:00">2022-05-04 15:14:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" itemprop="url" rel="index"><span itemprop="name">嵌入式Linux</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      使用Debootstrap制作Debian文件系统（STM32MP157）发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 Debootstrap第一阶段这个阶段会下载一些基本的包。 在Ubuntu主机安装Debootstrap软件及依赖： 1sudo apt-get install debootstrap qemu-user-static 新建文件夹，用来存放根文件系统： 1mkdir rootfs 制作Debian根文件系统： 1sudo debootstrap --foreign --arch armhf buster rootfs http:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; 如果没有报错就说明完成了，时间大概几分钟。 Debootstrap第二阶段这个阶段会安装包。 复制qemu-arm-static文件： 1sudo cp &#x2F;usr&#x2F;bin&#x2F;qemu-arm-static
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag"><i class="fas fa-tags"></i>嵌入式Linux</a>
+        
+        <a class="post-tag button" href="/tags/QT/" rel="tag"><i class="fas fa-tags"></i>QT</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/%E4%BD%BF%E7%94%A8TFTP%E5%90%AF%E5%8A%A8Linux%E5%86%85%E6%A0%B8%EF%BC%88STM32MP157%EF%BC%89/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -727,65 +784,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_LTDC_RGB_800x480_01/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/STM32_LTDC_RGB_800x480_01/" itemprop="url">正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-21T01:32:22+08:00">2022-03-21 01:32:22</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 ​ 我不是买了一块4.3寸野火和正点原子双兼容的屏幕嘛，在测试和使用过程中积累了些许的经验，在此分享一下。 为什么这块屏幕能够做到双兼容？​ 首先要说明的是这块屏幕使用的是RGB的接口，并不是使用的MCU接口。RGB屏幕在使用时只需要配置好屏幕的时钟和一些扫描参数就可以了，而MCU屏幕需要对其写入指令，较为复杂。因此找到一款扫描参数和原厂相同的RGB屏幕要比找到一款使用相同主控的MCU屏幕容易得多，甚至你可以找到不同面板（TN和IPS）的RGB屏幕，而MCU屏幕除了进行定制，往往只能找到和原厂一样面板的屏幕（吐槽正点原子4.3寸800*480分辨率的MCU屏使用的是TN面板）。 STM32CubeMX配置步骤首先配置F429的RCC时钟部分，使用外部时钟信号。 接下来配置GPIO部分。 PB5为背光控制引脚，高电平时背光打开。 接下来是LTDC部分的引脚。因为正点原子F
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
-        
-        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
-        
-        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
-        
-        <a class="post-tag button" href="/tags/RGBLCD/" rel="tag"><i class="fas fa-tags"></i>RGBLCD</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -832,7 +830,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">38</a></div>
+      <div><a href="/archives/">39</a></div>
     </div>
     
     
@@ -846,7 +844,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">47</a></div>
+      <div><a href="/tags/">49</a></div>
     </div>
     
     

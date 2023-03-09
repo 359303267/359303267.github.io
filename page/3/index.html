@@ -202,6 +202,65 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/STM32_LTDC_RGB_800x480_01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/STM32_LTDC_RGB_800x480_01/" itemprop="url">正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-03-21T01:32:22+08:00">2022-03-21 01:32:22</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FSTM32%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">嵌入式STM32笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      正点原子F429开发板使用STM32CubeMX驱动4.3寸 RGB LCD发现最近随便转载的很多啊，未经授权禁止转载！抄袭！！否则转载者死全家！！另外这是我的笔记，不是教程，难免会有错误，不具有很高的参考性，望周知。 ​ 我不是买了一块4.3寸野火和正点原子双兼容的屏幕嘛，在测试和使用过程中积累了些许的经验，在此分享一下。 为什么这块屏幕能够做到双兼容？​ 首先要说明的是这块屏幕使用的是RGB的接口，并不是使用的MCU接口。RGB屏幕在使用时只需要配置好屏幕的时钟和一些扫描参数就可以了，而MCU屏幕需要对其写入指令，较为复杂。因此找到一款扫描参数和原厂相同的RGB屏幕要比找到一款使用相同主控的MCU屏幕容易得多，甚至你可以找到不同面板（TN和IPS）的RGB屏幕，而MCU屏幕除了进行定制，往往只能找到和原厂一样面板的屏幕（吐槽正点原子4.3寸800*480分辨率的MCU屏使用的是TN面板）。 STM32CubeMX配置步骤首先配置F429的RCC时钟部分，使用外部时钟信号。 接下来配置GPIO部分。 PB5为背光控制引脚，高电平时背光打开。 接下来是LTDC部分的引脚。因为正点原子F
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/STM32/" rel="tag"><i class="fas fa-tags"></i>STM32</a>
+        
+        <a class="post-tag button" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fas fa-tags"></i>嵌入式</a>
+        
+        <a class="post-tag button" href="/tags/F429/" rel="tag"><i class="fas fa-tags"></i>F429</a>
+        
+        <a class="post-tag button" href="/tags/RGBLCD/" rel="tag"><i class="fas fa-tags"></i>RGBLCD</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/DWinUart_Driver/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -380,7 +439,7 @@
     <main class="post-main" itemprop="articleBody">
       
       
-      基于STM32的寻呼发射器开源啦！！这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系&#x33;&#x35;&#57;&#x33;&#48;&#51;&#50;&#x36;&#x37;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d; 项目介绍这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：https://www.bilibili.com/video/BV1YE411N7p7/ 相当于小型寻呼台
+      基于STM32的寻呼发射器开源啦！！这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系&#x33;&#53;&#x39;&#x33;&#x30;&#51;&#x32;&#54;&#x37;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109; 项目介绍这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：https://www.bilibili.com/video/BV1YE411N7p7/ 相当于小型寻
       
     </main>
     <footer class="post-footer">
@@ -675,65 +734,6 @@
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/POCSAG/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="小小小日天">
-        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小小小日天的博客">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/POCSAG/" itemprop="url">开源！使用单片机发送POCSAG编码呼响BP机</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T14:11:17+08:00">2019-08-23 14:11:17</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
-        </span>
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      
-      禁止转载 ​ 需要注意的是，现在BP机工作频段已经被国家收回，所以自己使用手台、车台等大功率无线发射器在这个频段发射无线电波是违法的，所以需要进行发射信号的衰减，无线发射功率控制在0.1W之内是没有问题的。 ​ 单片机使用STC公司的IAP15W4K58S4，时钟频率为27MHz，使用串口1来发送数据，串口波特率为115200。支持1200和512比特速率的POCSAG编码，支持正负相位，可以发送数字信息和汉字信息（不支持混输） ​ 对讲机我用的是宝峰UV-5R。单片机的P36接对讲机的压控振荡器输入端，P35接对讲机的PTT控制端，还要和对讲机共地（至于这三个接线端具体接在哪一个位置，网上一搜就有了）。对讲机的发射频率需要调到BP机的工作频率一样。 ​ BP机我用摩托罗拉精英王和大顾问实验成功，如果不响可以试试切换一下相位。如果显示乱码就换一个响声/功能位。​​ 如果就是不响，要知道哪有这么容易响？地址码、BP机工作频率、对讲机频率调到和BP机工作频率一致、对讲机不能有频偏。如果就是不响，要考虑BP机是否被改过频率，很多BP机在使用的时候都是改过频率的，或者就是对讲机有频偏，可以使用
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
-        
-        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
-        
-        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
-        
-        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -780,7 +780,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">38</a></div>
+      <div><a href="/archives/">39</a></div>
     </div>
     
     
@@ -794,7 +794,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">47</a></div>
+      <div><a href="/tags/">49</a></div>
     </div>
     
     

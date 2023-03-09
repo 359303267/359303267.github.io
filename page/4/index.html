@@ -202,6 +202,65 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://359303267.github.io/POCSAG/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="小小小日天">
+        <meta itemprop="description" content="当家门在开启时，我会向故乡顶礼——许巍">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小小小日天的博客">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/POCSAG/" itemprop="url">开源！使用单片机发送POCSAG编码呼响BP机</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-23T14:11:17+08:00">2019-08-23 14:11:17</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BP%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">BP机</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      
+      禁止转载 ​ 需要注意的是，现在BP机工作频段已经被国家收回，所以自己使用手台、车台等大功率无线发射器在这个频段发射无线电波是违法的，所以需要进行发射信号的衰减，无线发射功率控制在0.1W之内是没有问题的。 ​ 单片机使用STC公司的IAP15W4K58S4，时钟频率为27MHz，使用串口1来发送数据，串口波特率为115200。支持1200和512比特速率的POCSAG编码，支持正负相位，可以发送数字信息和汉字信息（不支持混输） ​ 对讲机我用的是宝峰UV-5R。单片机的P36接对讲机的压控振荡器输入端，P35接对讲机的PTT控制端，还要和对讲机共地（至于这三个接线端具体接在哪一个位置，网上一搜就有了）。对讲机的发射频率需要调到BP机的工作频率一样。 ​ BP机我用摩托罗拉精英王和大顾问实验成功，如果不响可以试试切换一下相位。如果显示乱码就换一个响声/功能位。​​ 如果就是不响，要知道哪有这么容易响？地址码、BP机工作频率、对讲机频率调到和BP机工作频率一致、对讲机不能有频偏。如果就是不响，要考虑BP机是否被改过频率，很多BP机在使用的时候都是改过频率的，或者就是对讲机有频偏，可以使用
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E7%9E%8E%E6%8A%98%E8%85%BE/" rel="tag"><i class="fas fa-tags"></i>瞎折腾</a>
+        
+        <a class="post-tag button" href="/tags/BP%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>BP机</a>
+        
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tags"></i>单片机</a>
+        
+        <a class="post-tag button" href="/tags/POCSAG/" rel="tag"><i class="fas fa-tags"></i>POCSAG</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://359303267.github.io/Get-BP-Code/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="小小小日天">
@@ -484,13 +543,13 @@
         
         <a class="post-tag button" href="/tags/%E7%BB%8F%E9%AA%8C/" rel="tag"><i class="fas fa-tags"></i>经验</a>
         
+        <a class="post-tag button" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
+        
         <a class="post-tag button" href="/tags/%E7%88%B1%E5%A5%87%E8%89%BA/" rel="tag"><i class="fas fa-tags"></i>爱奇艺</a>
         
         <a class="post-tag button" href="/tags/%E7%9F%A5%E8%AF%86%E5%B0%B1%E6%98%AF%E5%8A%9B%E9%87%8F/" rel="tag"><i class="fas fa-tags"></i>知识就是力量</a>
         
         <a class="post-tag button" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fas fa-tags"></i>分享</a>
-        
-        <a class="post-tag button" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
       </div>
       
@@ -720,7 +779,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">38</a></div>
+      <div><a href="/archives/">39</a></div>
     </div>
     
     
@@ -734,7 +793,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">47</a></div>
+      <div><a href="/tags/">49</a></div>
     </div>
     
     
