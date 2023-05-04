@@ -39,11 +39,11 @@
       <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
     
     
+      <category term="笔记" scheme="https://359303267.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="热成像" scheme="https://359303267.github.io/tags/%E7%83%AD%E6%88%90%E5%83%8F/"/>
     
       <category term="数据分析" scheme="https://359303267.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="笔记" scheme="https://359303267.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -70,13 +70,13 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
       <category term="驱动程序" scheme="https://359303267.github.io/tags/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/"/>
     
       <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
@@ -103,11 +103,11 @@
       <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
       <category term="kernel" scheme="https://359303267.github.io/tags/kernel/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
     
@@ -136,9 +136,9 @@
       <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
     
@@ -171,9 +171,9 @@
     
       <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
-      <category term="教程" scheme="https://359303267.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="视频剪辑" scheme="https://359303267.github.io/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    
+      <category term="教程" scheme="https://359303267.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -202,9 +202,9 @@
     
       <category term="内核" scheme="https://359303267.github.io/tags/%E5%86%85%E6%A0%B8/"/>
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="驱动移植" scheme="https://359303267.github.io/tags/%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D/"/>
     
@@ -235,9 +235,9 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
     
@@ -266,9 +266,9 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
     
@@ -324,9 +324,9 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
     
@@ -355,9 +355,9 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
     
@@ -386,9 +386,9 @@
       <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
     
@@ -417,9 +417,9 @@
       <category term="笔记分享" scheme="https://359303267.github.io/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="NFS" scheme="https://359303267.github.io/tags/NFS/"/>
     
@@ -448,9 +448,9 @@
       <category term="嵌入式Linux" scheme="https://359303267.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     
     
-      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
       <category term="嵌入式Linux" scheme="https://359303267.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
+    
+      <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
       <category term="QT" scheme="https://359303267.github.io/tags/QT/"/>
     
@@ -481,9 +481,9 @@
     
       <category term="经验" scheme="https://359303267.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
-      <category term="Linux" scheme="https://359303267.github.io/tags/Linux/"/>
-    
       <category term="教程" scheme="https://359303267.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Linux" scheme="https://359303267.github.io/tags/Linux/"/>
     
   </entry>
   

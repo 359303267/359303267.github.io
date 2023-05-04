@@ -20,11 +20,11 @@
       
         <tags>
             
+            <tag> 笔记 </tag>
+            
             <tag> 热成像 </tag>
             
             <tag> 数据分析 </tag>
-            
-            <tag> 笔记 </tag>
             
         </tags>
       
@@ -49,13 +49,13 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
             
             <tag> 驱动程序 </tag>
             
             <tag> kernel </tag>
+            
+            <tag> 经验 </tag>
             
         </tags>
       
@@ -80,11 +80,11 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
             
             <tag> kernel </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> NFS </tag>
             
@@ -111,9 +111,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> NFS </tag>
             
@@ -144,9 +144,9 @@
             
             <tag> 经验 </tag>
             
-            <tag> 教程 </tag>
-            
             <tag> 视频剪辑 </tag>
+            
+            <tag> 教程 </tag>
             
         </tags>
       
@@ -173,9 +173,9 @@
             
             <tag> 内核 </tag>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> 驱动移植 </tag>
             
@@ -204,9 +204,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> QT </tag>
             
@@ -233,9 +233,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> QT </tag>
             
@@ -287,9 +287,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> QT </tag>
             
@@ -316,9 +316,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> QT </tag>
             
@@ -345,9 +345,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> NFS </tag>
             
@@ -374,9 +374,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> NFS </tag>
             
@@ -403,9 +403,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 嵌入式Linux </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> QT </tag>
             
@@ -434,9 +434,9 @@
             
             <tag> 经验 </tag>
             
-            <tag> Linux </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
@@ -696,7 +696,7 @@
       <link href="/STM32_POCSAG_Transmit/"/>
       <url>/STM32_POCSAG_Transmit/</url>
       
-        <content type="html"><![CDATA[<h1 id="基于STM32的寻呼发射器开源啦！！"><a href="#基于STM32的寻呼发射器开源啦！！" class="headerlink" title="基于STM32的寻呼发射器开源啦！！"></a>基于STM32的寻呼发射器开源啦！！</h1><p>这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系<a href="mailto:&#x33;&#53;&#x39;&#x33;&#x30;&#51;&#x32;&#54;&#x37;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#x33;&#53;&#x39;&#x33;&#x30;&#51;&#x32;&#54;&#x37;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>  </p><h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：<a href="https://www.bilibili.com/video/BV1YE411N7p7/">https://www.bilibili.com/video/BV1YE411N7p7/</a></p><p>相当于小型寻呼台。<br>这款发射器支持手机wifi追频追码，支持所有POCSAG编码的机器，暂时不支持高速机。</p><p>5V2A供电，在户外可使用充电宝供电。支持摩托罗拉大顾问，精英王，八达等常见低速型号，发射低功率0.5W，高功率1W（只会多不会少），空旷发射距离1km多，条件好的距离可达2km（不是吹的，我实际测试过，天线在二楼，骑着小电驴测试距离，你也可以用设备测功率，不够1W我吃了它！由此可见其他那些100mW功率的发射器距离有多远了吧…），可外接功放增加距离（前提是在合规合法的情况下），可设置PTT延时，可提前和延后打开功放，避免误码。频率范围136MHz～174MHz，支持512、1200、2400速率的机器，可支持数字机和汉字机，也就是说，只要你的呼机上没有flex花花标志，都是支持的。</p><p>一次可发送400个字符，200个汉字，可以群呼，可以组呼，内置存储器，可存储20组呼机参数和常用语，可连接家里的Wifi，也可工作在热点模式。在户外没有wifi也可以通过手机连接自带的wifi网络进行控制。如果你有技术，可以自己做内网穿透（比如花生壳之类的，个人免费），实现随时随地都可以发送消息。这样的优势就是不怕我跑路。</p><p>发射器自带OLED显示屏，可显示重要参数和提示，产品支持固件升级。</p><ul><li><p>STM32F103RCT6可以更换成其他M3内核的单片机。</p></li><li><p>ESP8266-01S模块需要进行改装，需要将自带的1MB Flash更换成4MB，不能直接使用。如果不需要WIfi控制功能，也可以不装ESP8266。</p></li><li><p>SR_FRS_1WV模块也需要改装，不可直接使用，需要拆开屏蔽罩，将压控振荡器的输入端（26M晶振1脚）引出并与模块的第四脚相接才可以进行正常的发送。</p></li><li><p>进行无线发送时需要注意，不可空载测试，必须要接上V段天线或者假负载，否则会烧坏RF模块的功放！！</p></li><li><p>由于发送功率较大，已达到1W，空旷通信距离可以超过1km，因此务必遵守当地无线电相关法则，不可干扰其他设备正常运行，不可干扰其他人通信和卫星通信，务必通过业余无线电考试之后再进行操作！！</p></li></ul><p>PCB地址：<a href="https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy">https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy</a></p><p>源码地址：<a href="https://github.com/359303267/STM32_POCSAG_Transmit">https://github.com/359303267/STM32_POCSAG_Transmit</a></p><p>软件地址：<a href="https://github.com/359303267/STM32_POCSAG_Transmit/releases">https://github.com/359303267/STM32_POCSAG_Transmit/releases</a></p><p>使用教程：<a href="https://www.bilibili.com/video/BV1sZ4y1u76M">https://www.bilibili.com/video/BV1sZ4y1u76M</a></p><h1 id="成品外观"><a href="#成品外观" class="headerlink" title="成品外观"></a>成品外观</h1><p><img src="/images/STM32_POCSAG_Transmit/1.png" alt="正面">  </p><p><img src="/images/STM32_POCSAG_Transmit/2.png" alt="反面"></p><h1 id="假如你有问题"><a href="#假如你有问题" class="headerlink" title="假如你有问题"></a>假如你有问题</h1><p>本人开源这个项目即表示放弃这个项目，所以有任何问题都不要找我（当然，给我送钱除外，毕竟谁会跟钱过不去呢~），你需要增加自己的知识储备。更不要试图加我，我不会同意。</p><p>没有成品卖！！</p><h1 id="其他要说的"><a href="#其他要说的" class="headerlink" title="其他要说的"></a>其他要说的</h1><p>看到下面红色的打赏了吗？你懂我意思~</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="基于STM32的寻呼发射器开源啦！！"><a href="#基于STM32的寻呼发射器开源啦！！" class="headerlink" title="基于STM32的寻呼发射器开源啦！！"></a>基于STM32的寻呼发射器开源啦！！</h1><p>这个项目是我第一个独立自主的项目，从PCB设计、程序编写到上位机编写、外观设计都是我一个人独立完成，前后耗费近一年时间。现学业繁忙，没有精力继续维护下去，并且我觉得我代码写的稀烂。所以将这个项目开源，供广大朋友自己DIY。该项目遵循GPL协议，STM32部分代码、上位机全部代码和ESP8266全部代码仅用于个人研究和DIY，不可用于商业用途！！！商业授权请联系<a href="mailto:&#51;&#53;&#57;&#51;&#x30;&#51;&#50;&#x36;&#55;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#51;&#53;&#57;&#51;&#x30;&#51;&#50;&#x36;&#55;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a>  </p><h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>这个项目主要由STM32F103RCT6、ESP8266-01S、SR_FRS_1WV模块组成，需要配合上位机进行使用。主要用于生成POCSAG编码并进行NFM调制发送，使接收设备可以收到消息。可以向老式的BP机发送消息，前提是BP机必须工作在V段频率且支持POCSAG编码，关于这方面的知识可以从这里学习：<a href="https://www.bilibili.com/video/BV1YE411N7p7/">https://www.bilibili.com/video/BV1YE411N7p7/</a></p><p>相当于小型寻呼台。<br>这款发射器支持手机wifi追频追码，支持所有POCSAG编码的机器，暂时不支持高速机。</p><p>5V2A供电，在户外可使用充电宝供电。支持摩托罗拉大顾问，精英王，八达等常见低速型号，发射低功率0.5W，高功率1W（只会多不会少），空旷发射距离1km多，条件好的距离可达2km（不是吹的，我实际测试过，天线在二楼，骑着小电驴测试距离，你也可以用设备测功率，不够1W我吃了它！由此可见其他那些100mW功率的发射器距离有多远了吧…），可外接功放增加距离（前提是在合规合法的情况下），可设置PTT延时，可提前和延后打开功放，避免误码。频率范围136MHz～174MHz，支持512、1200、2400速率的机器，可支持数字机和汉字机，也就是说，只要你的呼机上没有flex花花标志，都是支持的。</p><p>一次可发送400个字符，200个汉字，可以群呼，可以组呼，内置存储器，可存储20组呼机参数和常用语，可连接家里的Wifi，也可工作在热点模式。在户外没有wifi也可以通过手机连接自带的wifi网络进行控制。如果你有技术，可以自己做内网穿透（比如花生壳之类的，个人免费），实现随时随地都可以发送消息。这样的优势就是不怕我跑路。</p><p>发射器自带OLED显示屏，可显示重要参数和提示，产品支持固件升级。</p><ul><li><p>STM32F103RCT6可以更换成其他M3内核的单片机。</p></li><li><p>ESP8266-01S模块需要进行改装，需要将自带的1MB Flash更换成4MB，不能直接使用。如果不需要WIfi控制功能，也可以不装ESP8266。</p></li><li><p>SR_FRS_1WV模块也需要改装，不可直接使用，需要拆开屏蔽罩，将压控振荡器的输入端（26M晶振1脚）引出并与模块的第四脚相接才可以进行正常的发送。</p></li><li><p>进行无线发送时需要注意，不可空载测试，必须要接上V段天线或者假负载，否则会烧坏RF模块的功放！！</p></li><li><p>由于发送功率较大，已达到1W，空旷通信距离可以超过1km，因此务必遵守当地无线电相关法则，不可干扰其他设备正常运行，不可干扰其他人通信和卫星通信，务必通过业余无线电考试之后再进行操作！！</p></li></ul><p>PCB地址：<a href="https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy">https://lceda.cn/verylk/xun-hu-fa-ye-jiv1-0_copy_copy</a></p><p>源码地址：<a href="https://github.com/359303267/STM32_POCSAG_Transmit">https://github.com/359303267/STM32_POCSAG_Transmit</a></p><p>软件地址：<a href="https://github.com/359303267/STM32_POCSAG_Transmit/releases">https://github.com/359303267/STM32_POCSAG_Transmit/releases</a></p><p>使用教程：<a href="https://www.bilibili.com/video/BV1sZ4y1u76M">https://www.bilibili.com/video/BV1sZ4y1u76M</a></p><h1 id="成品外观"><a href="#成品外观" class="headerlink" title="成品外观"></a>成品外观</h1><p><img src="/images/STM32_POCSAG_Transmit/1.png" alt="正面">  </p><p><img src="/images/STM32_POCSAG_Transmit/2.png" alt="反面"></p><h1 id="假如你有问题"><a href="#假如你有问题" class="headerlink" title="假如你有问题"></a>假如你有问题</h1><p>本人开源这个项目即表示放弃这个项目，所以有任何问题都不要找我（当然，给我送钱除外，毕竟谁会跟钱过不去呢~），你需要增加自己的知识储备。更不要试图加我，我不会同意。</p><p>没有成品卖！！</p><h1 id="其他要说的"><a href="#其他要说的" class="headerlink" title="其他要说的"></a>其他要说的</h1><p>看到下面红色的打赏了吗？你懂我意思~</p>]]></content>
       
       
       <categories>
@@ -766,13 +766,13 @@
       
         <tags>
             
+            <tag> Windows </tag>
+            
             <tag> WinPE </tag>
             
             <tag> U盘启动 </tag>
             
             <tag> 工具集 </tag>
-            
-            <tag> Windows </tag>
             
         </tags>
       
@@ -942,9 +942,9 @@
             
             <tag> 瞎折腾 </tag>
             
-            <tag> PCB </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> PCB </tag>
             
         </tags>
       
@@ -1033,13 +1033,13 @@
             
             <tag> 经验 </tag>
             
-            <tag> 笔记 </tag>
-            
             <tag> 爱奇艺 </tag>
             
             <tag> 知识就是力量 </tag>
             
             <tag> 分享 </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
       
@@ -1064,9 +1064,9 @@
       
         <tags>
             
-            <tag> 瞎折腾 </tag>
-            
             <tag> 刷机 </tag>
+            
+            <tag> 瞎折腾 </tag>
             
             <tag> 经验 </tag>
             
@@ -1167,6 +1167,50 @@
     
     <entry>
       <title></title>
+      <link href="/PEDonation/index.html"/>
+      <url>/PEDonation/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="https-359303267-github-io-PE"><a href="#https-359303267-github-io-PE" class="headerlink" title="https://359303267.github.io/PE/"></a><center><a href="https://359303267.github.io/PE/">https://359303267.github.io/PE/</a></center></h1><h1 id="一个不知道叫什么好的U盘启动工具集"><a href="#一个不知道叫什么好的U盘启动工具集" class="headerlink" title="一个不知道叫什么好的U盘启动工具集"></a><center>一个不知道叫什么好的U盘启动工具集</center></h1><h2 id="非常感谢以下赞助者"><a href="#非常感谢以下赞助者" class="headerlink" title="非常感谢以下赞助者"></a><center>非常感谢以下赞助者</center></h2><h3 id="（名单随机排序）"><a href="#（名单随机排序）" class="headerlink" title="（名单随机排序）"></a><center>（名单随机排序）</center></h3><table><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center">Blood of SKY</td><td align="center">*宽明</td><td align="center"><a href="mailto:&#55;&#56;&#x36;&#x35;&#50;&#x31;&#x31;&#x38;&#x34;&#x40;&#x71;&#113;&#46;&#99;&#111;&#109;">&#55;&#56;&#x36;&#x35;&#50;&#x31;&#x31;&#x38;&#x34;&#x40;&#x71;&#113;&#46;&#99;&#111;&#109;</a></td><td align="center">芋筅</td><td align="center">*光辉</td></tr><tr><td align="center">TonyYAO</td><td align="center"><em>雷　lev**</em>@gamil.com</td><td align="center">落弃</td><td align="center">2018-07-10微信赞助用户</td><td align="center">Singapore</td></tr><tr><td align="center">*震</td><td align="center">Alisren</td><td align="center">alcoholic</td><td align="center">源</td><td align="center">WXQ</td></tr><tr><td align="center">*敬龙</td><td align="center">mzg</td><td align="center">2018-08-30微信赞助用户</td><td align="center">成师</td><td align="center">铭豆</td></tr><tr><td align="center">195648521</td><td align="center">李伟华</td><td align="center">丹羽子</td><td align="center"><em>邓冲　zdc**</em>@163.com</td><td align="center">2018-03-18微信赞助用户</td></tr><tr><td align="center">洋</td><td align="center">执念っつ</td><td align="center">简单爱</td><td align="center">一清</td><td align="center">男人的骄傲</td></tr><tr><td align="center">2019-02-13微信赞助用户*💪🏻</td><td align="center">2019-04-21微信赞助用户*龙</td><td align="center">2019-05-27支付宝用户*祥博</td><td align="center">2019-07-19微信用户*è</td><td align="center">2019-07-20微信用户*红</td></tr><tr><td align="center">2019-07-22微信用户*秃</td><td align="center">2019-07-22支付宝用户*子骆</td><td align="center">2019-08-08微信用户*乐</td><td align="center">2019-08-09支付宝用户*靖</td><td align="center">2019-10-26支付宝用户*雷</td></tr><tr><td align="center">2019-11-03支付宝用户*清华</td><td align="center">2020-02-08微信用户*林</td><td align="center">2020-03-12支付宝用户**章</td><td align="center">2020-04-14支付宝用户**清</td><td align="center">2020-04-30支付宝用户**颖</td></tr><tr><td align="center">2020-06-05微信用户*士</td><td align="center">2020-04-26微信用户*子</td><td align="center">2020-07-15微信用户*學</td><td align="center">2020-07-15微信用户*X</td><td align="center">2020-07-23微信用户*六</td></tr><tr><td align="center">2020-06-19微信用户*μ</td><td align="center">2020-07-22支付宝用户*辉</td><td align="center">2020-08-17微信用户A*2</td><td align="center">2021-01-01微信用户*R</td><td align="center">2021-01-04微信用户*（那个字打不出）</td></tr><tr><td align="center">2021-02-1微信用户*市</td><td align="center">2022-02-23微信用户*来</td><td align="center">2021-09-11微信用户*力</td><td align="center">2021-06-18微信用户*白</td><td align="center">2022-03-13支付宝用户**亮</td></tr><tr><td align="center">2022-01-23支付宝用户**鑫</td><td align="center">2021-09-09支付宝用户*昕</td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table><h2 id="以及以下的无忧论坛用户："><a href="#以及以下的无忧论坛用户：" class="headerlink" title="以及以下的无忧论坛用户："></a><center>以及以下的无忧论坛用户：</center></h2><table><thead><tr><th align="right"></th><th align="left"></th><th align="right"></th><th align="left"></th></tr></thead><tbody><tr><td align="right"><code>wimboot</code>:</td><td align="left">非常棒的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=402673">Win10PE</a>内核</td><td align="right"><code>立帮电子</code>:</td><td align="left">优质的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=397706">一键备份还原工具</a> 以及<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=403550">WinPE生成器</a></td></tr><tr><td align="right"><code>2010kva</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=364890">界面友好的一键制作工具</a></td><td align="right"><code>wintoflash</code>:</td><td align="left">非常棒的Porteus 4.0 口袋Linux系统以及<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=410086">Grub2文件管理</a></td></tr><tr><td align="right"><code>jsgh1983</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=365856">Message启动菜单个性化制作工具</a></td><td align="right"><code>红毛樱木</code>:</td><td align="left">搜集大量<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=372840">网卡、显卡驱动</a></td></tr><tr><td align="right"><code>hhh333</code>:</td><td align="left">搜集整理的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=388395&fromuid=570450">NVME驱动程序</a></td><td align="right"><code>slore</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=409685">Wimbuilder2 PE生成器项目</a></td></tr><tr><td align="right"><code>sinoxer</code>:</td><td align="left"><a href="https://www.xyboot.com/usb3_drivers_smart_install/">搜集整理的USB3.0驱动</a></td><td align="right"><code>Pauly</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=157812&extra=page=1">XORBOOT Uefi: 多系统引导程序</a></td></tr><tr><td align="right"><code>slorelee</code>:</td><td align="left"><a href="https://github.com/slorelee/wimbuilder2">WinBuilder2项目</a></td><td align="right"></td><td align="left"></td></tr></tbody></table><h2 id="好用的话，请作者喝杯茶吧🙂"><a href="#好用的话，请作者喝杯茶吧🙂" class="headerlink" title="好用的话，请作者喝杯茶吧🙂"></a><center>好用的话，请作者喝杯茶吧🙂</center></h2><div class="reward" id="reward">  <button id="reward-button" class="button" disable="enable">打赏</button>  <div id="qr" class="qr" style="display: none;" aria-hidden="true">    <div id="alipay">      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝">    </div>  </div></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/xunhufasheqi-help/index.html"/>
+      <url>/xunhufasheqi-help/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="寻呼发射器帮助"><a href="#寻呼发射器帮助" class="headerlink" title="寻呼发射器帮助"></a>寻呼发射器帮助</h1><p>视频教程：</p><blockquote><ul><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M">演示（一）</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=2">演示（二）</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=3">第一步：安装驱动</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=4">连接Wifi的方法</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=5">群呼和组呼的配置及使用</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=6">固件升级方法</a></li></ul></blockquote><p>如有其他问题，可在下方评论区留言</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/xunhufasheqi-update/index.html"/>
       <url>/xunhufasheqi-update/index.html</url>
       
@@ -1188,55 +1232,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/PEDonation/index.html"/>
-      <url>/PEDonation/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="https-359303267-github-io-PE"><a href="#https-359303267-github-io-PE" class="headerlink" title="https://359303267.github.io/PE/"></a><center><a href="https://359303267.github.io/PE/">https://359303267.github.io/PE/</a></center></h1><h1 id="一个不知道叫什么好的U盘启动工具集"><a href="#一个不知道叫什么好的U盘启动工具集" class="headerlink" title="一个不知道叫什么好的U盘启动工具集"></a><center>一个不知道叫什么好的U盘启动工具集</center></h1><h2 id="非常感谢以下赞助者"><a href="#非常感谢以下赞助者" class="headerlink" title="非常感谢以下赞助者"></a><center>非常感谢以下赞助者</center></h2><h3 id="（名单随机排序）"><a href="#（名单随机排序）" class="headerlink" title="（名单随机排序）"></a><center>（名单随机排序）</center></h3><table><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center">Blood of SKY</td><td align="center">*宽明</td><td align="center"><a href="mailto:&#55;&#x38;&#x36;&#53;&#50;&#x31;&#49;&#x38;&#x34;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#55;&#x38;&#x36;&#53;&#50;&#x31;&#49;&#x38;&#x34;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a></td><td align="center">芋筅</td><td align="center">*光辉</td></tr><tr><td align="center">TonyYAO</td><td align="center"><em>雷　lev**</em>@gamil.com</td><td align="center">落弃</td><td align="center">2018-07-10微信赞助用户</td><td align="center">Singapore</td></tr><tr><td align="center">*震</td><td align="center">Alisren</td><td align="center">alcoholic</td><td align="center">源</td><td align="center">WXQ</td></tr><tr><td align="center">*敬龙</td><td align="center">mzg</td><td align="center">2018-08-30微信赞助用户</td><td align="center">成师</td><td align="center">铭豆</td></tr><tr><td align="center">195648521</td><td align="center">李伟华</td><td align="center">丹羽子</td><td align="center"><em>邓冲　zdc**</em>@163.com</td><td align="center">2018-03-18微信赞助用户</td></tr><tr><td align="center">洋</td><td align="center">执念っつ</td><td align="center">简单爱</td><td align="center">一清</td><td align="center">男人的骄傲</td></tr><tr><td align="center">2019-02-13微信赞助用户*💪🏻</td><td align="center">2019-04-21微信赞助用户*龙</td><td align="center">2019-05-27支付宝用户*祥博</td><td align="center">2019-07-19微信用户*è</td><td align="center">2019-07-20微信用户*红</td></tr><tr><td align="center">2019-07-22微信用户*秃</td><td align="center">2019-07-22支付宝用户*子骆</td><td align="center">2019-08-08微信用户*乐</td><td align="center">2019-08-09支付宝用户*靖</td><td align="center">2019-10-26支付宝用户*雷</td></tr><tr><td align="center">2019-11-03支付宝用户*清华</td><td align="center">2020-02-08微信用户*林</td><td align="center">2020-03-12支付宝用户**章</td><td align="center">2020-04-14支付宝用户**清</td><td align="center">2020-04-30支付宝用户**颖</td></tr><tr><td align="center">2020-06-05微信用户*士</td><td align="center">2020-04-26微信用户*子</td><td align="center">2020-07-15微信用户*學</td><td align="center">2020-07-15微信用户*X</td><td align="center">2020-07-23微信用户*六</td></tr><tr><td align="center">2020-06-19微信用户*μ</td><td align="center">2020-07-22支付宝用户*辉</td><td align="center">2020-08-17微信用户A*2</td><td align="center">2021-01-01微信用户*R</td><td align="center">2021-01-04微信用户*（那个字打不出）</td></tr><tr><td align="center">2021-02-1微信用户*市</td><td align="center">2022-02-23微信用户*来</td><td align="center">2021-09-11微信用户*力</td><td align="center">2021-06-18微信用户*白</td><td align="center">2022-03-13支付宝用户**亮</td></tr><tr><td align="center">2022-01-23支付宝用户**鑫</td><td align="center">2021-09-09支付宝用户*昕</td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table><h2 id="以及以下的无忧论坛用户："><a href="#以及以下的无忧论坛用户：" class="headerlink" title="以及以下的无忧论坛用户："></a><center>以及以下的无忧论坛用户：</center></h2><table><thead><tr><th align="right"></th><th align="left"></th><th align="right"></th><th align="left"></th></tr></thead><tbody><tr><td align="right"><code>wimboot</code>:</td><td align="left">非常棒的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=402673">Win10PE</a>内核</td><td align="right"><code>立帮电子</code>:</td><td align="left">优质的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=397706">一键备份还原工具</a> 以及<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=403550">WinPE生成器</a></td></tr><tr><td align="right"><code>2010kva</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=364890">界面友好的一键制作工具</a></td><td align="right"><code>wintoflash</code>:</td><td align="left">非常棒的Porteus 4.0 口袋Linux系统以及<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=410086">Grub2文件管理</a></td></tr><tr><td align="right"><code>jsgh1983</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=365856">Message启动菜单个性化制作工具</a></td><td align="right"><code>红毛樱木</code>:</td><td align="left">搜集大量<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=372840">网卡、显卡驱动</a></td></tr><tr><td align="right"><code>hhh333</code>:</td><td align="left">搜集整理的<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=388395&fromuid=570450">NVME驱动程序</a></td><td align="right"><code>slore</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=409685">Wimbuilder2 PE生成器项目</a></td></tr><tr><td align="right"><code>sinoxer</code>:</td><td align="left"><a href="https://www.xyboot.com/usb3_drivers_smart_install/">搜集整理的USB3.0驱动</a></td><td align="right"><code>Pauly</code>:</td><td align="left"><a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=157812&extra=page=1">XORBOOT Uefi: 多系统引导程序</a></td></tr><tr><td align="right"><code>slorelee</code>:</td><td align="left"><a href="https://github.com/slorelee/wimbuilder2">WinBuilder2项目</a></td><td align="right"></td><td align="left"></td></tr></tbody></table><h2 id="好用的话，请作者喝杯茶吧🙂"><a href="#好用的话，请作者喝杯茶吧🙂" class="headerlink" title="好用的话，请作者喝杯茶吧🙂"></a><center>好用的话，请作者喝杯茶吧🙂</center></h2><div class="reward" id="reward">  <button id="reward-button" class="button" disable="enable">打赏</button>  <div id="qr" class="qr" style="display: none;" aria-hidden="true">    <div id="alipay">      <img id="alipay_qr" src="/images/AliPay.jpg" alt="支付宝">    </div>  </div></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>一个不知道叫什么好的U盘启动工具集</title>
       <link href="/history/PE-2019-08-08/index.html"/>
       <url>/history/PE-2019-08-08/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="先说版权"><a href="#先说版权" class="headerlink" title="先说版权"></a>先说版权</h1><p>　　这个PE工具集已经被一些商人盯上了！<br>　　所以先把版权放在前面，这个工具个人免费下载和使用，也可以解包研究，但是请不要拿它来卖钱！你以为把这个东西装到U盘里然后卖U盘的方法我没想到吗？长点脑子好吧。我不卖钱肯定是有原因的。也希望已经拿这个工具来挣钱的人停止这种行为，否则我将撤下所有资源，这样对谁都没有好处。<br>　　现在b站关于商标注册的事情闹得沸沸扬扬，我从一开始也考虑了这个问题，但是我觉得无论什么样的手段，最终都是挡得住君子防不住小人，所以我也希望各位都要点脸，不要因为钱而变成畜生。所以我在一些背景图上打了很浅的水印，防止别人盗用。<br>　　这个工具不是给小白用户使用的，而是给我这种半吊子来用的，如果你只是想偶尔给自己装个系统我劝你别用这个，省的到时候跟我说：啊……你这个没有那个什么工具……你带的工具不好用……你这个工具集太大了，看别人的就一百多兆……¯_༼ •́ ͜ʖ •̀ ༽_/¯<br>　　所以，新版本<strong>只提供完整版和光盘版</strong>，不再提供其他版本，你喜欢用小体积的用别人家的去，望悉知。<br>　　这个PE工具集<strong>不允许拿来做任何商业活动</strong>，但是<strong>个人是免费下载和使用和研究</strong>的！<strong>禁止转载到远景论坛</strong>！<br>　　有些商家用这个赚钱不说还不愿意放出官方的帖子链接，用意何在？用我的东西好歹给我说一声是吧？这样才能促进社会和谐，民族安定，国家富强。。。<br>　　<strong>PECMD.ini未加密</strong>，并且进行整理标注，欢迎研究和分析。禁止抄袭！！如发现有侵权行为，会走程序。  </p><h1 id="2019-08-08，嘻嘻···嘻······"><a href="#2019-08-08，嘻嘻···嘻······" class="headerlink" title="2019-08-08，嘻嘻···嘻······"></a>2019-08-08，嘻嘻···嘻······</h1><p>　　很开心，又更新了，但是我发誓以后绝不轻易更新。鼓捣这个东西很耗费时间和精力，搞这几天我睡的很晚，又不挣钱。以后的时间越来越少，所以等下次更新？等着吧~！<br>　　你们所期望的功能，我没有添加进去，无非就是一键装系统的工具而已，DISM++体积小功能多，足矣！<br>　　说一下吧，更新了啥？我劝你仔细看  </p><ol><li>没有更新PE内核，呃……盲目追求新版本是错误的，目前的内核很稳定，体积和功能也控制的很好，我没有必要去换个新的内核然后重新弄一遍</li><li>但是注入了USB3.0，NVME，IRST驱动。其实这些个驱动不注入也行……win10自带的驱动足矣驱动这些东西，IRST模式蓝屏你就不能把磁盘模式改为AHCI吗？</li><li>更新了Diskgenus、DISM++、WinNTSetup、CPU-Z……算了，太麻烦不写，最讨厌写更新日志了，就像敲代码不想写注释一样讨厌。</li><li>加入了安装外置驱动的功能。把驱动放进“PETools\外置驱动程序”目录里面，进入PE之后运行桌面的“安装外置驱动”快捷方式就可以安装了，支持多级目录，驱动是需要解压的，含有inf文件的那种。</li><li>优化了一些操作逻辑，比如说UEFI启动界面将32位和64位的菜单分开了，还有会自动搜索PETools，如果搜索不到PETools的话，就不会创建”加载外置工具”的快捷方式。</li><li>Win10PE加入了右下角显示网络状态和连接wifi的图标（使用PENetWork），所以开机以后会自动弹出PENetWork的窗口，点击关闭就好了。</li><li>优化一些界面显示，现在启动页面可以显示当前的启动方式了。Win10PE优化了任务管理器默认的窗口大小。</li><li>替换微型Linux系统为Slitaz 5.0。</li><li>打包了光盘版，光盘版支持UEFI和Legacy BIOS两种启动方式，两种启动方式共用了一些文件，所以一些界面和U盘版会有差别。</li><li>不支持上个版本无损升级，需要将U盘格式化后重新制作。</li><li>Win10PE加入了MTP组件，可以连接手机拷贝文件。Win10PEx86支持比较完美，Win10PEx64只可以从手机拷贝到电脑，不能从电脑拷贝到手机，会发生错误，不知原因出在哪里，期望有高手出现能够解决。</li><li>Win10PE将世界之窗浏览器更新到了7，支持Html5视频直接播放，不需要flash插件了。也支持ip地址直接访问（需要在标签栏上右击，使用chrome内核才可以）。支持HIDPI显示。</li><li>其他的想不起来了，第三条曾经说过我讨厌写更新日志，所以忘了就忘了吧。　　</li></ol><h1 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h1><h2 id="启动界面"><a href="#启动界面" class="headerlink" title="启动界面"></a>启动界面</h2><p><img src="/images/PE/13.png"></p><p><img src="/images/PE/14.png"></p><p><img src="/images/PE/15.png"></p><h2 id="丰富的菜单项"><a href="#丰富的菜单项" class="headerlink" title="丰富的菜单项"></a>丰富的菜单项</h2><p><img src="/images/PE/16.png"></p><p><img src="/images/PE/17.png"></p><p><img src="/images/PE/18.png"></p><h2 id="Windows-2003-PE"><a href="#Windows-2003-PE" class="headerlink" title="Windows 2003 PE"></a>Windows 2003 PE</h2><p><img src="/images/PE/19.png"></p><p><img src="/images/PE/20.png"></p><h2 id="Windows-10-PE"><a href="#Windows-10-PE" class="headerlink" title="Windows 10 PE"></a>Windows 10 PE</h2><p><img src="/images/PE/21.jpg"></p><p><img src="/images/PE/22.jpg"></p><p><img src="/images/PE/23.jpg"></p><p><img src="/images/PE/24.jpg"></p><p><img src="/images/PE/25.jpg"></p><h2 id="Slitaz-5-0-Linux-系统"><a href="#Slitaz-5-0-Linux-系统" class="headerlink" title="Slitaz 5.0 Linux 系统"></a>Slitaz 5.0 Linux 系统</h2><p><img src="/images/PE/26.png"></p><h2 id="内置基于-Linux-的-Acronis-工具"><a href="#内置基于-Linux-的-Acronis-工具" class="headerlink" title="内置基于 Linux 的 Acronis 工具"></a>内置基于 Linux 的 Acronis 工具</h2><p><img src="/images/PE/27.png"></p><p><img src="/images/PE/28.png"></p><h2 id="UEFI-启动模式下的工具"><a href="#UEFI-启动模式下的工具" class="headerlink" title="UEFI 启动模式下的工具"></a>UEFI 启动模式下的工具</h2><p><img src="/images/PE/29.png"></p><p><img src="/images/PE/30.png"></p><h2 id="丰富又强大的外置-PETools"><a href="#丰富又强大的外置-PETools" class="headerlink" title="丰富又强大的外置 PETools"></a>丰富又强大的外置 PETools</h2><p><img src="/images/PE/31.png"></p><h2 id="制作工具主界面"><a href="#制作工具主界面" class="headerlink" title="制作工具主界面"></a>制作工具主界面</h2><p><img src="/images/PE/32.png"></p><h1 id="体积占比"><a href="#体积占比" class="headerlink" title="体积占比"></a>体积占比</h1><h2 id="U盘完整版"><a href="#U盘完整版" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><table><thead><tr><th align="center">BIOS占用</th><th align="center">UEFI占用</th><th align="center">外置PETools</th><th align="center">总计占用</th></tr></thead><tbody><tr><td align="center">1350MB</td><td align="center">1350MB</td><td align="center">671.1MB</td><td align="center">3371.1MB</td></tr></tbody></table><h2 id="光盘版"><a href="#光盘版" class="headerlink" title="光盘版"></a>光盘版</h2><p>​    使用普通4.7GB DVD光盘刻录足够</p><h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ol><li>支持大部分的机器和硬件。新机器使用Win10PE，老机器使用Win2003PE，配合Slitaz Linux系统基本可以做到维护所有家用机型。</li><li>Win2003PE和Win10PE支持网络功能，内置一定的网卡驱动，部分机型需要手动安装驱动，Win10PE支持声音。</li><li>附带的<strong>PETools搜集了很多兼顾体积和功能的程序</strong>，装机无忧。</li><li>Win10PE支持MTP功能，可以从安卓手机上拷贝文件。</li><li>可以打开常见的文件格式（包括jpg、gif、png、bmp等常见图片格式，mp3、wav、mp4、avi、mkv等常见媒体格式，doc、docx、xls、xlsx、ppt、pptx、chm、pdf等常见文稿格式等等）</li><li>在不加载外置PETools的情况下，自带的工具足够给磁盘分区和装系统用，以便内存不够造成无法加载PETools。</li><li>可以把常用的驱动放在”U盘根目录\PETools\外置驱动程序”目录当中，进入PE之后只需要点击开始菜单里的快捷方式就可以自动安装驱动程序。</li><li>附带基于Linux内核的Acronis True Image Home和Acronis Disk Director工具。</li><li>界面好看，UEFI启动界面使用<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=157812&extra=page=1">XorBoot Uefi</a>工具制作。<a href="/files/PE/XorBootUx64.exe.zip">在此</a>上传一个我使用的版本，以免绝版。</li><li>没有推广和广告以及任何影响工具纯净的东西。</li></ol><h1 id="正确的安装方式（是安装不是使用，看清楚喽-）"><a href="#正确的安装方式（是安装不是使用，看清楚喽-）" class="headerlink" title="正确的安装方式（是安装不是使用，看清楚喽~）"></a>正确的安装方式（是安装不是使用，看清楚喽~）</h1><h2 id="U盘完整版-1"><a href="#U盘完整版-1" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><ol><li><p>首先准备一个容量大于或等于4GB的存储设备（使用USB3.0设备可以大幅度提高进入PE的速度）  </p></li><li><p>一台运行Windows XP及以上系统的电脑（建议使用Windows 7系统，Windows 10可能出现兼容性问题）</p></li><li><p>备份重要资料（制作过程需要抹除数据）</p></li><li><p>打开USEC文件夹里的“开始制作.exe”</p></li><li><p>选择对应的磁盘，其他参数不要改，直接单击“全新制作”</p></li><li><p>制作完成后，将PETools文件夹拷贝到你的存储设备，注意是文件夹和里面的文件，不是只发送里面的文件，**保证文件结构类似于”G:\PETools\Tools.wim”**。当然如果不需要PETools的话，这一步可以忽略。</p></li></ol><h2 id="光盘版-1"><a href="#光盘版-1" class="headerlink" title="光盘版"></a>光盘版</h2><p>​    使用刻录软件刻录到DVD光盘即可，这里不提供刻录方法。</p><h1 id="各PE最低启动内存"><a href="#各PE最低启动内存" class="headerlink" title="各PE最低启动内存"></a>各PE最低启动内存</h1><p>​    Win2003PE最低启动内存：512MB<br>​    Win10PE 32位版最低启动内存：1G<br>​    Win10PE 64位版最低启动内存：1G<br>​    机器内存少于512MB建议使用DOS工具替代使用  </p><h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><h2 id="U盘完整版-2"><a href="#U盘完整版-2" class="headerlink" title="U盘完整版"></a>U盘完整版</h2><p>百度云链接: <a href="https://pan.baidu.com/s/19Z0oc5GREB_tyMPsOw_jVA">https://pan.baidu.com/s/19Z0oc5GREB_tyMPsOw_jVA</a> 提取码: b9ma  </p><p>Google Drive链接：<a href="https://drive.google.com/open?id=1InPM0LQ9nViF0g5HdlEGpmV_iJ9WKA3k">https://drive.google.com/open?id=1InPM0LQ9nViF0g5HdlEGpmV_iJ9WKA3k</a></p><p>文件: 2019.08.08_Full.zip<br>大小: 3345512026 字节<br>修改时间: 2019年8月8日, 16:34:21<br>MD5: 7263B762AC83F2B936492FDA490C7880<br>SHA1: 479D88C2D752F4D18F681D1800225A764E0A2FF9<br>CRC32: D062C169  </p><h2 id="光盘版-2"><a href="#光盘版-2" class="headerlink" title="光盘版"></a>光盘版</h2><p>百度云链接: <a href="https://pan.baidu.com/s/1LMzW6XuaufszyZMl4947wg">https://pan.baidu.com/s/1LMzW6XuaufszyZMl4947wg</a> 提取码: kj52  </p><p>Google Drive链接：<a href="https://drive.google.com/open?id=14WRu-smOfxBKF4HzaEHeWkD7ZPdJKLhK">https://drive.google.com/open?id=14WRu-smOfxBKF4HzaEHeWkD7ZPdJKLhK</a></p><p>文件: 2019.08.08_CDROM.iso<br>大小: 2396276736 字节<br>修改时间: 2019年8月8日, 15:19:02<br>MD5: 0D5C1ADDE81D8020BB91B41ADFEA73D8<br>SHA1: 97BA12184A28269B683DD2E970104172F09E6D0A<br>CRC32: 661F1DB6  </p><h1 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h1><ol><li>PE可以点击右下角回到桌面啦！</li><li>刷新Explorer.exe在鼠标右键“打开加加”里面！</li><li>加载外置工具后可以按PrtSc键进行截图！</li><li>搜索文件的话，用“文件工具”里的“Everything”要比系统自带的搜索快得多！</li><li>PE识别不到硬盘，有两种解决方案。如果是Win2003PE就进“Win2003PE蓝屏黑屏不认硬盘解决方案”看看吧。如果是Win10PE，嗯。。。。。这个可以进BIOS把硬盘模式设置为IDE模式试试，装好系统之后再改回来。</li><li>想要快速拷贝可以用FastCopy软件哦~</li><li>正确加载PETools的方式是保证所有磁盘根目录只有一个PETools（搜索方式是倒序盘符搜索），然后打开桌面的“加载外置程序”，等待几秒就可以了。加载PETools之后最好刷新一下Explorer.exe（当然也可以不刷新，嘿嘿···）</li><li>更改分辨率可以在右下角的彩色屏幕图标上右击，可以看到你想更改的分辨率，然后手动刷新Explorer。</li><li>按住shift键并在空白处右击可以打开命令提示符。</li><li>机器与机器之间传输文件可以利用网络工具里的FTP服务器和FTP客户端哦~也可以使用飞鸽传书或者使用HFS搭建HTTP服务器来传输文件。</li><li>用PE自带的DISM++可以完成大多数的系统维护功能（安装系统，离线补丁，注入驱动，修复引导等等）。</li><li>点击右下角PENetWork的图标可以直接连接Wifi。</li><li>连接手机到Win10PE之后可以在PE里面使用fastboot工具来刷机，<a href="/fastboot-01">刷机教程在此</a>。</li><li>如果你想在正常的系统使用PETools里面的程序，可以使用7-Zip打开PETools.wim，将需要的工具解压出来就可以使用了。</li></ol><h1 id="和平问答"><a href="#和平问答" class="headerlink" title="和平问答"></a>和平问答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs plain">问：这个工具集有什么缺点吗？<br>答：缺点嘛···很多啊，比如不能穿越时空到1937年打小日本~<br><br>问：背景图好难看！我可以更改背景吗？<br>答：可以的，换成妹子吧，顺便把那图片也发给我好啦<br><br>问：你的PETools可以在其他PE上使用吗？<br>答：可以的，解压或挂载后用PECMD加载对应系统的ini文件就好啦<br><br>问：你的PE可以玩游戏吗？<br>答：我是不会告诉你可以的，而且还能搞核武器实验，控制美军核导弹的！<br><br>问：赞助和不赞助有什么区别？<br>答：使用上没区别，但捐助后你的心灵得到了净化，精神得到了满足，人民会因此更加和谐，国家会为此再度强盛······<br><br>问：体积太大了，能做的小点吗？我连4GB的SD卡都买不起~<br>答：不仅能大能小，还能长能短，能硬能软~<br><br>问：楼猪好厉害，能教我怎么制作PE吗？<br>答：能啊，等我找到女盆友···或者帮我买一个女朋友！<br><br>问：电脑修得好，备胎当到老 是真的吗？<br>答：佛曰：不可说，不可说啊······<br><br>问：这一年都过去了，大佬还没有女朋友？？<br>答：哈哈哈哈哈，没有！我好Happy啊！<br><br>问：还会继续更新吗？<br>答：要我死~<br><br></code></pre></td></tr></table></figure><h1 id="那些神奇的链接"><a href="#那些神奇的链接" class="headerlink" title="那些神奇的链接"></a>那些神奇的链接</h1><p>赞助名单：<a href="/PEDonation">/PEDonation</a><br>历史版本：<a href="/history/PE-2018-09-04">2018-09-04</a><br>原帖地址：<a href="http://blog.csdn.net/tw359303267/article/details/74075075">http://blog.csdn.net/tw359303267/article/details/74075075</a><br>Github：<a href="https://359303267.github.io/PE">https://359303267.github.io/PE</a><br>以前的版本在无忧论坛：<a href="http://bbs.wuyou.net/forum.php?mod=viewthread&tid=378683&extra=">http://bbs.wuyou.net/forum.php?mod=viewthread&amp;tid=378683&amp;extra=</a>  </p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/xunhufasheqi-help/index.html"/>
-      <url>/xunhufasheqi-help/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="寻呼发射器帮助"><a href="#寻呼发射器帮助" class="headerlink" title="寻呼发射器帮助"></a>寻呼发射器帮助</h1><p>视频教程：</p><blockquote><ul><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M">演示（一）</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=2">演示（二）</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=3">第一步：安装驱动</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=4">连接Wifi的方法</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=5">群呼和组呼的配置及使用</a></li><li><a href="https://www.bilibili.com/video/BV1sZ4y1u76M?p=6">固件升级方法</a></li></ul></blockquote><p>如有其他问题，可在下方评论区留言</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
